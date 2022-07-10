@@ -1,0 +1,166 @@
+﻿{
+    "event": "push",
+    "entity": {
+        "chatKey": "userChat-62ca49ac4245658e1942",
+        "id": "62ca5ff16ee98be52240",
+        "mainKey": "62ca5ff16ee98be52240",
+        "root": false,
+        "channelId": "95334",
+        "chatType": "userChat",
+        "chatId": "62ca49ac4245658e1942",
+        "personType": "manager",
+        "personId": "228036",
+        "requestId": "a5d38ea5-040f-4342-8bca-a34882c30fb5",
+        "language": "ko",
+        "createdAt": 1657430001454,
+        "version": 1,
+        "blocks": [
+            {
+                "type": "text",
+                "value": "일주일 식단표 제공"
+            }
+        ],
+        "plainText": "일주일 식단표 제공",
+        "updatedAt": 1657430001453,
+        "threadMsg": false,
+        "broadcastedMsg": false
+    },
+    "refers": {
+        "manager": {
+            "id": "228036",
+            "channelId": "95334",
+            "accountId": "182319",
+            "username": "yundiet",
+            "name": "쭌매니저",
+            "showDescriptionToFront": false,
+            "email": "yun-diet@naver.com",
+            "showEmailToFront": false,
+            "mobileNumber": "+821079241442",
+            "showMobileNumberToFront": false,
+            "role": "owner",
+            "removed": false,
+            "createdAt": 1656308680332,
+            "displayAsChannel": false,
+            "defaultGroupWatch": "all",
+            "defaultDirectChatWatch": "all",
+            "defaultUserChatWatch": "all",
+            "chatAlertSound": "drop",
+            "showPrivateMessagePreview": true,
+            "operatorScore": 10.13,
+            "touchScore": 267.22,
+            "operatorEmailReminder": true,
+            "operator": true,
+            "operatorScheduling": false,
+            "defaultAllMentionImportant": true,
+            "userMessageImportant": true,
+            "autoAssignCapacity": 10,
+            "doNotDisturb": false,
+            "avatarUrl": "https://cf.channel.io/avatar/emoji/tropical_fish.abb7f9.png",
+            "managerId": "228036"
+        },
+        "userChat": {
+            "id": "62ca49ac4245658e1942",
+            "channelId": "95334",
+            "state": "opened",
+            "managed": true,
+            "userId": "62b945681778f6d16a79",
+            "name": "주노",
+            "source": {
+                "page": "https://yundiet.com/",
+                "supportBot": {
+                    "id": "43684",
+                    "revisionId": "153512",
+                    "sectionPath": [
+                        "A",
+                        "B"
+                    ]
+                }
+            },
+            "managerIds": [
+                "228036"
+            ],
+            "assigneeId": "228036",
+            "tags": [
+                "식단큐레이션받기"
+            ],
+            "firstOpenedAt": 1657424358074,
+            "openedAt": 1657424358074,
+            "createdAt": 1657424300271,
+            "frontMessageId": "62ca5ff16ee98be52240",
+            "frontUpdatedAt": 1657430001454,
+            "deskMessageId": "62ca5ff16ee98be52240",
+            "deskUpdatedAt": 1657430001454,
+            "firstAssigneeIdAfterOpen": "228036",
+            "firstRepliedAtAfterOpen": 1657424471587,
+            "waitingTime": 113513,
+            "avgReplyTime": 113513,
+            "totalReplyTime": 113513,
+            "replyCount": 1,
+            "operationWaitingTime": 113513,
+            "operationAvgReplyTime": 113513,
+            "operationTotalReplyTime": 113513,
+            "operationReplyCount": 1,
+            "firstAskedAt": 1657424358074,
+            "version": 38,
+            "goalState": "waiting"
+        },
+        "online": {
+            "channelId": "95334",
+            "personType": "user",
+            "personId": "62b945681778f6d16a79",
+            "id": "user-62b945681778f6d16a79"
+        },
+        "user": {
+            "id": "62b945681778f6d16a79",
+            "channelId": "95334",
+            "memberId": "fb4550f9-4a1c-4a58-9813-4f93bafa38de",
+            "veilId": "fb4550f9-4a1c-4a58-9813-4f93bafa38de",
+            "type": "lead",
+            "name": "주노",
+            "mobileNumberQualified": false,
+            "emailQualified": false,
+            "profile": {
+                "name": "주노",
+                "couponCount": 25,
+                "description": "ㅇㅇ",
+                "gender": [
+                    "유지를 하고 싶은데 어떻게 해야될까요?"
+                ],
+                "mobileNumber": "+821046331442"
+            },
+            "alert": 6,
+            "unread": 6,
+            "popUpChatId": "62ca49ac4245658e1942",
+            "blocked": false,
+            "unsubscribeEmail": false,
+            "unsubscribeTexting": false,
+            "hasChat": true,
+            "hasPushToken": false,
+            "language": "ko",
+            "country": "KR",
+            "city": "서울시 마포구",
+            "latitude": 37.56340789794922,
+            "longitude": 126.90785217285156,
+            "web": {
+                "device": "Apple iPhone",
+                "os": "iOS 15.5",
+                "osName": "iOS",
+                "browser": "KAKAOTALK 9.8.3",
+                "browserName": "KAKAOTALK",
+                "sessionsCount": 44,
+                "lastSeenAt": 1657429844192
+            },
+            "sessionsCount": 44,
+            "lastSeenAt": 1657429844192,
+            "createdAt": 1656309096096,
+            "updatedAt": 1657430001534,
+            "version": 909,
+            "managedKey": 1657429844192,
+            "member": false,
+            "avatarUrl": "https://cf.channel.io/avatar/emoji/dizzy.fac484.png",
+            "mobileNumber": "+821046331442",
+            "systemLanguage": "ko"
+        }
+    },
+    "type": "message"
+}
