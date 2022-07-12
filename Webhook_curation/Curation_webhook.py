@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     print('Success!')
-    return 'Hello World!'
+    return '진유훈 멍청이 담배 좀 그만 펴'
 
 @app.route('/webhook', methods=['GET', 'POST'])
 
@@ -22,21 +22,23 @@ def webhook():
         print(chat_ID)
         thirdparty = content.get('refers').get('user')['profile']['thirdPartyAgree']
         print(thirdparty)
-        # if thirdparty == True:
-        time.sleep(2)
-        Util.first_block(chat_ID, content)
-        # time.sleep(2)
-        Util.second_block(chat_ID, content)
-        # time.sleep(2)
-        Util.third_block(chat_ID,content)
-        # time.sleep(2)
-        Util.fourth_block(chat_ID,content)
-        # time.sleep(2)
-        Util.fifith_block(chat_ID,content)
-        # time.sleep(2)
-        Util.final_block(chat_ID)
-            
-        # else: pass
+        if thirdparty != True:
+            pass
+        else:
+            time.sleep(2)
+            Util.first_block(chat_ID, content)
+            time.sleep(2)
+            Util.second_block(chat_ID, content)
+            time.sleep(0.5)
+            Util.second_1_block(chat_ID,content)
+            time.sleep(2)
+            Util.third_block(chat_ID,content)
+            time.sleep(2)
+            Util.fourth_block(chat_ID,content)
+            time.sleep(2)
+            Util.fifith_block(chat_ID,content)
+            time.sleep(2)
+            Util.final_block(chat_ID)
         
     if request.method == 'GET':
         content = request.args.to_dict()

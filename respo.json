@@ -1,0 +1,1048 @@
+{
+  "messages": [
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd23cb9f52f64c909",
+      "mainKey": "62ccd23cb9f52f64c909",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590332761,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "나에게 맞지 않는 식단은\n나에게 맞지 않는 옷과 같아요.\n\n요요가 생기거나, 폭식을 하거나\n과도한 스트레스를 받는 문제가 발생해요.\n\n영양소의 과다 공급을 점진적으로 줄여가며\n나에게 맞는 식단 관리를 시작하면\n부작용 없이 건강한 내 모습을\n만나 볼 수 있을거에요.\n\n"
+        },
+        {
+          "type": "text",
+          "value": "건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이 가장 중요하죠.\n\n체중을 빨리 람량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n<b>윤식단</b>과 함께 지금부터라도 시작해 보세요!"
+        }
+      ],
+      "plainText": "나에게 맞지 않는 식단은\n나에게 맞지 않는 옷과 같아요.\n\n요요가 생기거나, 폭식을 하거나\n과도한 스트레스를 받는 문제가 발생해요.\n\n영양소의 과다 공급을 점진적으로 줄여가며\n나에게 맞는 식단 관리를 시작하면\n부작용 없이 건강한 내 모습을\n만나 볼 수 있을거에요.\n\n\n건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이 가장 중요하죠.\n\n체중을 빨리 람량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n윤식단과 함께 지금부터라도 시작해 보세요!",
+      "updatedAt": 1657590332763,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd23a981a401af169",
+      "mainKey": "62ccd23a981a401af169",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590330623,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "<b>[ㅇㅇ]</b>님의 식단관리에\n도움을 줄 수 있는 제품이에요.\n\n<b>탄수화물 20g</b>와 <b>단백질 12g</b>의 \n<b>한끼 권장 섭취량</b>에 맞는\n식단을 준비했어요.\n\n식단관리를 쉽고 편하게 시작해보세요!\n\n"
+        },
+        {
+          "type": "text",
+          "value": "\n고객님의 식단관리를 간편하게 도와줄\n<b>윤식단 맞춤 정기구독</b>을 추천해 드려요!\n\n"
+        },
+        {
+          "type": "bullets",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "<link type=\"url\" value=\"https://smartstore.naver.com/yundiet/products/6032323719\">\"윤식단 샐러드 정기배송1일 1식 20일\n프로그램 도시락 배달\n건강 식단 새벽 구독 저염\"</link>"
+            }
+          ]
+        }
+      ],
+      "plainText": "[ㅇㅇ]님의 식단관리에\n도움을 줄 수 있는 제품이에요.\n\n탄수화물 20g와 단백질 12g의 \n한끼 권장 섭취량에 맞는\n식단을 준비했어요.\n\n식단관리를 쉽고 편하게 시작해보세요!\n\n\n\n고객님의 식단관리를 간편하게 도와줄\n윤식단 맞춤 정기구독을 추천해 드려요!\n\n\n- \"윤식단 샐러드 정기배송1일 1식 20일\n프로그램 도시락 배달\n건강 식단 새벽 구독 저염\"",
+      "updatedAt": 1657590330623,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd23875235db99cbe",
+      "mainKey": "62ccd23875235db99cbe",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590328479,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "식사횟수가 <b>[3회]</b>이네요!\n\n"
+        },
+        {
+          "type": "text",
+          "value": "<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.\n\n"
+        },
+        {
+          "type": "text",
+          "value": "\n앞으로도 좋은 타이밍에 식사 해주세요!"
+        }
+      ],
+      "plainText": "식사횟수가 [3회]이네요!\n\n\n에너지 섭취 관리를 너무 잘하고 있습니다!\n식사는 3~5시간에 한 번씩\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n살이 찌는 체질로 변하게 돼요.\n\n\n\n앞으로도 좋은 타이밍에 식사 해주세요!",
+      "updatedAt": 1657590328480,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd2365356c473daff",
+      "mainKey": "62ccd2365356c473daff",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590326341,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "<b>[수분1.3L]</b>가 <b>[ㅇㅇ]</b>님의\n하루 수분 섭취량이에요.\n\n조금만 더 수분 보충에 신경 써주신다면\n더욱 좋은 몸의 상태를 유지할 수 있을 거예요!\n\n"
+        },
+        {
+          "type": "text",
+          "value": "커피, 차, 음료의 경우 수분 보충보다\n이뇨작용을 하기 때문에\n수분으로 간주하지 않습니다!\n\n수분 섭취는 <b>물</b>로 해야 된다는 사실을\n꼭 기억해 주세요!"
+        }
+      ],
+      "plainText": "[수분1.3L]가 [ㅇㅇ]님의\n하루 수분 섭취량이에요.\n\n조금만 더 수분 보충에 신경 써주신다면\n더욱 좋은 몸의 상태를 유지할 수 있을 거예요!\n\n\n커피, 차, 음료의 경우 수분 보충보다\n이뇨작용을 하기 때문에\n수분으로 간주하지 않습니다!\n\n수분 섭취는 물로 해야 된다는 사실을\n꼭 기억해 주세요!",
+      "updatedAt": 1657590326342,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd2342cb0bcc1283f",
+      "mainKey": "62ccd2342cb0bcc1283f",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590324183,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "<b>탄수화물 20g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n"
+        },
+        {
+          "type": "bullets",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "바나나 0.7개"
+            },
+            {
+              "type": "text",
+              "value": "단호박 111.1g"
+            },
+            {
+              "type": "text",
+              "value": "고구마 64.5g"
+            },
+            {
+              "type": "text",
+              "value": "현미밥 60.6g"
+            },
+            {
+              "type": "text",
+              "value": "오트밀 29.0g"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n\n<b>단백질 12g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n"
+        },
+        {
+          "type": "bullets",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "닭가슴살 54.5g"
+            },
+            {
+              "type": "text",
+              "value": "돼지안심 60.0g"
+            },
+            {
+              "type": "text",
+              "value": "돼지목살 57.1g"
+            },
+            {
+              "type": "text",
+              "value": "소우둔살 60.0g"
+            },
+            {
+              "type": "text",
+              "value": "두부 150.0g"
+            },
+            {
+              "type": "text",
+              "value": "연어 57.1g"
+            },
+            {
+              "type": "text",
+              "value": "계란 2.0개"
+            },
+            {
+              "type": "text",
+              "value": "참치 63.2g"
+            }
+          ]
+        }
+      ],
+      "plainText": "탄수화물 20g을 섭취하기 위해서는\n아래를 참조해주세요!\n\n\n- 바나나 0.7개\n- 단호박 111.1g\n- 고구마 64.5g\n- 현미밥 60.6g\n- 오트밀 29.0g\n\n\n단백질 12g을 섭취하기 위해서는\n아래를 참조해주세요!\n\n\n- 닭가슴살 54.5g\n- 돼지안심 60.0g\n- 돼지목살 57.1g\n- 소우둔살 60.0g\n- 두부 150.0g\n- 연어 57.1g\n- 계란 2.0개\n- 참치 63.2g",
+      "updatedAt": 1657590324183,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd23388807b60e2b4",
+      "mainKey": "62ccd23388807b60e2b4",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590323559,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "활동량이 꽤 있으시네요. 아주 좋습니다!\n\n"
+        },
+        {
+          "type": "text",
+          "value": "<b>[5kg 미만 감량]</b>을 원한다고\n답변을 하셨어요!\n\n<b>[5kg 미만 감량]</b>을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!\n\n\n"
+        },
+        {
+          "type": "text",
+          "value": "\n<b>[ㅇㅇ]</b>님의 <b>하루 총 섭취량</b>을 알려드릴게요!\n\n"
+        },
+        {
+          "type": "bullets",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "<b>탄수화물 82g</b"
+            },
+            {
+              "type": "text",
+              "value": "<b>단백질 49g</b"
+            },
+            {
+              "type": "text",
+              "value": "<b>지방 14g</b"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\n\n총 <b>4번</b>에 나누어 섭취하시면 되세요!\n\n"
+        },
+        {
+          "type": "text",
+          "value": "따라서 <b>한 끼 섭취량</b>는 아래와 같아요!\n\n"
+        },
+        {
+          "type": "bullets",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "<b>탄수화물 20g</b>"
+            },
+            {
+              "type": "text",
+              "value": "<b>단백질 12g</b>"
+            },
+            {
+              "type": "text",
+              "value": "<b>지방 3g</b>"
+            }
+          ]
+        }
+      ],
+      "plainText": "활동량이 꽤 있으시네요. 아주 좋습니다!\n\n\n[5kg 미만 감량]을 원한다고\n답변을 하셨어요!\n\n[5kg 미만 감량]을 위해서는\n하루 4번의 식사를 권장 드리고 있어요!\n\n\n\n\n[ㅇㅇ]님의 하루 총 섭취량을 알려드릴게요!\n\n\n- 탄수화물 82g\n- 단백질 49g\n- 지방 14g\n\n\n총 4번에 나누어 섭취하시면 되세요!\n\n\n따라서 한 끼 섭취량는 아래와 같아요!\n\n\n- 탄수화물 20g\n- 단백질 12g\n- 지방 3g",
+      "updatedAt": 1657590323559,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd23167434fa101e7",
+      "mainKey": "62ccd23167434fa101e7",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590321422,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "<b>[ㅇㅇ]님</b>의\n 기초대사량은 <b>[473Kcal]</b>입니다!"
+        }
+      ],
+      "plainText": "[ㅇㅇ]님의\n 기초대사량은 [473Kcal]입니다!",
+      "updatedAt": 1657590321422,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd22fced58c30a2e5",
+      "mainKey": "62ccd22fced58c30a2e5",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "language": "ko",
+      "createdAt": 1657590319847,
+      "version": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "아래 연락처로 답변 알림을 받을 수 있습니다."
+        }
+      ],
+      "plainText": "아래 연락처로 답변 알림을 받을 수 있습니다.",
+      "updatedAt": 1657590693595,
+      "form": {
+        "type": "followUp",
+        "triggerMessageId": "62ccd22ec6269e6bed4e",
+        "inputs": [
+          {
+            "type": "text",
+            "dataType": "string",
+            "label": "휴대폰 번호",
+            "bindingKey": "user.profile.mobileNumber",
+            "value": "+821046331442",
+            "readOnly": false
+          }
+        ],
+        "submittedAt": 1657590693584
+      },
+      "options": [
+        "doNotPost",
+        "silent",
+        "doNotUpdateDesk",
+        "doNotSearch"
+      ],
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd22eced642dc4687",
+      "mainKey": "62ccd22eced642dc4687",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "user",
+      "personId": "62b945681778f6d16a79",
+      "createdAt": 1657590318847,
+      "version": 1,
+      "updatedAt": 1657590318847,
+      "log": {
+        "action": "open"
+      },
+      "options": [
+        "immutable",
+        "private",
+        "silent",
+        "doNotUpdateDesk",
+        "doNotSearch"
+      ],
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd22ec6269e6bed4e",
+      "mainKey": "62ccd22ec6269e6bed4e",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "user",
+      "personId": "62b945681778f6d16a79",
+      "requestId": "1657590318208Q0Jx",
+      "createdAt": 1657590318811,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "ㅁ"
+        }
+      ],
+      "plainText": "ㅁ",
+      "updatedAt": 1657590318811,
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd22ad34082142853",
+      "mainKey": "62ccd22ad34082142853",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590314865,
+      "version": 1,
+      "updatedAt": 1657590314865,
+      "log": {
+        "action": "addTags",
+        "values": [
+          "식단큐레이션받기"
+        ],
+        "triggerType": "supportBot",
+        "triggerId": "43684"
+      },
+      "options": [
+        "immutable",
+        "private",
+        "silent",
+        "doNotUpdateDesk",
+        "doNotSearch"
+      ],
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd22a78a0d469e085",
+      "mainKey": "62ccd22a78a0d469e085",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590314494,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "💁🏻‍♀설문이 끝났습니다! \n\n <b>성함을 남겨주시면</b> \n\n문진을 분석후 결과를 보내드릴게요 ☺"
+        }
+      ],
+      "plainText": "💁🏻‍♀설문이 끝났습니다! \n\n 성함을 남겨주시면 \n\n문진을 분석후 결과를 보내드릴게요 ☺",
+      "updatedAt": 1657590314494,
+      "options": [
+        "doNotPost",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "B",
+        "stepIndex": 6
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd22808edcfbb96b3",
+      "mainKey": "62ccd22808edcfbb96b3",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590312036,
+      "version": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "개인정보 활용동의를 선택해야 \n결과를 분석 할 수 있습니다!"
+        }
+      ],
+      "plainText": "개인정보 활용동의를 선택해야 \n결과를 분석 할 수 있습니다!",
+      "updatedAt": 1657590313186,
+      "form": {
+        "type": "custom",
+        "inputs": [
+          {
+            "type": "bool",
+            "dataType": "boolean",
+            "required": true,
+            "label": "개인정보 활용동의(필수)",
+            "bindingKey": "user.profile.thirdPartyAgree",
+            "value": true,
+            "readOnly": false
+          }
+        ],
+        "submittedAt": 1657590313179
+      },
+      "options": [
+        "doNotPost",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "B",
+        "stepIndex": 5
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd2227b85202dded0",
+      "mainKey": "62ccd2227b85202dded0",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590306505,
+      "version": 2,
+      "updatedAt": 1657590310997,
+      "form": {
+        "type": "custom",
+        "inputs": [
+          {
+            "type": "multiSelect",
+            "dataType": "list",
+            "required": true,
+            "options": [
+              "식단 관리를 롱런 하고 싶어요",
+              "빠르게 체중 감량을 하고 싶어요",
+              "체중 감량 후 오래 유지하고 싶어요",
+              "아침을 간편하게 해결하고 싶어요",
+              "점심을 간편하게 해결하고 싶어요",
+              "저녁을 간편하게 해결하고 싶어요",
+              "기타"
+            ],
+            "label": "8. 윤식단 구독서비스를 이용한다면 무엇을 원하시나요? (중복가능",
+            "bindingKey": "user.profile.subs_want",
+            "value": [
+              "점심을 간편하게 해결하고 싶어요"
+            ],
+            "readOnly": false
+          },
+          {
+            "type": "multiSelect",
+            "dataType": "list",
+            "required": false,
+            "options": [
+              "운동을 꼭 해야 도움이 될까요?",
+              "유지를 하고 싶은데 어떻게 해야될까요?",
+              "식단관리 중 먹을 수 있는 것들이 뭐가 있을까요?",
+              "식단 관리 중 먹을 수 있는 것들이 뭐가 있을까요?"
+            ],
+            "label": "9. 식단관리시 궁금한 점이 있다면 편하게 남겨주세요! (선택",
+            "bindingKey": "user.profile.questions",
+            "value": [
+              "유지를 하고 싶은데 어떻게 해야될까요?"
+            ],
+            "readOnly": false
+          },
+          {
+            "type": "text",
+            "dataType": "string",
+            "required": false,
+            "label": "10.식단관리시 필요한 서비스가 있다면 공유해주세요! 추첨을 통해 윤식단 체험팩을 선물해드릴게요!",
+            "bindingKey": "user.profile.Need_service",
+            "readOnly": false
+          }
+        ],
+        "submittedAt": 1657590310986
+      },
+      "options": [
+        "doNotPost",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "B",
+        "stepIndex": 4
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd21d1c13938a50f2",
+      "mainKey": "62ccd21d1c13938a50f2",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590301115,
+      "version": 2,
+      "updatedAt": 1657590305977,
+      "form": {
+        "type": "custom",
+        "inputs": [
+          {
+            "type": "multiSelect",
+            "dataType": "list",
+            "required": true,
+            "options": [
+              "빠른 체중 감량 (3개월 이내)",
+              "적당한 체중 감량 (3개월 이상)",
+              "자극적인 음식으로 소화가 불편해요",
+              "영양가 있는 클린한 점심을 원해요",
+              "건강한 관리를 하고 싶어요",
+              "기타"
+            ],
+            "label": "5. 현재 고민을 모두 선택해주세요!",
+            "bindingKey": "user.profile.worries",
+            "value": [
+              "영양가 있는 클린한 점심을 원해요"
+            ],
+            "readOnly": false
+          },
+          {
+            "type": "singleSelect",
+            "dataType": "string",
+            "required": true,
+            "options": [
+              "1회",
+              "2회",
+              "3회",
+              "4회",
+              "5회 이상"
+            ],
+            "label": "6. 평소 식사 횟수를 알려주세요",
+            "bindingKey": "user.profile.number_dining",
+            "value": "3회",
+            "readOnly": false
+          },
+          {
+            "type": "singleSelect",
+            "dataType": "string",
+            "required": true,
+            "options": [
+              "근육없이 마른 체형",
+              "잔근육의 마른 체형",
+              "보통 체형",
+              "근육형",
+              "기타"
+            ],
+            "label": "7.원하는 나의 모습을 알려주세요",
+            "bindingKey": "user.profile.goal_shape",
+            "value": "근육형",
+            "readOnly": false
+          }
+        ],
+        "submittedAt": 1657590305969
+      },
+      "options": [
+        "doNotPost",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "B",
+        "stepIndex": 3
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd21849671feb148e",
+      "mainKey": "62ccd21849671feb148e",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590296300,
+      "version": 2,
+      "updatedAt": 1657590300582,
+      "form": {
+        "type": "custom",
+        "inputs": [
+          {
+            "type": "singleSelect",
+            "dataType": "string",
+            "required": true,
+            "options": [
+              "5Kg 이상의 감량을 원하세요?",
+              "5Kg 미만의 감량을 원하세요?",
+              "유지를 원하세요?",
+              "5Kg 이상의 증량을 원하세요?"
+            ],
+            "label": "3. 목표",
+            "bindingKey": "user.profile.goal",
+            "value": "5Kg 미만의 감량을 원하세요?",
+            "readOnly": false
+          },
+          {
+            "type": "singleSelect",
+            "dataType": "string",
+            "required": true,
+            "options": [
+              "500ml 이하",
+              "1L 이하",
+              "1.5L 이하",
+              "1.5L 이상"
+            ],
+            "label": "4.수분섭취량",
+            "bindingKey": "user.profile.hydrate",
+            "value": "1.5L 이하",
+            "readOnly": false
+          }
+        ],
+        "submittedAt": 1657590300572
+      },
+      "options": [
+        "doNotPost",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "B",
+        "stepIndex": 2
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd20ed3ba4fcb23c8",
+      "mainKey": "62ccd20ed3ba4fcb23c8",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590286867,
+      "version": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "이제 설문을 시작해 볼게요!"
+        }
+      ],
+      "plainText": "이제 설문을 시작해 볼게요!",
+      "updatedAt": 1657590295775,
+      "form": {
+        "type": "custom",
+        "inputs": [
+          {
+            "type": "number",
+            "dataType": "number",
+            "required": true,
+            "label": "1. 체중",
+            "bindingKey": "user.profile.weight",
+            "value": 42,
+            "readOnly": false
+          },
+          {
+            "type": "singleSelect",
+            "dataType": "string",
+            "required": true,
+            "options": [
+              "거의 없다 (주1회이하)",
+              "보통 (주2회이상)",
+              "꽤있다 (주4회)",
+              "많다 (주5회이상)"
+            ],
+            "label": "2. 운동량",
+            "bindingKey": "user.profile.activation",
+            "value": "꽤있다 (주4회)",
+            "readOnly": false
+          }
+        ],
+        "submittedAt": 1657590295766
+      },
+      "options": [
+        "doNotPost",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "B",
+        "stepIndex": 1
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd204d6d68d313165",
+      "mainKey": "62ccd204d6d68d313165",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590276879,
+      "version": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "주노님의 식단관리를 도와드리기 \n위해 건강 문진을 준비했어요! \n\n건강문진을 통해 나에게 맞는 섭취량과 \n식습관을 큐레이션 받아보세요 :laughing: \n\n<b>10가지의</b> 질문을 준비했어요!"
+        }
+      ],
+      "plainText": "주노님의 식단관리를 도와드리기 \n위해 건강 문진을 준비했어요! \n\n건강문진을 통해 나에게 맞는 섭취량과 \n식습관을 큐레이션 받아보세요 😆 \n\n10가지의 질문을 준비했어요!",
+      "updatedAt": 1657590286101,
+      "form": {
+        "type": "custom",
+        "inputs": [
+          {
+            "type": "text",
+            "dataType": "string",
+            "required": true,
+            "label": "이름",
+            "bindingKey": "user.profile.name",
+            "value": "ㅇㅇ",
+            "readOnly": false
+          },
+          {
+            "type": "text",
+            "dataType": "string",
+            "required": true,
+            "label": "연락처",
+            "bindingKey": "user.profile.mobileNumber",
+            "value": "+821046331442",
+            "readOnly": false
+          },
+          {
+            "type": "number",
+            "dataType": "number",
+            "required": true,
+            "label": "키",
+            "bindingKey": "user.profile.height",
+            "value": 18,
+            "readOnly": false
+          },
+          {
+            "type": "number",
+            "dataType": "number",
+            "required": true,
+            "label": "나이",
+            "bindingKey": "user.profile.age",
+            "value": 38,
+            "readOnly": false
+          }
+        ],
+        "submittedAt": 1657590286094
+      },
+      "options": [
+        "doNotPost",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "B",
+        "stepIndex": 0
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd20283828fc56316",
+      "mainKey": "62ccd20283828fc56316",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "user",
+      "personId": "62b945681778f6d16a79",
+      "requestId": "165759027391872z6",
+      "language": "ko",
+      "createdAt": 1657590274538,
+      "version": 1,
+      "blocks": [
+        {
+          "type": "text",
+          "value": ":bouquet: 무료 식단 큐레이션 받기"
+        }
+      ],
+      "plainText": "💐 무료 식단 큐레이션 받기",
+      "updatedAt": 1657590274538,
+      "options": [
+        "immutable",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "A",
+        "submitButtonIndex": 0
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    },
+    {
+      "chatKey": "userChat-62ccd20142093147104b",
+      "id": "62ccd2014866bba9bb68",
+      "mainKey": "62ccd2014866bba9bb68",
+      "root": false,
+      "channelId": "95334",
+      "chatType": "userChat",
+      "chatId": "62ccd20142093147104b",
+      "personType": "bot",
+      "personId": "229534",
+      "createdAt": 1657590273296,
+      "version": 2,
+      "blocks": [
+        {
+          "type": "text",
+          "value": "반가워요 고객님! \n궁금한 사항을 선택해주세요!"
+        }
+      ],
+      "plainText": "반가워요 고객님! \n궁금한 사항을 선택해주세요!",
+      "updatedAt": 1657590274526,
+      "options": [
+        "doNotPost",
+        "silent",
+        "doNotSearch"
+      ],
+      "supportBot": {
+        "id": "43684",
+        "revisionId": "154043",
+        "sectionId": "A",
+        "stepIndex": 0
+      },
+      "threadMsg": false,
+      "broadcastedMsg": false
+    }
+  ],
+  "bots": [
+    {
+      "id": "229534",
+      "channelId": "95334",
+      "name": "yundiet",
+      "createdAt": 1656308680332,
+      "color": "#86e3da",
+      "avatarUrl": "https://cf.channel.io/thumb/200x200/pub-file/95334/62c2b943064e275eabe0/file.png"
+    }
+  ],
+  "users": [
+    {
+      "id": "62b945681778f6d16a79",
+      "channelId": "95334",
+      "memberId": "fb4550f9-4a1c-4a58-9813-4f93bafa38de",
+      "veilId": "fb4550f9-4a1c-4a58-9813-4f93bafa38de",
+      "type": "lead",
+      "name": "ㅇㅇ",
+      "mobileNumberQualified": false,
+      "emailQualified": false,
+      "profile": {
+        "goal": "5Kg 미만의 감량을 원하세요?",
+        "thirdPartyAgree": true,
+        "gender": [
+          "유지를 하고 싶은데 어떻게 해야될까요?"
+        ],
+        "subs_want": [
+          "점심을 간편하게 해결하고 싶어요"
+        ],
+        "mobileNumber": "+821046331442",
+        "questions": [
+          "유지를 하고 싶은데 어떻게 해야될까요?"
+        ],
+        "couponCount": 25,
+        "description": "ㅇㅇ",
+        "weight": 42,
+        "hydrate": "1.5L 이하",
+        "Need_service": "ㅁ",
+        "worries": [
+          "영양가 있는 클린한 점심을 원해요"
+        ],
+        "additional_needs": "ㅁㅇ",
+        "name": "ㅇㅇ",
+        "goal_shape": "근육형",
+        "activation": "꽤있다 (주4회)",
+        "age": 38,
+        "height": 18,
+        "number_dining": "3회"
+      },
+      "alert": 8,
+      "unread": 8,
+      "blocked": false,
+      "unsubscribeEmail": false,
+      "unsubscribeTexting": false,
+      "hasChat": true,
+      "hasPushToken": false,
+      "language": "ko",
+      "country": "KR",
+      "city": "서울시 마포구",
+      "latitude": 37.56340789794922,
+      "longitude": 126.90785217285156,
+      "web": {
+        "device": "Apple iPhone",
+        "os": "iOS 15.5",
+        "osName": "iOS",
+        "browser": "KAKAOTALK 9.8.3",
+        "browserName": "KAKAOTALK",
+        "sessionsCount": 56,
+        "lastSeenAt": 1657586336772
+      },
+      "sessionsCount": 56,
+      "lastSeenAt": 1657586336772,
+      "createdAt": 1656309096096,
+      "updatedAt": 1657590332790,
+      "version": 1872,
+      "managedKey": 1657586336772,
+      "member": false,
+      "avatarUrl": "https://cf.channel.io/avatar/emoji/dizzy.fac484.png",
+      "mobileNumber": "+821046331442",
+      "systemLanguage": "ko"
+    }
+  ],
+  "supportBots": [
+    {
+      "id": "43684",
+      "channelId": "95334",
+      "botName": "yundiet",
+      "name": "상담 챗봇",
+      "order": 5,
+      "revisionId": "154043",
+      "state": "active",
+      "runMode": "always",
+      "start": 356,
+      "stop": 155,
+      "chatOpen": 122,
+      "createdAt": 1656828185381,
+      "updatedAt": 1657535724688,
+      "userChatExpireDuration": "PT744H",
+      "managerId": "228036"
+    }
+  ],
+  "automationRules": []
+}

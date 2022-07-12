@@ -194,26 +194,9 @@ def Recommendation():
 
 
 
+#### TEST TOTAL BLOCK ### 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### A1 . Personal Information  ###
-def first_block(chat_ID,content):
+def total_block(chat_ID,content):
     """_summary_
 
     Args:
@@ -233,54 +216,33 @@ def first_block(chat_ID,content):
     user_weight = content.get('refers').get('user')['profile']['weight']
     user_height = content.get('refers').get('user')['profile']['height']
     user_age = content.get('refers').get('user')['profile']['age']
-    
-    BMR = BMR_calories_calculation(user_weight, user_height, user_age)
-    json_data = {
-        'blocks': [
-            {
-                'type': 'text',
-                'value': f'<b>[{user_name}]님</b>의\n 기초대사량은 <b>[{BMR}Kcal]</b>입니다!'   
-            }
-            ]
-        } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
-    
-    
-
-def second_block(chat_ID,content):
-    """_summary_
-
-    Args:
-        chat_ID (str): content.get('refers').get('message')['chatId'] 
-        content (_type_): content by webhook
-    """
-    import requests
-    headers = {
-        'accept': 'application/json',
-        # Already added when you pass json=
-        # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
-    }
-    
-    user_activation = content.get('refers').get('user')['profile']['activation']    
+    user_activation = content.get('refers').get('user')['profile']['activation']   
     user_goal = content.get('refers').get('user')['profile']['goal']
-    user_name = content.get('refers').get('user')['profile']['name']
     user_weight = content.get('refers').get('user')['profile']['weight']
     user_height = content.get('refers').get('user')['profile']['height']
-    user_age = content.get('refers').get('user')['profile']['age']
     BMR = BMR_calories_calculation(user_weight, user_height, user_age)
     maintenance = activation_calories_calculation(user_activation,BMR)
     goal_calories = goal_calories_calculation(user_goal,maintenance)
     carbohydrate, protein, fat = macro_calories_calucation(goal_calories)    
     activation = activation_response(user_activation)
     goal = goal_response(user_goal)
+    user_hydrate =content.get('refers').get('user')['profile']['hydrate']
+    hydrate_response = hydrate_response(user_hydrate,user_weight,user_name)
+    user_dining = content.get('refers').get('user')['profile']['number_dining']
+    dining_response = dining_response(user_dining)
+    user_worries =content.get('refers').get('user')['profile']['worries']
+    yun_diet_main, yun_diet_link, yun_honest_main, yun_honest_link, abc_main, abc_link = Recommendation()
     
     json_data = {
         'blocks': [
             {
                 'type': 'text',
+                'value': f'<b>[{user_name}]님</b>의\n 기초대사량은 <b>[{BMR}Kcal]</b>입니다!\n\n\n'   
+            },
+            {
+                'type': 'text',
                 'value': f'활동량이 {activation}\n\n'
+                
             },
             {
                 'type':'text',
@@ -313,7 +275,7 @@ def second_block(chat_ID,content):
             },
             {
                 'type':'text',
-                'value':f'따라서 <b>한 끼 섭취 칼로리</b>는 아래와 같아요!\n\n'
+                'value':f'\n따라서 <b>한 끼 섭취량</b>는 아래와 같아요!\n\n'
             },
             {
                 'type':'bullets',
@@ -331,43 +293,7 @@ def second_block(chat_ID,content):
                         'value':f'<b>지방 {int(fat/4)}g</b>'
                     }
                 ]
-            }
-        ]
-    }
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
-
-### SECOND_1_BLOCK ### 
-def second_1_block(chat_ID,content):
-    """_summary_
-
-    Args:
-        chat_ID (str): content.get('refers').get('message')['chatId'] 
-        content (_type_): content by webhook
-    """
-    import requests
-    headers = {
-        'accept': 'application/json',
-        # Already added when you pass json=
-        # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
-    }
-    
-    user_activation = content.get('refers').get('user')['profile']['activation']    
-    user_goal = content.get('refers').get('user')['profile']['goal']
-    user_name = content.get('refers').get('user')['profile']['name']
-    user_weight = content.get('refers').get('user')['profile']['weight']
-    user_height = content.get('refers').get('user')['profile']['height']
-    user_age = content.get('refers').get('user')['profile']['age']
-    BMR = BMR_calories_calculation(user_weight, user_height, user_age)
-    maintenance = activation_calories_calculation(user_activation,BMR)
-    goal_calories = goal_calories_calculation(user_goal,maintenance)
-    carbohydrate, protein, fat = macro_calories_calucation(goal_calories)    
-    activation = activation_response(user_activation)
-    goal = goal_response(user_goal)
-    
-    json_data = {
-        'blocks':[
+            },
             {
                 'type':'text',
                 'value': f'\n\n<b>탄수화물 {int(carbohydrate/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
@@ -381,19 +307,19 @@ def second_1_block(chat_ID,content):
                     },
                     {
                         'type':'text',
-                        'value':f'단호박 {round((int(carbohydrate/4)/1.8),1)}g'
+                        'value':f'단호박 {round((int(carbohydrate/4)*(100/18)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'고구마 {round((int(carbohydrate/4)/3.1),1)}g'
+                        'value':f'고구마 {round((int(carbohydrate/4)*(100/31)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'현미밥 {round((int(carbohydrate/4)/3.3),1)}g'
+                        'value':f'현미밥 {round((int(carbohydrate/4)*(100/33)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'오트밀 {round((int(carbohydrate/4)/6.9),1)}g'
+                        'value':f'오트밀 {round((int(carbohydrate/4)*(100/69)),1)}g'
                     }
                 ]
             },
@@ -406,165 +332,64 @@ def second_1_block(chat_ID,content):
                 'blocks':[
                     {
                         'type':'text',
-                        'value':f'닭가슴살 {round((int(protein/4)/2.2),1)}g' 
+                        'value':f'닭가슴살 {round((int(protein/4)*(100/22)),1)}g' 
                     },
                     {
                         'type':'text',
-                        'value':f'돼지안심 {round((int(protein/4)/2),1)}g'
+                        'value':f'돼지안심 {round((int(protein/4)*(100/20)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'돼지목살 {round((int(protein/4)/2.1),1)}g'
+                        'value':f'돼지목살 {round((int(protein/4)*(100/21)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'소우둔살 {round((int(protein/4)/2),1)}g'
+                        'value':f'소우둔살 {round((int(protein/4)*(100/20)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'두부 {round((int(protein/4)/0.8),1)}g'
+                        'value':f'두부 {round((int(protein/4)*(100/8)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'연어 {round((int(protein/4)/2.1),1)}g'
+                        'value':f'연어 {round((int(protein/4)*(100/21)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'계란 {round((int(protein/4)/0.6),1)}g'
+                        'value':f'계란 {round(int(protein/4)/6,1)}개'
                     },
                     {
                         'type':'text',
-                        'value':f'참치 {round((int(protein/4)/1.9),1)}g'
+                        'value':f'참치 {round((int(protein/4)*(100/19)),1)}g'
                     }
                 ]
-            }
-        ]
-    }
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
-
-
-
-
-
-
-
-
-
-
-### A3 . Personal Hydrate ###    
-def third_block(chat_ID,content):
-    """_summary_
-
-    Args:
-        chat_ID (str): content.get('refers').get('message')['chatId'] 
-        content (_type_): content by webhook
-    """
-    import requests
-    headers = {
-        'accept': 'application/json',
-        # Already added when you pass json=
-        # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
-    }
-    
-    user_name = content.get('refers').get('user')['profile']['name']
-    user_weight = content.get('refers').get('user')['profile']['weight']
-    user_hydrate =content.get('refers').get('user')['profile']['hydrate']
-    response = hydrate_response(user_hydrate,user_weight,user_name)
-    json_data = {
-        'blocks': [
-            {
-                'type': 'text',
-                'value': f'{response}'
             },
             {
                 'type': 'text',
-                'value': '커피, 차, 음료의 경우 수분 보충보다\n이뇨작용을 하기 때문에\n수분으로 간주하지 않습니다!\n\n수분 섭취는 <b>물</b>로 해야 된다는 사실을\n꼭 기억해 주세요!'
-            },
-            ]
-        } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
-    
-    
-### A4 . Personal Dining ###
-def fourth_block(chat_ID,content):
-    """_summary_
-
-    Args:
-        chat_ID (str): content.get('refers').get('message')['chatId'] 
-        content (_type_): content by webhook
-    """
-    import requests
-    headers = {
-        'accept': 'application/json',
-        # Already added when you pass json=
-        # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
-    }
-    
-    user_dining = content.get('refers').get('user')['profile']['number_dining']
-    response = dining_response(user_dining)
-    
-    json_data = {
-        'blocks': [
-            {
-                'type': 'text',
-                'value': f'식사횟수가 <b>[{user_dining}]</b>이네요!\n\n'
+                'value': f'{hydrate_response}'
             },
             {
                 'type': 'text',
-                'value': f'{response}\n\n'
+                'value': '\n\n커피, 차, 음료의 경우 수분 보충보다\n이뇨작용을 하기 때문에\n수분으로 간주하지 않습니다!\n\n수분 섭취는 <b>물</b>로 해야 된다는 사실을\n꼭 기억해 주세요!\n'
             },
             {
                 'type': 'text',
-                'value': '\n앞으로도 좋은 타이밍에 식사 해주세요!'                
+                'value': f'\n\n식사횟수가 <b>[{user_dining}]</b>이네요!\n\n'
+            },
+            {
+                'type': 'text',
+                'value': f'{dining_response}\n\n'
+            },
+            {
+                'type': 'text',
+                'value': '\n\n앞으로도 좋은 타이밍에 식사 해주세요!'                
+            },
+            {
+                'type': 'text',
+                'value': f'\n\n\n<b>[{user_name}]</b>님의 식단관리에\n도움을 줄 수 있는 제품이에요.\n\n<b>탄수화물 {int(carbohydrate/4)}g</b>와 <b>단백질 {int(protein/4)}g</b>의 \n<b>한끼 권장 섭취량</b>에 맞는\n식단을 준비했어요.\n\n식단관리를 쉽고 편하게 시작해보세요!\n\n'
             }
             ]
-        } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
-    
-
-### A5 . Personal recommendation ###
-def fifith_block(chat_ID,content):
-    """_summary_
-
-    Args:
-        chat_ID (str): content.get('refers').get('message')['chatId'] 
-        content (_type_): content by webhook
-    """
-    import requests
-    headers = {
-        'accept': 'application/json',
-        # Already added when you pass json=
-        # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
-    }
-    
-    user_activation = content.get('refers').get('user')['profile']['activation']    
-    user_goal = content.get('refers').get('user')['profile']['goal']
-    user_name = content.get('refers').get('user')['profile']['name']
-    user_weight = content.get('refers').get('user')['profile']['weight']
-    user_height = content.get('refers').get('user')['profile']['height']
-    user_age = content.get('refers').get('user')['profile']['age']
-    user_worries =content.get('refers').get('user')['profile']['worries']
-    
-    BMR = BMR_calories_calculation(user_weight, user_height, user_age)
-    maintenance = activation_calories_calculation(user_activation,BMR)
-    goal_calories = goal_calories_calculation(user_goal,maintenance)
-    carbohydrate, protein, fat = macro_calories_calucation(goal_calories)  
-    yun_diet_main, yun_diet_link, yun_honest_main, yun_honest_link, abc_main, abc_link = Recommendation()
-    json_data = {
-        'blocks': [
-            {
-                'type': 'text',
-                'value': f'<b>[{user_name}]</b>님의 식단관리에\n도움을 줄 수 있는 제품이에요.\n\n<b>탄수화물 {int(carbohydrate/4)}g</b>와 <b>단백질 {int(protein/4)}g</b>의 \n<b>한끼 권장 섭취량</b>에 맞는\n식단을 준비했어요.\n\n식단관리를 쉽고 편하게 시작해보세요!\n\n'
-            }
-        ]
-    }
-    
+        }
     if '빠른 체중 감량 (3개월 이내)' in user_worries:
         json_data.get('blocks').append(yun_honest_main)
         json_data.get('blocks').append(yun_honest_link)
@@ -579,38 +404,21 @@ def fifith_block(chat_ID,content):
         json_data.get('blocks').append(abc_link)
     elif ('빠른 체중 감량 (3개월 이내)' and '적당한 체중 감량 (3개월 이상)') not in user_worries:
         json_data.get('blocks').append(yun_diet_main)
-        json_data.get('blocks').append(yun_diet_link)        
+        json_data.get('blocks').append(yun_diet_link)   
         
         
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
-    
-### FINAL ###
-def final_block(chat_ID):
-    """_summary_
-
-    Args:
-        chat_ID (str): content.get('refers').get('message')['chatId'] 
-    """
-    import requests
-    headers = {
-        'accept': 'application/json',
-        # Already added when you pass json=
-        # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+    Final_json_1 = {
+        'type':'text',
+        'value': '\n\n\n나에게 맞지 않는 식단은\n나에게 맞지 않는 옷과 같아요.\n\n요요가 생기거나, 폭식을 하거나\n과도한 스트레스를 받는 문제가 발생해요.\n\n영양소의 과다 공급을 점진적으로 줄여가며\n나에게 맞는 식단 관리를 시작하면\n부작용 없이 건강한 내 모습을\n만나 볼 수 있을거에요.\n\n'
     }
+            
+    Final_json_2 = {
+        'type':'text',
+        'value': '건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이 가장 중요하죠.\n\n체중을 빨리 감량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n<b>윤식단</b>과 함께 지금부터라도 시작해 보세요!'
+    }
+    json_data.get('blockks').append(Final_json_1)
+    json_data.get('blocks').append(Final_json_2)
+    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
     
-    json_data = {
-        'blocks': [
-            {
-                'type': 'text',
-                'value': '나에게 맞지 않는 식단은\n나에게 맞지 않는 옷과 같아요.\n\n요요가 생기거나, 폭식을 하거나\n과도한 스트레스를 받는 문제가 발생해요.\n\n영양소의 과다 공급을 점진적으로 줄여가며\n나에게 맞는 식단 관리를 시작하면\n부작용 없이 건강한 내 모습을\n만나 볼 수 있을거에요.\n\n'
-            },
-            {
-                'type' : 'text',
-                'value': '건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이 가장 중요하죠.\n\n체중을 빨리 람량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n<b>윤식단</b>과 함께 지금부터라도 시작해 보세요!'
-            }
-            ]
-        } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
     
+

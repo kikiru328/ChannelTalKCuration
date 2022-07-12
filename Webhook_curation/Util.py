@@ -86,10 +86,10 @@ def goal_response(user_goal):
     Returns:
         str: str > second_block
     """
-    if user_goal == '5Kg 이상의 감량을 원하세요?' : return "<b>[5Kg 이상 감량]</b>을 원하신다고\n답변을 하셨어요!\n\n[5Kg 이상 감량]을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
-    elif user_goal == '5Kg 미만의 감량을 원하세요?': return "<b>[5kg 미만 감량]</b>을 원한다고\n답변을 하셨어요!\n\n[5kg 미만 감량]을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
-    elif user_goal == '5Kg 이상의 증량을 원하세요?': return "<b>[5Kg 이상 증량]</b>을 원한다고\n답변을 하셨어요!\n\n[5Kg 이상 증량]을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
-    else: return "<b>[유지]</b>를 원한다고\n답변을 하셨어요!\n\n[유지]를 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
+    if user_goal == '5Kg 이상의 감량을 원하세요?' : return "<b>[5Kg 이상 감량]</b>을 원하신다고\n답변을 하셨어요!\n\n<b>[5Kg 이상 감량]</b>을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
+    elif user_goal == '5Kg 미만의 감량을 원하세요?': return "<b>[5kg 미만 감량]</b>을 원한다고\n답변을 하셨어요!\n\n<b>[5kg 미만 감량]</b>을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
+    elif user_goal == '5Kg 이상의 증량을 원하세요?': return "<b>[5Kg 이상 증량]</b>을 원한다고\n답변을 하셨어요!\n\n<b>[5Kg 이상 증량]</b>을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
+    else: return "<b>[유지]</b>를 원한다고\n답변을 하셨어요!\n\n<b>[유지]</b>를 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
 
 ###### THIRD ######
 global hydrate_response 
@@ -124,15 +124,15 @@ def dining_response(user_dining):
         str: response str > fourth_block
     """
     if user_dining == '1회':
-        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.'
+        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.'
     elif user_dining == '2회':
-        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
+        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
     elif user_dining == '3회':
-        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
+        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
     elif user_dining == '4회':
-        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
+        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
     else: 
-        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.\n\n<b>5회 이상의 식사</b>는 좋은 방법이지만\n과식의 우려가 있어 하루 권장 섭취량을\n잘 분배해 섭취해 주세요!' 
+        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.\n\n<b>5회 이상의 식사</b>는 좋은 방법이지만\n과식의 우려가 있어 하루 권장 섭취량을\n잘 분배해 섭취해 주세요!' 
 
 
 
@@ -246,10 +246,7 @@ def first_block(chat_ID,content):
     response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
     
     
-    
-    
-    
-### A2 . Personal Activation  ###        
+
 def second_block(chat_ID,content):
     """_summary_
 
@@ -276,47 +273,47 @@ def second_block(chat_ID,content):
     maintenance = activation_calories_calculation(user_activation,BMR)
     goal_calories = goal_calories_calculation(user_goal,maintenance)
     carbohydrate, protein, fat = macro_calories_calucation(goal_calories)    
-    user_activation = activation_response(user_activation)
-    user_goal = goal_response(user_goal)
+    activation = activation_response(user_activation)
+    goal = goal_response(user_goal)
     
     json_data = {
         'blocks': [
             {
                 'type': 'text',
-                'value': f'활동량이 {user_activation}\n\n'
+                'value': f'활동량이 {activation}\n\n'
             },
             {
-                'type': 'text',
-                'value': f'{user_goal}\n\n\n'
+                'type':'text',
+                'value':f'{goal}\n\n\n'
             },
             {
-                'type': 'text',
-                'value': f'\n<b>[{user_name}]</b>님의 <b>하루 총 섭취량</b>을 알려드릴게요!\n\n'
+                'type':'text',
+                'value':f'\n<b>[{user_name}]</b>님의 <b>하루 총 섭취량</b>을 알려드릴게요!\n\n'
             },
             {
-                'type': 'bullets',
+                'type':'bullets',
                 'blocks':[
                     {
                         'type':'text',
-                        'value':f'<b>탄수화물 {carbohydrate}g</b>'
+                        'value':f'<b>탄수화물 {carbohydrate}g</b'
                     },
                     {
                         'type':'text',
-                        'value':f'<b>단백질 {protein}g</b>'
+                        'value':f'<b>단백질 {protein}g</b'
                     },
                     {
                         'type':'text',
-                        'value':f'<b>지방 {fat}g</b>'
+                        'value':f'<b>지방 {fat}g</b'
                     }
                 ]
             },
             {
                 'type':'text',
-                'value':'\n\n총 <b>4번</b>에 나누어 섭취하시면 되세요!\n'
+                'value':'\n\n총 <b>4번</b>에 나누어 섭취하시면 되세요!\n\n'
             },
             {
-                'type': 'text',
-                'value': f'따라서 <b>한 끼 섭취 칼로리</b>는 아래와 같아요!\n\n'
+                'type':'text',
+                'value':f'따라서 <b>한 끼 섭취량</b>는 아래와 같아요!\n\n'
             },
             {
                 'type':'bullets',
@@ -333,11 +330,46 @@ def second_block(chat_ID,content):
                         'type':'text',
                         'value':f'<b>지방 {int(fat/4)}g</b>'
                     }
-                    
                 ]
-            },
+            }
+        ]
+    }
+    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
+
+### SECOND_1_BLOCK ### 
+def second_1_block(chat_ID,content):
+    """_summary_
+
+    Args:
+        chat_ID (str): content.get('refers').get('message')['chatId'] 
+        content (_type_): content by webhook
+    """
+    import requests
+    headers = {
+        'accept': 'application/json',
+        # Already added when you pass json=
+        # 'Content-Type': 'application/json',
+        'x-access-key': '62c7984897721f282db3',
+        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+    }
+    
+    user_activation = content.get('refers').get('user')['profile']['activation']    
+    user_goal = content.get('refers').get('user')['profile']['goal']
+    user_name = content.get('refers').get('user')['profile']['name']
+    user_weight = content.get('refers').get('user')['profile']['weight']
+    user_height = content.get('refers').get('user')['profile']['height']
+    user_age = content.get('refers').get('user')['profile']['age']
+    BMR = BMR_calories_calculation(user_weight, user_height, user_age)
+    maintenance = activation_calories_calculation(user_activation,BMR)
+    goal_calories = goal_calories_calculation(user_goal,maintenance)
+    carbohydrate, protein, fat = macro_calories_calucation(goal_calories)    
+    activation = activation_response(user_activation)
+    goal = goal_response(user_goal)
+    
+    json_data = {
+        'blocks':[
             {
-                'type': 'text',
+                'type':'text',
                 'value': f'\n\n<b>탄수화물 {int(carbohydrate/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
             },
             {
@@ -349,100 +381,66 @@ def second_block(chat_ID,content):
                     },
                     {
                         'type':'text',
-                        'value':f'단호박 {round((int(carbohydrate/4)/1.8),1)}g'
+                        'value':f'단호박 {round((int(carbohydrate/4)*(100/18)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'고구마 {round((int(carbohydrate/4)/3.1),1)}g'
+                        'value':f'고구마 {round((int(carbohydrate/4)*(100/31)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'현미밥 {round((int(carbohydrate/4)/3.3),1)}g'
+                        'value':f'현미밥 {round((int(carbohydrate/4)*(100/33)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'오트밀 {round((int(carbohydrate/4)/6.9),1)}g'
-                    },
-
+                        'value':f'오트밀 {round((int(carbohydrate/4)*(100/69)),1)}g'
+                    }
                 ]
             },
             {
-                'type': 'text',
-                'value': f'\n\n<b>단백질 {int(protein/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
+                'type':'text',
+                'value':f'\n\n<b>단백질 {int(protein/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
             },
             {
-                'type':'blocks',
+                'type':'bullets',
                 'blocks':[
                     {
                         'type':'text',
-                        'value':f'닭가슴살 {round((int(protein/4)/2.2),1)}g' 
+                        'value':f'닭가슴살 {round((int(protein/4)*(100/22)),1)}g' 
                     },
                     {
                         'type':'text',
-                        'value':f'돼지안심 {round((int(protein/4)/2),1)}g'
+                        'value':f'돼지안심 {round((int(protein/4)*(100/20)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'돼지목살 {round((int(protein/4)/2.1),1)}g'
+                        'value':f'돼지목살 {round((int(protein/4)*(100/21)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'소우둔살 {round((int(protein/4)/2),1)}g'
+                        'value':f'소우둔살 {round((int(protein/4)*(100/20)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'두부 {round((int(protein/4)/0.8),1)}g'
+                        'value':f'두부 {round((int(protein/4)*(100/8)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'연어 {round((int(protein/4)/2.1),1)}g'
+                        'value':f'연어 {round((int(protein/4)*(100/21)),1)}g'
                     },
                     {
                         'type':'text',
-                        'value':f'계란 {round((int(protein/4)/0.6),1)}g'
+                        'value':f'계란 {round(int(protein/4)/6,1)}개'
                     },
                     {
                         'type':'text',
-                        'value':f'참치 {round((int(protein/4)/1.9),1)}g'
-                    },
-                    
+                        'value':f'참치 {round((int(protein/4)*(100/19)),1)}g'
+                    }
                 ]
             }
-            ]
-        } 
+        ]
+    }
     response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -483,7 +481,7 @@ def third_block(chat_ID,content):
             {
                 'type': 'text',
                 'value': '커피, 차, 음료의 경우 수분 보충보다\n이뇨작용을 하기 때문에\n수분으로 간주하지 않습니다!\n\n수분 섭취는 <b>물</b>로 해야 된다는 사실을\n꼭 기억해 주세요!'
-            },
+            }
             ]
         } 
     response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
@@ -610,7 +608,7 @@ def final_block(chat_ID):
             },
             {
                 'type' : 'text',
-                'value': '건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이 가장 중요하죠.\n\n체중을 빨리 람량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n<b>윤식단</b>과 함께 지금부터라도 시작해 보세요!'
+                'value': '건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이 가장 중요하죠.\n\n체중을 빨리 감량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n<b>윤식단</b>과 함께 지금부터라도 시작해 보세요!'
             }
             ]
         } 
