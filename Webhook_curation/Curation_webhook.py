@@ -27,6 +27,7 @@ def webhook():
         else:
             time.sleep(2)
             Util.first_block(chat_ID, content)
+            # Util.image_block(chat_ID)
             time.sleep(2)
             Util.second_block(chat_ID, content)
             time.sleep(0.5)
@@ -39,6 +40,7 @@ def webhook():
             Util.fifith_block(chat_ID,content)
             time.sleep(2)
             Util.final_block(chat_ID)
+            
         
     if request.method == 'GET':
         content = request.args.to_dict()
