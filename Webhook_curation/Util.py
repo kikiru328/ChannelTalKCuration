@@ -1,3 +1,13 @@
+global API_keys
+def API_keys():
+    import json
+    with open('API_key.json','r') as api_json:
+       api = json.load(api_json) 
+    key = api.get('x-access-key')
+    sec = api.get('x-access-secret')
+    return key,sec
+
+
 global BMR_calories_calculation, activation_calories_calculation, goal_calories_calculation, macro_calories_calucation
 def BMR_calories_calculation(user_weight, user_height, user_age):
 
@@ -221,12 +231,13 @@ def first_block(chat_ID,content):
         content (_type_): content by webhook
     """
     import requests
+    key,pwd = API_keys()
     headers = {
         'accept': 'application/json',
         # Already added when you pass json=
         # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
     }
     
     user_name = content.get('refers').get('user')['profile']['name']
@@ -255,12 +266,13 @@ def second_block(chat_ID,content):
         content (_type_): content by webhook
     """
     import requests
+    key,pwd = API_keys()
     headers = {
         'accept': 'application/json',
         # Already added when you pass json=
         # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
     }
     
     user_activation = content.get('refers').get('user')['profile']['activation']    
@@ -345,12 +357,13 @@ def second_1_block(chat_ID,content):
         content (_type_): content by webhook
     """
     import requests
+    key,pwd = API_keys()
     headers = {
         'accept': 'application/json',
         # Already added when you pass json=
         # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
     }
     
     user_activation = content.get('refers').get('user')['profile']['activation']    
@@ -460,12 +473,13 @@ def third_block(chat_ID,content):
         content (_type_): content by webhook
     """
     import requests
+    key,pwd = API_keys()
     headers = {
         'accept': 'application/json',
         # Already added when you pass json=
         # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
     }
     
     user_name = content.get('refers').get('user')['profile']['name']
@@ -496,12 +510,13 @@ def fourth_block(chat_ID,content):
         content (_type_): content by webhook
     """
     import requests
+    key,pwd = API_keys()
     headers = {
         'accept': 'application/json',
         # Already added when you pass json=
         # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
     }
     
     user_dining = content.get('refers').get('user')['profile']['number_dining']
@@ -535,12 +550,13 @@ def fifith_block(chat_ID,content):
         content (_type_): content by webhook
     """
     import requests
+    key,pwd = API_keys()
     headers = {
         'accept': 'application/json',
         # Already added when you pass json=
         # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
     }
     
     user_activation = content.get('refers').get('user')['profile']['activation']    
@@ -592,12 +608,13 @@ def final_block(chat_ID):
         chat_ID (str): content.get('refers').get('message')['chatId'] 
     """
     import requests
+    key,pwd = API_keys()
     headers = {
         'accept': 'application/json',
         # Already added when you pass json=
         # 'Content-Type': 'application/json',
-        'x-access-key': '62c7984897721f282db3',
-        'x-access-secret': 'ef5f908abc1a0d2dfadeac988dd8cef2',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
     }
     
     json_data = {
