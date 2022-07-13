@@ -1,12 +1,12 @@
-from flask import Flask, request, Response
+import sys
+from flask import Flask, request, Response, render_template
 import threading
 import json
 
 app = Flask(__name__)
 @app.route('/')
-def hello_world():
-    print('Success!')
-    return '진유훈 멍청이 담배 좀 그만 펴'
+def home():
+    return render_template("index.html", image_file='식단표.png')
 
 @app.route('/webhook', methods=['GET', 'POST'])
 
@@ -18,29 +18,32 @@ def webhook():
         import time
         # with open('./content.json','w') as file_:
         #     json.dump(content,file_)
-        chat_ID = content.get('refers').get('message')['chatId']
-        print(chat_ID)
-        thirdparty = content.get('refers').get('user')['profile']['thirdPartyAgree']
-        print(thirdparty)
-        if thirdparty != True:
+        if content.get('entity').get('tags') != ['식단큐레이션받기']:
             pass
         else:
-            time.sleep(2)
-            Util.first_block(chat_ID, content)
-            # Util.image_block(chat_ID)
-            time.sleep(2)
-            Util.second_block(chat_ID, content)
-            time.sleep(0.5)
-            Util.second_1_block(chat_ID,content)
-            time.sleep(2)
-            Util.third_block(chat_ID,content)
-            time.sleep(2)
-            Util.fourth_block(chat_ID,content)
-            time.sleep(2)
-            Util.fifith_block(chat_ID,content)
-            time.sleep(2)
-            Util.final_block(chat_ID)
-            
+            chat_ID = content.get('refers').get('message')['chatId']
+            print(chat_ID)
+            thirdparty = content.get('refers').get('user')['profile']['thirdPartyAgree']
+            print(thirdparty)
+            if thirdparty != True:
+                pass
+            else:
+                time.sleep(2)
+                Util.first_block(chat_ID, content)
+                time.sleep(2)
+                Util.second_block(chat_ID, content)
+                time.sleep(0.5)
+                Util.second_1_block(chat_ID,content)
+                time.sleep(2)
+                Util.third_block(chat_ID,content)
+                time.sleep(2)
+                Util.fourth_block(chat_ID,content)
+                time.sleep(2)
+                Util.fifith_block(chat_ID,content)
+                time.sleep(2)
+                Util.final_block(chat_ID)
+                time.sleep(1)
+                Util.image_block(chat_ID)
         
     if request.method == 'GET':
         content = request.args.to_dict()

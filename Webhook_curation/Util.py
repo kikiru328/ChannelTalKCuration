@@ -7,16 +7,6 @@ def API_keys():
     sec = api.get('x-access-secret')
     return key,sec
 
-# global get_response_image
-# def get_response_image(image_path):
-#     import io
-#     from base64 import encodebytes
-#     from PIL import Image
-#     pil_img = Image.open(image_path, mode='r') # reads the PIL image
-#     byte_arr = io.BytesIO()
-#     pil_img.save(byte_arr, format='PNG') # convert the PIL image to byte array
-#     encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii') # encode as base64
-#     return encoded_img
 
 global BMR_calories_calculation, activation_calories_calculation, goal_calories_calculation, macro_calories_calucation
 def BMR_calories_calculation(user_weight, user_height, user_age):
@@ -159,6 +149,7 @@ def dining_response(user_dining):
 ##### FINAL ######
 global Recommendation
 def Recommendation():
+    image_ = '식단표.png'
     yun_diet_main =                 {
                     'type':'text',
                     'value':'\n고객님의 식단관리를 간편하게 도와줄\n<b>윤식단 맞춤 정기구독</b>을 추천해 드려요!\n\n'
@@ -168,7 +159,7 @@ def Recommendation():
                     'blocks':[
                         {
                             'type':'text',
-                            'value': '<link type="url" value="https://smartstore.naver.com/yundiet/products/6032323719">"윤식단 샐러드 정기배송1일 1식 20일\n프로그램 도시락 배달\n건강 식단 새벽 구독 저염"</link>'   
+                            'value': '<link type="url" value=f"https://smartstore.naver.com/yundiet/products/6032323719">"윤식단 샐러드 정기배송1일 1식 20일\n프로그램 도시락 배달\n건강 식단 새벽 구독 저염"</link>'   
                         }
                     ]
                 }
@@ -641,30 +632,41 @@ def final_block(chat_ID):
         } 
     response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
     
-    
-# def image_block(chat_ID):
-#     import requests
-#     key,pwd = API_keys()
-#     headers = {
-#         'accept': 'application/json',
-#         # Already added when you pass json=
-#         # 'Content-Type': 'application/json',
-#         'x-access-key': f'{key}',
-#         'x-access-secret': f'{pwd}',
-#     }
-#     im_b64 = get_response_image('./식단표.png')
-    
-#     json_data={
-#         'files':[
-#             {   
-#                 'type':'image',
-#                 'name':'식단표.png',
-#                 'size':18334,
-#                 'contentType':'image/png',
-#                 'value':im_b64,
-#                 'width':1134,
-#                 'height':501
-#             }
-#         ]
-#     }
-#     response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+ 
+ 
+ 
+# Thumbnail X   
+def image_block(chat_ID):
+    import requests
+    key,pwd = API_keys()
+    headers = {
+        'accept': 'application/json',
+        # Already added when you pass json=
+        # 'Content-Type': 'application/json',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
+    }
+    try:
+        json_data={
+            'files':[
+                {   
+                    'id':'static/img',
+                    'type':'image',
+                    'name':'식단표.png',
+                    'size':18334,
+                    'contentType':'image/png',
+                    "duration": 0,
+                    'width':1134,
+                    'height':501,
+                    "orientation": 0,
+                    "animated": 'true',
+                    'bucket':'1b70-222-110-195-119.jp.ngrok.io',
+                    'key':'./static/img/식단표.png',
+                    'previewKey': './static/img/식단표.png'
+                                        
+                }
+            ]
+        }
+        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+    except Exception as e:
+        print(e)
