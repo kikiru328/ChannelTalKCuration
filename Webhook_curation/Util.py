@@ -35,8 +35,8 @@ def activation_calories_calculation(user_activation:str,BMR):
         int: maintenance : int > goal_calculation parameter ( trunc )
     """
     if user_activation == '거의 없다 (주1회이하)' : return int(BMR * 1.2)
-    elif user_activation == '보통 (주2회이상)' : return int(BMR * 1.375)
-    elif user_activation == '꽤있다 (주4회)' : return int(BMR * 1.55)
+    elif user_activation == '보통 (주2~4회)' : return int(BMR * 1.375)
+    elif user_activation == '많다(주5~7회)' : return int(BMR * 1.55)
     else : return int(BMR * 1.725)
     
 def goal_calories_calculation(user_goal,maintenance):
@@ -652,7 +652,7 @@ def image_block(chat_ID):
                 {   
                     'id':'static/img',
                     'type':'image',
-                    'name':'식단표.png',
+                    'name':'aaaaa.png',
                     'size':18334,
                     'contentType':'image/png',
                     "duration": 0,
@@ -660,9 +660,9 @@ def image_block(chat_ID):
                     'height':501,
                     "orientation": 0,
                     "animated": 'true',
-                    'bucket':'1b70-222-110-195-119.jp.ngrok.io',
-                    'key':'./static/img/식단표.png',
-                    'previewKey': './static/img/식단표.png'
+                    'bucket':'e4cd-14-37-215-79.jp.ngrok.io',
+                    'key':'./static/img/aaaaa.png',
+                    'previewKey': 'aaaaa.png'
                                         
                 }
             ]
@@ -670,3 +670,35 @@ def image_block(chat_ID):
         response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
     except Exception as e:
         print(e)
+
+
+# def image_block(chat_ID):
+#     import requests
+#     key,pwd = API_keys()
+#     headers = {
+#         'accept': 'application/json',
+#         # Already added when you pass json=
+#         # 'Content-Type': 'application/json',
+#         'x-access-key': f'{key}',
+#         'x-access-secret': f'{pwd}',
+#     }
+#     try:
+#         json_data={
+#             'webPage':[
+#                 {   
+#                     'id':'static/img',
+#                     "url": "https://fcd7-14-37-215-79.jp.ngrok.io/static/img/%EC%8B%9D%EB%8B%A8%ED%91%9C.png",
+#                     'title':'식단표.png',
+#                     'description':'image/png',
+#                     "imageUrl": "https://fcd7-14-37-215-79.jp.ngrok.io/static/img/%EC%8B%9D%EB%8B%A8%ED%91%9C.png",
+#                     'width':1134,
+#                     'height':501,
+#                     'bucket':'1b70-222-110-195-119.jp.ngrok.io',
+#                     'previewKey': './static/img/식단표.png'
+                                        
+#                 }
+#             ]
+#         }
+#         response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+#     except Exception as e:
+#         print(e)

@@ -1,5 +1,0 @@
-function add_img() { 
-	var img = document.createElement('img'); 
-    img.src = './식단표.png'; 
-	document.getElementById('body').appendChild(img);
-}
