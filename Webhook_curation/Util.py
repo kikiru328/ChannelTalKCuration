@@ -747,7 +747,7 @@ def image_block(chat_ID,content):
         'blocks':[
             {
                 'type':'text',
-                'value':f':calendar: <b>[{user_name}]님</b>에 맞춘\n    <b>맞춤 식단표</b>에요!:v:'
+                'value':f"ㅤㅤ\n:calendar: <b>[{user_name}]님</b>에 맞춘\n     <b>맞춤 식단표</b>에요!:v:"
             }
         ],
         'buttons':[
