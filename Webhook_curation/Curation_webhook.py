@@ -16,8 +16,8 @@ def webhook():
     def auto(content):
         import Util        
         import time
-        # with open('./content.json','w') as file_:
-        #     json.dump(content,file_)
+        with open('./content.json','w') as file_:
+            json.dump(content,file_)
         if content.get('entity').get('tags') != ['식단큐레이션받기']:
             pass
         else:
@@ -29,21 +29,26 @@ def webhook():
                 pass
             else:
                 time.sleep(2)
-                Util.first_block(chat_ID, content)
+                Util.Processing(chat_ID) # 분석중
                 time.sleep(2)
-                Util.second_block(chat_ID, content)
-                time.sleep(0.5)
-                Util.second_1_block(chat_ID,content)
+                Util.first_block(chat_ID, content) # 기본정보
                 time.sleep(2)
-                Util.third_block(chat_ID,content)
+                Util.second_block(chat_ID, content) # 활동량 칼로리
                 time.sleep(2)
-                Util.fourth_block(chat_ID,content)
+                Util.second_1_block(chat_ID,content) # 칼로리 섭취
                 time.sleep(2)
-                Util.fifith_block(chat_ID,content)
+                Util.third_block(chat_ID,content) # 수분
                 time.sleep(2)
-                Util.final_block(chat_ID)
-                time.sleep(1)
-                Util.image_block(chat_ID)
+                Util.fourth_block(chat_ID,content) # 식사
+                time.sleep(2)
+                Util.fifith_block(chat_ID,content) # 추천
+                time.sleep(2)
+                Util.recommend_url(chat_ID,content) # 추천링크
+                time.sleep(2)
+                Util.image_block(chat_ID,content) # 식단표
+                time.sleep(2)
+                Util.final_block(chat_ID) # 마무리
+                
         
     if request.method == 'GET':
         content = request.args.to_dict()

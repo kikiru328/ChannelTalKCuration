@@ -115,10 +115,10 @@ def hydrate_response(user_hydrate,user_weight,user_name):
         str: response str > third_block
     """
     hydration = round(user_weight * 0.03,1)
-    if user_hydrate == '500ml 이하' : return f'<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 심각한 수분 부족 상태로,\n충분한 수분 보충을 권장 드립니다!\n\n처음부터 너무 많은 양의 물을 섭취하는 것이 부담스러우시다면\n<b>하루 "1L"</b>섭취로 점진적으로\n시작해 보세요!\n\n'
-    elif user_hydrate == '1L 이하' : return f'<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 심각한 수분 부족 상태로,\n충분한 수분 보충을 권장 드립니다!\n\n처음부터 너무 많은 양의 물을 섭취하는 것이 부담스러우시다면\n<b>하루 "1.5L"</b>섭취로 점진적으로\n시작해 보세요!\n\n'
-    elif user_hydrate == '1.5L 이하' : return f'<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n조금만 더 수분 보충에 신경 써주신다면\n더욱 좋은 몸의 상태를 유지할 수 있을 거예요!\n\n'
-    else: return f'<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 수분 보충을 열심히 하시는 것 같아요!\n나에게 맞는 섭취량을 정확히 알아가며\n더욱 좋은 몸의 컨디션을 만들어보세요!\n\n'
+    if user_hydrate == '500ml 이하' : return f':droplet:\n<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 심각한 수분 부족 상태로,\n충분한 수분 보충을 권장 드립니다!\n\n처음부터 너무 많은 양의 물을 섭취하는 것이 부담스러우시다면\n<b>하루 "1L"</b>섭취로 점진적으로\n시작해 보세요!\n\n'
+    elif user_hydrate == '1L 이하' : return f':droplet:\n<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 심각한 수분 부족 상태로,\n충분한 수분 보충을 권장 드립니다!\n\n처음부터 너무 많은 양의 물을 섭취하는 것이 부담스러우시다면\n<b>하루 "1.5L"</b>섭취로 점진적으로\n시작해 보세요!\n\n'
+    elif user_hydrate == '1.5L 이하' : return f':droplet:\n<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n조금만 더 수분 보충에 신경 써주신다면\n더욱 좋은 몸의 상태를\n유지할 수 있을 거예요!\n\n'
+    else: return f':droplet:\n<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 수분 보충을\n열심히 하시는 것 같아요!\n나에게 맞는 섭취량을 정확히 알아가며\n더욱 좋은 몸의 컨디션을 만들어보세요!\n\n'
 
 
 
@@ -134,65 +134,118 @@ def dining_response(user_dining):
         str: response str > fourth_block
     """
     if user_dining == '1회':
-        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.'
+        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n:alarm_clock: 07시 / 12시 / 16시 / 19시\n   이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.'
     elif user_dining == '2회':
-        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
+        return '<b>에너지 섭취 관리가 필요해요!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n:alarm_clock: 07시 / 12시 / 16시 / 19시\n   이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
     elif user_dining == '3회':
-        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
+        return '<b>에너지 섭취 관리를\n 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n:alarm_clock: 07시 / 12시 / 16시 / 19시\n   이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
     elif user_dining == '4회':
-        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
+        return '<b>에너지 섭취 관리를\n 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n:alarm_clock: 07시 / 12시 / 16시 / 19시\n   이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
     else: 
-        return '<b>에너지 섭취 관리를 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n07시 / 12시 / 16시 / 19시 이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.\n\n<b>5회 이상의 식사</b>는 좋은 방법이지만\n과식의 우려가 있어 하루 권장 섭취량을\n잘 분배해 섭취해 주세요!' 
+        return '<b>에너지 섭취 관리를\n 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n:alarm_clock: 07시 / 12시 / 16시 / 19시\n이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.\n\n<b>5회 이상의 식사</b>는 좋은 방법이지만\n과식의 우려가 있어 하루 권장 섭취량을\n잘 분배해 섭취해 주세요!' 
 
 
 
 ##### FINAL ######
 global Recommendation
 def Recommendation():
-    image_ = '식단표.png'
-    yun_diet_main =                 {
-                    'type':'text',
-                    'value':'\n고객님의 식단관리를 간편하게 도와줄\n<b>윤식단 맞춤 정기구독</b>을 추천해 드려요!\n\n'
-                }
-    yun_diet_link =                 {
-                    'type':'bullets',
-                    'blocks':[
-                        {
-                            'type':'text',
-                            'value': '<link type="url" value=f"https://smartstore.naver.com/yundiet/products/6032323719">"윤식단 샐러드 정기배송1일 1식 20일\n프로그램 도시락 배달\n건강 식단 새벽 구독 저염"</link>'   
-                        }
-                    ]
-                }
-    yun_honest_main =                 {
-                    'type':'text',
-                    'value':'\n어니스트어니스트어니스트어니스트\n<b>어니스트어니스트어니스트</b>을 추천해 드려요!\n\n'
-                }
+    yun_diet ={
+        'blocks':[
+            {
+                'type':'text',
+                'value':':herb: 식단관리를 간편하게\n   도와줄 <b>윤식단 맞춤 정기구독</b>을\n   추천해 드려요!'
+            }
+        ],
+        'buttons':[
+            {
+                'title':'윤식단 샐러드 정기배송 프로그램',
+                'colorVariant':'cobalt',
+                'url':'https://smartstore.naver.com/yundiet/products/6032323719'
+            }
+        ]
+    }
     
-    yun_honest_link =                 {
-                    'type':'bullets',
-                    'blocks':[
-                        {
-                            'type':'text',
-                            'value': '<link type="url" value="https://smartstore.naver.com/yundiet/products/5960404693">"어니스트어니스트어니스트어니스트어니스트어니스트어니스트"</link>'   
-                        }
-                    ]
-                }    
-    abc_main =                 {
-                    'type':'text',
-                    'value':'\n공복 섭취시 체지방 감소에 도움이 되는\n<b>ABC주스</b>를 추천해 드려요!\n\n'   
-                }
-    abc_link = {
-                    'type':'bullets',
-                    'blocks':[
-                        {
-                            'type':'text',
-                            'value':'<link type="url" value="https://smartstore.naver.com/latib/products/4661326066?n_media=27758&n_query=%EB%9D%BC%ED%8B%B0%EB%B8%8C&n_rank=1&n_ad_group=grp-a001-02-000000027136859&n_ad=nad-a001-02-000000183759162&n_campaign_type=2&n_mall_id=ncp_1nt80m_01&n_mall_pid=4661326066&n_ad_group_type=2&NaPm=ct%3Dl5dnidx4%7Cci%3D0A80001FeGzw4OvR%5F0ZH%7Ctr%3Dpla%7Chk%3Dd633f149dc91e977e4d06d49e2d3db59c256261c">"라티브 ABC쥬스 클렌즈 건강 주스\n200ml x 10포"</link>'
-                        }
-                    ]
-                }
-    return yun_diet_main, yun_diet_link, yun_honest_main, yun_honest_link, abc_main, abc_link
+    abc = {
+        'blocks':[
+            {
+                'type':'text',
+                'value':':tropical_drink: 공복 섭취시 <b>체지방 감소</b>에\n   도움되는<b>ABC주스</b>를 추천해 드려요!'
+            }
+        ],
+        'buttons':[
+            {
+                'title':'라티브 ABC쥬스 클렌즈 건강 주스',
+                'colorVariant':'cobalt',
+                'url':'https://smartstore.naver.com/latib/products/4661326066?n_media=27758&n_query=%EB%9D%BC%ED%8B%B0%EB%B8%8C&n_rank=1&n_ad_group=grp-a001-02-000000027136859&n_ad=nad-a001-02-000000183759162&n_campaign_type=2&n_mall_id=ncp_1nt80m_01&n_mall_pid=4661326066&n_ad_group_type=2&NaPm=ct%3Dl5dnidx4%7Cci%3D0A80001FeGzw4OvR%5F0ZH%7Ctr%3Dpla%7Chk%3Dd633f149dc91e977e4d06d49e2d3db59c256261c'
+            }
+        ]
+    }
+    
+    honest = {
+        'blocks':[
+            {
+                'type':'text',
+                'value':':pray: 어니스트 을 추천해 드려요!'
+            }
+        ],
+        'buttons':[
+            {
+                'title':'진정한 윤식단 어니스트',
+                'colorVariant':'cobalt',
+                'url':'https://smartstore.naver.com/yundiet/products/5960404693'
+            }
+        ]
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    # yun_diet_main =                 {
+    #                 'type':'text',
+    #                 'value':'\n\n:mag_right: 고객님의 식단관리를 간편하게\n   도와줄 <b>윤식단 맞춤 정기구독</b>을\n   추천해 드려요!\n\n'
+    #             }
+    # yun_diet_link =                 {
+    #                 'type':'text',
+    #                 'value':':link:   <link type="url" value=f"https://smartstore.naver.com/yundiet/products/6032323719">"윤식단 샐러드 정기배송1일\n1식 20일 프로그램 도시락 배달\n건강 식단 새벽 구독 저염"</link>'   
+    #             }
+    # yun_honest_main =                 {
+    #                 'type':'text',
+    #                 'value':':mag_right: 어니스트 을 추천해 드려요!\n\n'
+    #             }
+    
+    # yun_honest_link =                 {
+    #                 'type':'bullets',
+    #                 'blocks':[
+    #                     {
+    #                         'type':'text',
+    #                         'value': ':link:   <link type="url" value="https://smartstore.naver.com/yundiet/products/5960404693">"어니스트어니스트어니스트어니스트"</link>'   
+    #                     }
+    #                 ]
+    #             }    
+    # abc_main =                 {
+    #                 'type':'text',
+    #                 'value':'\n\n\n:mag_right: 공복 섭취시 <b>체지방 감소</b>에 도움되는\n   <b>ABC주스</b>를 추천해 드려요!\n\n'   
+    #             }
+    
+    # abc_link = {
+    #                 'type':'text',
+    #                 'value':':link:   <link type="url" value="https://smartstore.naver.com/latib/products/4661326066?n_media=27758&n_query=%EB%9D%BC%ED%8B%B0%EB%B8%8C&n_rank=1&n_ad_group=grp-a001-02-000000027136859&n_ad=nad-a001-02-000000183759162&n_campaign_type=2&n_mall_id=ncp_1nt80m_01&n_mall_pid=4661326066&n_ad_group_type=2&NaPm=ct%3Dl5dnidx4%7Cci%3D0A80001FeGzw4OvR%5F0ZH%7Ctr%3Dpla%7Chk%3Dd633f149dc91e977e4d06d49e2d3db59c256261c">라티브 ABC쥬스 클렌즈 건강 주스\n200ml x 10포</link>'
+    #             }
+    # return yun_diet_main, yun_diet_link, yun_honest_main, yun_honest_link, abc_main, abc_link
+    return yun_diet,abc,honest
             
 
+global table
+def table(user_goal):
+    if user_goal == '5Kg 이상의 감량을 원하세요?' : return 'https://a575-14-37-215-79.jp.ngrok.io/static/img/more_5_reduce.png'
+    elif user_goal == '5Kg 미만의 감량을 원하세요?' : return 'https://a575-14-37-215-79.jp.ngrok.io/static/img/less_5_reduce.png'
+    elif user_goal == '5kg 이상의 증량을 원하세요?' : return 'https://a575-14-37-215-79.jp.ngrok.io/static/img/gain_5.png'
+    else: return 'https://a575-14-37-215-79.jp.ngrok.io/static/img/maintain.png'
 
 
 
@@ -206,20 +259,31 @@ def Recommendation():
 
 
 
+def Processing(chat_ID):
+    """_summary_
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Args:
+        chat_ID (str): content.get('refers').get('message')['chatId'] 
+    """
+    import requests
+    key,pwd = API_keys()
+    headers = {
+        'accept': 'application/json',
+        # Already added when you pass json=
+        # 'Content-Type': 'application/json',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
+    }
+    
+    json_data = {
+        'blocks': [
+            {
+                'type': 'text',
+                'value': ':bulb: 나에게 맞는 식단을 분석중입니다'
+            }
+            ]
+        } 
+    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
 
 
 
@@ -301,24 +365,11 @@ def second_block(chat_ID,content):
             },
             {
                 'type':'text',
-                'value':f'\n<b>[{user_name}]</b>님의 <b>하루 총 섭취량</b>을 알려드릴게요!\n\n'
+                'value':f':fork_and_knife:<b>[{user_name}]</b>님의 <b>하루 총 섭취량</b>을\n알려드릴게요!\n\n'
             },
             {
-                'type':'bullets',
-                'blocks':[
-                    {
-                        'type':'text',
-                        'value':f'<b>탄수화물 {carbohydrate}g</b'
-                    },
-                    {
-                        'type':'text',
-                        'value':f'<b>단백질 {protein}g</b'
-                    },
-                    {
-                        'type':'text',
-                        'value':f'<b>지방 {fat}g</b'
-                    }
-                ]
+                'type':'text',
+                'value':f':rice: <b>탄수화물 {carbohydrate}g</b>\n:meat_on_bone: <b>단백질 {protein}g</b>\n:chestnut: <b>지방 {fat}g</b>'
             },
             {
                 'type':'text',
@@ -329,21 +380,8 @@ def second_block(chat_ID,content):
                 'value':f'따라서 <b>한 끼 섭취량</b>는 아래와 같아요!\n\n'
             },
             {
-                'type':'bullets',
-                'blocks':[
-                    {
-                        'type':'text',
-                        'value':f'<b>탄수화물 {int(carbohydrate/4)}g</b>'
-                    },
-                    {
-                        'type':'text',
-                        'value':f'<b>단백질 {int(protein/4)}g</b>'
-                    },
-                    {
-                        'type':'text',
-                        'value':f'<b>지방 {int(fat/4)}g</b>'
-                    }
-                ]
+                'type':'text',
+                'value':f':rice: <b>탄수화물 {int(carbohydrate/4)}g</b>\n:meat_on_bone: <b>단백질 {int(protein/4)}g</b>\n:chestnut: <b>지방 {int(fat/4)}g</b>'
             }
         ]
     }
@@ -384,7 +422,11 @@ def second_1_block(chat_ID,content):
         'blocks':[
             {
                 'type':'text',
-                'value': f'\n\n<b>탄수화물 {int(carbohydrate/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
+                'value':':rice:\n'
+            },
+            {
+                'type':'text',
+                'value': f'<b>탄수화물 {int(carbohydrate/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
             },
             {
                 'type':'bullets',
@@ -413,7 +455,11 @@ def second_1_block(chat_ID,content):
             },
             {
                 'type':'text',
-                'value':f'\n\n<b>단백질 {int(protein/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
+                'value':'\n\n:meat_on_bone:\n'
+            },
+            {
+                'type':'text',
+                'value':f'<b>단백질 {int(protein/4)}g</b>을 섭취하기 위해서는\n아래를 참조해주세요!\n\n' 
             },
             {
                 'type':'bullets',
@@ -495,7 +541,8 @@ def third_block(chat_ID,content):
             },
             {
                 'type': 'text',
-                'value': '커피, 차, 음료의 경우 수분 보충보다\n이뇨작용을 하기 때문에\n수분으로 간주하지 않습니다!\n\n수분 섭취는 <b>물</b>로 해야 된다는 사실을\n꼭 기억해 주세요!'
+                'value': '커피, 차, 음료의 경우 수분 보충보다\n<b>이뇨작용</b>을 하기 때문에\n수분으로 간주하지 않습니다!\n\n수분 섭취는 <b>물</b>로 해야 된다는 사실을\n<b>꼭</b> 기억해 주세요!:wink:'
+                
             }
             ]
         } 
@@ -525,6 +572,10 @@ def fourth_block(chat_ID,content):
     
     json_data = {
         'blocks': [
+            {
+                'type':'text',
+                'value':':fork_and_knife:\n'
+            },
             {
                 'type': 'text',
                 'value': f'식사횟수가 <b>[{user_dining}]</b>이네요!\n\n'
@@ -572,34 +623,75 @@ def fifith_block(chat_ID,content):
     maintenance = activation_calories_calculation(user_activation,BMR)
     goal_calories = goal_calories_calculation(user_goal,maintenance)
     carbohydrate, protein, fat = macro_calories_calucation(goal_calories)  
-    yun_diet_main, yun_diet_link, yun_honest_main, yun_honest_link, abc_main, abc_link = Recommendation()
+    # yun_diet_main, yun_diet_link, yun_honest_main, yun_honest_link, abc_main, abc_link = Recommendation()
     json_data = {
         'blocks': [
             {
                 'type': 'text',
-                'value': f'<b>[{user_name}]</b>님의 식단관리에\n도움을 줄 수 있는 제품이에요.\n\n<b>탄수화물 {int(carbohydrate/4)}g</b>와 <b>단백질 {int(protein/4)}g</b>의 \n<b>한끼 권장 섭취량</b>에 맞는\n식단을 준비했어요.\n\n식단관리를 쉽고 편하게 시작해보세요!\n\n'
+                'value': f'<b>[{user_name}]</b>님의 식단관리에\n도움을 줄 수 있는 제품이에요.\n\n:pushpin: <b>탄수화물 {int(carbohydrate/4)}g</b>와 <b>단백질 {int(protein/4)}g</b>의 \n<b>   한끼 권장 섭취량</b>에 맞는\n   식단을 준비했어요.\n\n식단관리를 쉽고 편하게 시작해보세요!\n\n'
             }
         ]
     }
     
-    if '빠른 체중 감량 (3개월 이내)' in user_worries:
-        json_data.get('blocks').append(yun_honest_main)
-        json_data.get('blocks').append(yun_honest_link)
-        json_data.get('blocks').append(yun_diet_main)
-        json_data.get('blocks').append(yun_diet_link)
-        json_data.get('blocks').append(abc_main)
-        json_data.get('blocks').append(abc_link)
-    elif ('빠른 체중 감량 (3개월 이내)' not in user_worries) and ('적당한 체중 감량 (3개월 이상)' in user_worries):
-        json_data.get('blocks').append(yun_diet_main)
-        json_data.get('blocks').append(yun_diet_link)
-        json_data.get('blocks').append(abc_main)
-        json_data.get('blocks').append(abc_link)
-    elif ('빠른 체중 감량 (3개월 이내)' and '적당한 체중 감량 (3개월 이상)') not in user_worries:
-        json_data.get('blocks').append(yun_diet_main)
-        json_data.get('blocks').append(yun_diet_link)        
+    # if '빠른 체중 감량 (3개월 이내)' in user_worries:
+    #     json_data.get('blocks').append(yun_honest_main)
+    #     json_data.get('blocks').append(yun_honest_link)
+    #     json_data.get('blocks').append(yun_diet_main)
+    #     json_data.get('blocks').append(yun_diet_link)
+    #     json_data.get('blocks').append(abc_main)
+    #     json_data.get('blocks').append(abc_link)
+    # elif ('빠른 체중 감량 (3개월 이내)' not in user_worries) and ('적당한 체중 감량 (3개월 이상)' in user_worries):
+    #     json_data.get('blocks').append(yun_diet_main)
+    #     json_data.get('blocks').append(yun_diet_link)
+    #     json_data.get('blocks').append(abc_main)
+    #     json_data.get('blocks').append(abc_link)
+    # elif ('빠른 체중 감량 (3개월 이내)' and '적당한 체중 감량 (3개월 이상)') not in user_worries:
+    #     json_data.get('blocks').append(yun_diet_main)
+    #     json_data.get('blocks').append(yun_diet_link)        
         
         
     response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+
+
+
+
+def recommend_url(chat_ID, content):
+    """_summary_
+
+    Args:
+        chat_ID (str): content.get('refers').get('message')['chatId'] 
+        content (_type_): content by webhook
+    """
+    import requests
+    import time
+    key,pwd = API_keys()
+    headers = {
+        'accept': 'application/json',
+        # Already added when you pass json=
+        # 'Content-Type': 'application/json',
+        'x-access-key': f'{key}',
+        'x-access-secret': f'{pwd}',
+    }
+    
+    user_worries =content.get('refers').get('user')['profile']['worries']
+    yun_diet,abc,honest = Recommendation()
+    
+    if '빠른 체중 감량 (3개월 이내)' in user_worries:
+        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=honest)
+        time.sleep(1)         
+        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=yun_diet)       
+        time.sleep(1)
+        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=abc)   
+    elif ('빠른 체중 감량 (3개월 이내)' not in user_worries) and ('적당한 체중 감량 (3개월 이상)' in user_worries):
+        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=yun_diet)
+        time.sleep(1)
+        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=abc)
+    elif ('빠른 체중 감량 (3개월 이내)' and '적당한 체중 감량 (3개월 이상)') not in user_worries:
+        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=yun_diet) 
+        
+
+
+
     
 ### FINAL ###
 def final_block(chat_ID):
@@ -621,22 +713,24 @@ def final_block(chat_ID):
     json_data = {
         'blocks': [
             {
+                'type':'text',
+                'value':':herb:\n'
+            },
+            {
                 'type': 'text',
-                'value': '나에게 맞지 않는 식단은\n나에게 맞지 않는 옷과 같아요.\n\n요요가 생기거나, 폭식을 하거나\n과도한 스트레스를 받는 문제가 발생해요.\n\n영양소의 과다 공급을 점진적으로 줄여가며\n나에게 맞는 식단 관리를 시작하면\n부작용 없이 건강한 내 모습을\n만나 볼 수 있을거에요.\n\n'
+                'value': '나에게 맞지 않는 식단은\n나에게 맞지 않는 옷과 같아요.\n\n요요가 생기거나, 폭식을 하거나\n과도한 스트레스를 받는 문제가\n발생해요.\n\n영양소의 과다 공급을\n점진적으로 줄여가며\n나에게 맞는 식단 관리를 시작하면\n부작용 없이 건강한 내 모습을\n만나 볼 수 있을거에요.\n\n'
             },
             {
                 'type' : 'text',
-                'value': '건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이 가장 중요하죠.\n\n체중을 빨리 감량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n<b>윤식단</b>과 함께 지금부터라도 시작해 보세요!'
+                'value': '건강을 관리하는 것은\n벽돌을 쌓는 것과 같아요.\n\n조금 느리더라도 단단하게 쌓아\n무너지지 않게 하는 것이\n가장 중요하죠.\n\n체중을 빨리 감량하는 것 보다,\n감량한 체중을 오래 유지하는 것이\n더욱 중요합니다.\n\n건강관리, 아직 늦지 않았어요.\n<b>윤식단</b>과 함께 지금부터라도\n시작해 보세요!:grinning:'
             }
             ]
         } 
     response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
     
  
- 
- 
-# Thumbnail X   
-def image_block(chat_ID):
+
+def image_block(chat_ID,content):
     import requests
     key,pwd = API_keys()
     headers = {
@@ -646,59 +740,22 @@ def image_block(chat_ID):
         'x-access-key': f'{key}',
         'x-access-secret': f'{pwd}',
     }
-    try:
-        json_data={
-            'files':[
-                {   
-                    'id':'static/img',
-                    'type':'image',
-                    'name':'aaaaa.png',
-                    'size':18334,
-                    'contentType':'image/png',
-                    "duration": 0,
-                    'width':1134,
-                    'height':501,
-                    "orientation": 0,
-                    "animated": 'true',
-                    'bucket':'e4cd-14-37-215-79.jp.ngrok.io',
-                    'key':'./static/img/aaaaa.png',
-                    'previewKey': 'aaaaa.png'
-                                        
-                }
-            ]
-        }
-        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
-    except Exception as e:
-        print(e)
-
-
-# def image_block(chat_ID):
-#     import requests
-#     key,pwd = API_keys()
-#     headers = {
-#         'accept': 'application/json',
-#         # Already added when you pass json=
-#         # 'Content-Type': 'application/json',
-#         'x-access-key': f'{key}',
-#         'x-access-secret': f'{pwd}',
-#     }
-#     try:
-#         json_data={
-#             'webPage':[
-#                 {   
-#                     'id':'static/img',
-#                     "url": "https://fcd7-14-37-215-79.jp.ngrok.io/static/img/%EC%8B%9D%EB%8B%A8%ED%91%9C.png",
-#                     'title':'식단표.png',
-#                     'description':'image/png',
-#                     "imageUrl": "https://fcd7-14-37-215-79.jp.ngrok.io/static/img/%EC%8B%9D%EB%8B%A8%ED%91%9C.png",
-#                     'width':1134,
-#                     'height':501,
-#                     'bucket':'1b70-222-110-195-119.jp.ngrok.io',
-#                     'previewKey': './static/img/식단표.png'
-                                        
-#                 }
-#             ]
-#         }
-#         response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
-#     except Exception as e:
-#         print(e)
+    
+    user_goal = content.get('refers').get('user')['profile']['goal']
+    user_name = content.get('refers').get('user')['profile']['name']
+    json_data={
+        'blocks':[
+            {
+                'type':'text',
+                'value':f':calendar: <b>[{user_name}]님</b>에 맞춘\n    <b>맞춤 식단표</b>에요!:v:'
+            }
+        ],
+        'buttons':[
+            {   
+                'title':'맞춤 식단표 받기',
+                "colorVariant": "green",  
+                "url": table(user_goal)                                      
+            }
+        ]
+    }
+    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
