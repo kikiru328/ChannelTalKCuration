@@ -320,10 +320,10 @@ def Recommendation(carbohydrate,protein):
 
 
 def table(user_goal):
-    if user_goal == '5Kg 이상의 감량을 원하세요?' : return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/more_5_reduce.png'
-    elif user_goal == '5Kg 미만의 감량을 원하세요?' : return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/less_5_reduce.png'
-    elif user_goal == '5kg 이상의 증량을 원하세요?' : return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/gain_5.png'
-    else: return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/maintain.png'
+    if user_goal == '5Kg 이상의 감량을 원하세요?' : return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/more_5_reduce.png'
+    elif user_goal == '5Kg 미만의 감량을 원하세요?' : return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/less_5_reduce.png'
+    elif user_goal == '5kg 이상의 증량을 원하세요?' : return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/gain_5.png'
+    else: return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/maintain.png'
 
 
 
