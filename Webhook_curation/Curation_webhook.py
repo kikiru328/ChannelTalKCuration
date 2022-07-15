@@ -14,14 +14,22 @@ def webhook():
 
     '''자동화 작업 함수'''
     def auto(content):
+        """_summary_
+
+        Args:
+            content (str): chat_ID : UserChat ID
+            +) Tags : Only for curation
+            +) thread : Webhook for flask
+            
+        """
         import Util        
         import time
-        with open('./content.json','w') as file_:
-            json.dump(content,file_)
+        # with open('./content.json','w') as file_:
+        #     json.dump(content,file_)
         if content.get('entity').get('tags') != ['식단큐레이션받기']:
             pass
         else:
-            chat_ID = content.get('refers').get('message')['chatId']
+            chat_ID = content.get('refers').get('message')['chatId'] 
             print(chat_ID)
             thirdparty = content.get('refers').get('user')['profile']['thirdPartyAgree']
             print(thirdparty)
@@ -29,25 +37,25 @@ def webhook():
                 pass
             else:
                 time.sleep(2)
-                Util.Processing(chat_ID) # 분석중
+                Util.Introduction(chat_ID) # 분석중 > Simple Text
                 time.sleep(2)
-                Util.first_block(chat_ID, content) # 기본정보
+                Util.Personal_Information_BMR(chat_ID, content) # 기본정보 > Functions : BMR_c
                 time.sleep(2)
-                Util.second_block(chat_ID, content) # 활동량 칼로리
+                Util.Activation_food_amount(chat_ID, content) # 활동량 칼로리 > Functions : BMR_c,activation_c,goal_c,macro_c,activation_r,goal_r
                 time.sleep(2)
-                Util.second_1_block(chat_ID,content) # 칼로리 섭취
+                Util.Calories_per_dining(chat_ID,content) # 칼로리 섭취 > Functions : BMR_c,activation_c,goal_c,macro_c,activation_r,goal_r
                 time.sleep(2)
-                Util.third_block(chat_ID,content) # 수분
+                Util.Hydration(chat_ID,content) # 수분 > Functions : hydrate_response
                 time.sleep(2)
-                Util.fourth_block(chat_ID,content) # 식사
+                Util.Dining_Habit(chat_ID,content) # 식사 > Functions : dining_response
                 time.sleep(2)
-                Util.fifith_block(chat_ID,content) # 추천
+                Util.Recommendation(chat_ID,content) # 추천 > Functions : Recommendation
                 time.sleep(2)
-                Util.recommend_url(chat_ID,content) # 추천링크
+                Util.Recommendation_Link(chat_ID,content) # 추천링크 > Functions : Recommendation for Link ( fifith_block + )
                 time.sleep(2)
-                Util.image_block(chat_ID,content) # 식단표
+                Util.Dining_Schedule(chat_ID,content) # 식단표 > Fucntions : table
                 time.sleep(2)
-                Util.final_block(chat_ID) # 마무리
+                Util.Final_Introduction(chat_ID) # 마무리 > Functions :  X 
                 
         
     if request.method == 'GET':
@@ -66,5 +74,4 @@ def webhook():
 
 
 if __name__ == '__main__':
-    # app.run(port=80, debug=True)
     app.run(port=80, debug=True)

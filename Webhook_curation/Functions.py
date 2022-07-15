@@ -1,17 +1,39 @@
-# global API_keys
+
+                                                                        
+   ##     #####    ######            ##  ##   ######   ##  ##    ####   
+  ####    ##  ##     ##              ## ##    ##       ##  ##   ##      
+ ##  ##   ##  ##     ##              ####     ####      ####     ####   
+ ##  ##   #####      ##              ####     ##         ##         ##  
+ ######   ##         ##              ## ##    ##         ##         ##  
+ ##  ##   ##       ######            ##  ##   ######     ##      ####   
+                                                                        
+
 def API_keys():
+    """ API KEY FOR CHANNEL TALK 
+
+    Returns:
+        API : API KEY / PWD
+    """
     import json
     with open('API_key.json','r') as api_json:
        api = json.load(api_json) 
     key = api.get('x-access-key')
     sec = api.get('x-access-secret')
     return key,sec
+#############################################################################################
 
+                           
+ #####    ##   ##  #####   
+ ##  ##   #######  ##  ##  
+ #####    #######  ##  ##  
+ ##  ##   ## # ##  #####   
+ ##  ##   ##   ##  ## ##   
+ #####    ##   ##  ##  ##  
+                           
 
-# global BMR_calories_calculation, activation_calories_calculation, goal_calories_calculation, macro_calories_calucation
 def BMR_calories_calculation(user_weight, user_height, user_age):
 
-    """_summary_
+    """BMR : 기초대사량 계산 
 
     Args:
         user_weight (int): content.get('refers').get('user')['profile']['weight']
@@ -22,6 +44,16 @@ def BMR_calories_calculation(user_weight, user_height, user_age):
         int: BMR : int > activation_calculation parameter ( trunc ) 
     """
     return int(66 + (13.7 * user_weight) + (5 * user_height) -  (6.8 * user_age))
+#############################################################################################
+
+                                                                                          
+   ##      ####    ######   ######   ##  ##   ######             ####      ##     ##      
+  ####    ##  ##     ##       ##     ##  ##   ##                ##  ##    ####    ##      
+ ##  ##   ##         ##       ##     ##  ##   ####              ##       ##  ##   ##      
+ ##  ##   ##         ##       ##     ##  ##   ##                ##       ##  ##   ##      
+ ######   ##  ##     ##       ##      ####    ##                ##  ##   ######   ##      
+ ##  ##    ####      ##     ######     ##     ######             ####    ##  ##   ######  
+                                                                                          
 
 
 def activation_calories_calculation(user_activation:str,BMR):
@@ -38,7 +70,18 @@ def activation_calories_calculation(user_activation:str,BMR):
     elif user_activation == '보통 (주2~4회)' : return int(BMR * 1.375)
     elif user_activation == '많다(주5~7회)' : return int(BMR * 1.55)
     else : return int(BMR * 1.725)
-    
+#############################################################################################
+
+                                                                        
+  ####     ####      ##     ##                 ####      ##     ##      
+ ##  ##   ##  ##    ####    ##                ##  ##    ####    ##      
+ ##       ##  ##   ##  ##   ##                ##       ##  ##   ##      
+ ## ###   ##  ##   ##  ##   ##                ##       ##  ##   ##      
+ ##  ##   ##  ##   ######   ##                ##  ##   ######   ##      
+  ####     ####    ##  ##   ######             ####    ##  ##   ######  
+                                                                        
+
+
 def goal_calories_calculation(user_goal,maintenance):
     """_summary_
 
@@ -53,7 +96,20 @@ def goal_calories_calculation(user_goal,maintenance):
     elif user_goal == '5Kg 미만의 감량을 원하세요?' : return int(maintenance * 0.9)
     elif user_goal == '5kg 이상의 증량을 원하세요?' : return int(maintenance * 1.1)
     else: return int(maintenance)
-    
+#############################################################################################
+
+
+
+                                             
+ ##   ##    ##      ####    #####     ####   
+ #######   ####    ##  ##   ##  ##   ##  ##  
+ #######  ##  ##   ##       ##  ##   ##  ##  
+ ## # ##  ##  ##   ##       #####    ##  ##  
+ ##   ##  ######   ##  ##   ## ##    ##  ##  
+ ##   ##  ##  ##    ####    ##  ##    ####   
+                                             
+
+  
 def macro_calories_calucation(goal_calories):
     """_summary_
 
@@ -67,12 +123,18 @@ def macro_calories_calucation(goal_calories):
     protein = int(goal_calories * 0.3 / 4)
     fat = int(goal_calories * 0.2 / 9)
     return carbohydrate, protein, fat
+#############################################################################################
 
+                                                                                          
+   ##      ####    ######   ######   ##  ##   ######            #####    ######    ####   
+  ####    ##  ##     ##       ##     ##  ##   ##                ##  ##   ##       ##      
+ ##  ##   ##         ##       ##     ##  ##   ####              ##  ##   ####      ####   
+ ##  ##   ##         ##       ##     ##  ##   ##                #####    ##           ##  
+ ######   ##  ##     ##       ##      ####    ##                ## ##    ##           ##  
+ ##  ##    ####      ##     ######     ##     ######            ##  ##   ######    ####   
+                                                                                          
 
-
-###### SECOND ########
     
-# global activation_response, goal_response
 def activation_response(user_activation):
     """_summary_
 
@@ -86,7 +148,18 @@ def activation_response(user_activation):
     elif user_activation == '보통 (주2회이상)' : return "적당합니다.아주 좋습니다!"
     elif user_activation == '꽤있다 (주4회)' : return "꽤 있으시네요. 아주 좋습니다!"
     else: return "많으시군요. 아주 좋습니다!"
-    
+#############################################################################################
+
+                                                                        
+  ####     ####      ##     ##                #####    ######    ####   
+ ##  ##   ##  ##    ####    ##                ##  ##   ##       ##      
+ ##       ##  ##   ##  ##   ##                ##  ##   ####      ####   
+ ## ###   ##  ##   ##  ##   ##                #####    ##           ##  
+ ##  ##   ##  ##   ######   ##                ## ##    ##           ##  
+  ####     ####    ##  ##   ######            ##  ##   ######    ####   
+                                                                        
+
+
 def goal_response(user_goal):
     """_summary_
 
@@ -100,9 +173,18 @@ def goal_response(user_goal):
     elif user_goal == '5Kg 미만의 감량을 원하세요?': return "<b>[5kg 미만 감량]</b>을 원한다고\n답변을 하셨어요!\n\n<b>[5kg 미만 감량]</b>을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
     elif user_goal == '5Kg 이상의 증량을 원하세요?': return "<b>[5Kg 이상 증량]</b>을 원한다고\n답변을 하셨어요!\n\n<b>[5Kg 이상 증량]</b>을 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
     else: return "<b>[유지]</b>를 원한다고\n답변을 하셨어요!\n\n<b>[유지]</b>를 위해서는\n<b>하루 4번</b>의 식사를 권장 드리고 있어요!"
+#############################################################################################    
 
-###### THIRD ######
-# global hydrate_response 
+                                                               
+ ##  ##   ##  ##   ####     #####      ##     ######   ######  
+ ##  ##   ##  ##   ## ##    ##  ##    ####      ##     ##      
+ ######    ####    ##  ##   ##  ##   ##  ##     ##     ####    
+ ##  ##     ##     ##  ##   #####    ##  ##     ##     ##      
+ ##  ##     ##     ## ##    ## ##    ######     ##     ##      
+ ##  ##     ##     ####     ##  ##   ##  ##     ##     ######  
+                                                               
+
+
 def hydrate_response(user_hydrate,user_weight,user_name):
     """_summary_
 
@@ -119,11 +201,18 @@ def hydrate_response(user_hydrate,user_weight,user_name):
     elif user_hydrate == '1L 이하' : return f':droplet:\n<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 심각한 수분 부족 상태로,\n충분한 수분 보충을 권장 드립니다!\n\n처음부터 너무 많은 양의 물을 섭취하는 것이 부담스러우시다면\n<b>하루 "1.5L"</b>섭취로 점진적으로\n시작해 보세요!\n\n'
     elif user_hydrate == '1.5L 이하' : return f':droplet:\n<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n조금만 더 수분 보충에 신경 써주신다면\n더욱 좋은 몸의 상태를\n유지할 수 있을 거예요!\n\n'
     else: return f':droplet:\n<b>[수분{hydration}L]</b>가 <b>[{user_name}]</b>님의\n하루 수분 섭취량이에요.\n\n현재 수분 보충을\n열심히 하시는 것 같아요!\n나에게 맞는 섭취량을 정확히 알아가며\n더욱 좋은 몸의 컨디션을 만들어보세요!\n\n'
+#############################################################################################
+
+                                                                                          
+ ####     ######   ##  ##   ######   ##  ##    ####             #####    ######    ####   
+ ## ##      ##     ### ##     ##     ### ##   ##  ##            ##  ##   ##       ##      
+ ##  ##     ##     ######     ##     ######   ##                ##  ##   ####      ####   
+ ##  ##     ##     ## ###     ##     ## ###   ## ###            #####    ##           ##  
+ ## ##      ##     ##  ##     ##     ##  ##   ##  ##            ## ##    ##           ##  
+ ####     ######   ##  ##   ######   ##  ##    ####             ##  ##   ######    ####   
+                                                                                          
 
 
-
-##### FOURTH #####
-# global dining_response
 def dining_response(user_dining):
     """_summary_
 
@@ -143,11 +232,18 @@ def dining_response(user_dining):
         return '<b>에너지 섭취 관리를\n 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n:alarm_clock: 07시 / 12시 / 16시 / 19시\n   이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.' 
     else: 
         return '<b>에너지 섭취 관리를\n 너무 잘하고 있습니다!</b>\n식사는 <b>3~5시간에 한 번씩</b>\n섭취를 해주는 것이 가장 좋아요!\n\n:alarm_clock: 07시 / 12시 / 16시 / 19시\n이런 방식으로요!\n\n1시간 동안 에너지로\n흡수할 수 있는 양은 정해져있어요\n\n한 번에 많은 양을 섭취하면\n흡수되지 못한 양의 에너지가\n지방으로 전환돼요\n\n또 한 대사율이 떨어져\n<b>살이 찌는 체질</b>로 변하게 돼요.\n\n<b>5회 이상의 식사</b>는 좋은 방법이지만\n과식의 우려가 있어 하루 권장 섭취량을\n잘 분배해 섭취해 주세요!' 
+#############################################################################################
+
+                                                                                                                              
+ #####    ######    ####     ####    ##   ##  ##   ##  ######   ##  ##   ####       ##     ######   ######    ####    ##  ##  
+ ##  ##   ##       ##  ##   ##  ##   #######  #######  ##       ### ##   ## ##     ####      ##       ##     ##  ##   ### ##  
+ ##  ##   ####     ##       ##  ##   #######  #######  ####     ######   ##  ##   ##  ##     ##       ##     ##  ##   ######  
+ #####    ##       ##       ##  ##   ## # ##  ## # ##  ##       ## ###   ##  ##   ##  ##     ##       ##     ##  ##   ## ###  
+ ## ##    ##       ##  ##   ##  ##   ##   ##  ##   ##  ##       ##  ##   ## ##    ######     ##       ##     ##  ##   ##  ##  
+ ##  ##   ######    ####     ####    ##   ##  ##   ##  ######   ##  ##   ####     ##  ##     ##     ######    ####    ##  ##  
+                                                                                                                              
 
 
-
-##### FINAL ######
-# global Recommendation
 def Recommendation():
     yun_diet ={
         'blocks':[
@@ -197,9 +293,18 @@ def Recommendation():
         ]
     }
     return yun_diet, abc, honest
+#############################################################################################
 
-    
-# global table
+                                             
+ ######     ##     #####    ##       ######  
+   ##      ####    ##  ##   ##       ##      
+   ##     ##  ##   #####    ##       ####    
+   ##     ##  ##   ##  ##   ##       ##      
+   ##     ######   ##  ##   ##       ##      
+   ##     ##  ##   #####    ######   ######  
+                                             
+
+
 def table(user_goal):
     if user_goal == '5Kg 이상의 감량을 원하세요?' : return 'https://a575-14-37-215-79.jp.ngrok.io/static/img/more_5_reduce.png'
     elif user_goal == '5Kg 미만의 감량을 원하세요?' : return 'https://a575-14-37-215-79.jp.ngrok.io/static/img/less_5_reduce.png'
