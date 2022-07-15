@@ -466,7 +466,18 @@ def Recommendation_Link(chat_ID, content):
     }
     
     user_worries =content.get('refers').get('user')['profile']['worries']
-    yun_diet,abc,honest = Functions.Recommendation()
+    user_activation = content.get('refers').get('user')['profile']['activation']    
+    user_goal = content.get('refers').get('user')['profile']['goal']
+    user_name = content.get('refers').get('user')['profile']['name']
+    user_weight = content.get('refers').get('user')['profile']['weight']
+    user_height = content.get('refers').get('user')['profile']['height']
+    user_age = content.get('refers').get('user')['profile']['age']
+    
+    BMR = Functions.BMR_calories_calculation(user_weight, user_height, user_age)
+    maintenance = Functions.activation_calories_calculation(user_activation,BMR)
+    goal_calories = Functions.goal_calories_calculation(user_goal,maintenance)
+    carbohydrate, protein, fat = Functions.macro_calories_calucation(goal_calories) 
+    yun_diet,abc,honest = Functions.Recommendation(carbohydrate,protein)
     
     if '빠른 체중 감량 (3개월 이내)' in user_worries:
         response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=honest)
