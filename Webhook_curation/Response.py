@@ -516,7 +516,7 @@ def Dining_Schedule(chat_ID,content):
         'buttons':[
             {   
                 'title':'맞춤 식단표 받기',
-                "colorVariant": "green",  
+                "colorVariant": "orange",  
                 "url": Functions.table(user_goal)                                      
             }
         ]

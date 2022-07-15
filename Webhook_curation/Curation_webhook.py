@@ -22,7 +22,7 @@ def webhook():
             +) thread : Webhook for flask
             
         """
-        import Util        
+        import Response        
         import time
         # with open('./content.json','w') as file_:
         #     json.dump(content,file_)
@@ -37,25 +37,25 @@ def webhook():
                 pass
             else:
                 time.sleep(2)
-                Util.Introduction(chat_ID) # 분석중 > Simple Text
+                Response.Introduction(chat_ID) # 분석중 > Simple Text
                 time.sleep(2)
-                Util.Personal_Information_BMR(chat_ID, content) # 기본정보 > Functions : BMR_c
+                Response.Personal_Information_BMR(chat_ID, content) # 기본정보 > Functions : BMR_c
                 time.sleep(2)
-                Util.Activation_food_amount(chat_ID, content) # 활동량 칼로리 > Functions : BMR_c,activation_c,goal_c,macro_c,activation_r,goal_r
+                Response.Activation_food_amount(chat_ID, content) # 활동량 칼로리 > Functions : BMR_c,activation_c,goal_c,macro_c,activation_r,goal_r
                 time.sleep(2)
-                Util.Calories_per_dining(chat_ID,content) # 칼로리 섭취 > Functions : BMR_c,activation_c,goal_c,macro_c,activation_r,goal_r
+                Response.Calories_per_dining(chat_ID,content) # 칼로리 섭취 > Functions : BMR_c,activation_c,goal_c,macro_c,activation_r,goal_r
                 time.sleep(2)
-                Util.Hydration(chat_ID,content) # 수분 > Functions : hydrate_response
+                Response.Hydration(chat_ID,content) # 수분 > Functions : hydrate_response
                 time.sleep(2)
-                Util.Dining_Habit(chat_ID,content) # 식사 > Functions : dining_response
+                Response.Dining_Habit(chat_ID,content) # 식사 > Functions : dining_response
                 time.sleep(2)
-                Util.Recommendation(chat_ID,content) # 추천 > Functions : Recommendation
+                Response.Recommendation(chat_ID,content) # 추천 > Functions : Recommendation
                 time.sleep(2)
-                Util.Recommendation_Link(chat_ID,content) # 추천링크 > Functions : Recommendation for Link ( fifith_block + )
+                Response.Recommendation_Link(chat_ID,content) # 추천링크 > Functions : Recommendation for Link ( fifith_block + )
                 time.sleep(2)
-                Util.Dining_Schedule(chat_ID,content) # 식단표 > Fucntions : table
+                Response.Dining_Schedule(chat_ID,content) # 식단표 > Fucntions : table
                 time.sleep(2)
-                Util.Final_Introduction(chat_ID) # 마무리 > Functions :  X 
+                Response.Final_Introduction(chat_ID) # 마무리 > Functions :  X 
                 
         
     if request.method == 'GET':

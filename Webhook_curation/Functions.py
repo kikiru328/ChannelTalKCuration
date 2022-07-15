@@ -244,7 +244,21 @@ def dining_response(user_dining):
                                                                                                                               
 
 
-def Recommendation():
+def Recommendation(carbohydrate,protein):
+    if (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=23'
+    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_subcription/?idx=30'
+    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=33'
+        
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=38'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(36,40)): url ='https://yundiet.com/curation_subcription/?idx=39'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=40'
+        
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=41'
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_subcription/?idx=42'
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=45'                
+    
+    else : url = 'https://yundiet.com/curation_subcription/?idx=45' 
+    
     yun_diet ={
         'blocks':[
             {
@@ -255,8 +269,8 @@ def Recommendation():
         'buttons':[
             {
                 'title':'윤식단 샐러드 정기배송 프로그램',
-                'colorVariant':'cobalt',
-                'url':'https://smartstore.naver.com/yundiet/products/6032323719'
+                'colorVariant':'green',
+                'url': url
             }
         ]
     }
@@ -271,7 +285,7 @@ def Recommendation():
         'buttons':[
             {
                 'title':'라티브 ABC쥬스 클렌즈 건강 주스',
-                'colorVariant':'cobalt',
+                'colorVariant':'green',
                 'url':'https://smartstore.naver.com/latib/products/4661326066?n_media=27758&n_query=%EB%9D%BC%ED%8B%B0%EB%B8%8C&n_rank=1&n_ad_group=grp-a001-02-000000027136859&n_ad=nad-a001-02-000000183759162&n_campaign_type=2&n_mall_id=ncp_1nt80m_01&n_mall_pid=4661326066&n_ad_group_type=2&NaPm=ct%3Dl5dnidx4%7Cci%3D0A80001FeGzw4OvR%5F0ZH%7Ctr%3Dpla%7Chk%3Dd633f149dc91e977e4d06d49e2d3db59c256261c'
             }
         ]
@@ -287,7 +301,7 @@ def Recommendation():
         'buttons':[
             {
                 'title':'진정한 윤식단 어니스트',
-                'colorVariant':'cobalt',
+                'colorVariant':'green',
                 'url':'https://smartstore.naver.com/yundiet/products/5960404693'
             }
         ]
