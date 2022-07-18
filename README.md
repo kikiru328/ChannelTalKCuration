@@ -9,4 +9,4 @@
 #### FUTURE
 
 1. DB 연동 > channel talk api로 Thumbnail과 Image가 전송, 저장되도록 한다.
-
+ 
