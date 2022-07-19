@@ -9,11 +9,12 @@
                                                                                  
 
 
-def Introduction(chat_ID):
+def Introduction(chat_ID,post_type):
     """_summary_
 
     Args:
-        chat_ID (str): content.get('refers').get('message')['chatId'] 
+        chat_ID (str): content.get('refers').get('message')['chatId'] >> 20220719 : group name
+        post_type (str) : groups : post message to groups
     """
     import requests
     import Functions
@@ -34,7 +35,7 @@ def Introduction(chat_ID):
             }
             ]
         } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+    response = requests.post(f'https://api.channel.io/open/v5/user-{post_type}/{chat_ID}/messages', headers=headers, json=json_data)    
 #############################################################################################   
 
                                                            
@@ -46,7 +47,7 @@ def Introduction(chat_ID):
 #####    ##   ##  ##  ##  
                                                                
 
-def Personal_Information_BMR(chat_ID,content):
+def Personal_Information_BMR(chat_ID,content,post_type):
     """_summary_
 
     Args:
@@ -78,7 +79,7 @@ def Personal_Information_BMR(chat_ID,content):
             }
             ]
         } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)
 ############################################################################################# 
                                                                                               
                                                                                                                                   
@@ -90,7 +91,7 @@ def Personal_Information_BMR(chat_ID,content):
 ##  ##    ####      ##     ######     ##     ######            ##  ##   ##   ##    ##    
                                                                                               
                                                                                                                                  
-def Activation_food_amount(chat_ID,content):
+def Activation_food_amount(chat_ID,content,post_type):
     """_summary_
 
     Args:
@@ -153,7 +154,7 @@ def Activation_food_amount(chat_ID,content):
             }
         ]
     }
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)
 #############################################################################################
 
                                                                                                                               
@@ -166,7 +167,7 @@ def Activation_food_amount(chat_ID,content):
                                                                                                                               
 
 # 4th : Calories per dining
-def Calories_per_dining(chat_ID,content):
+def Calories_per_dining(chat_ID,content,post_type):
     """_summary_
 
     Args:
@@ -279,7 +280,7 @@ def Calories_per_dining(chat_ID,content):
             }
         ]
     }
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)
 #############################################################################################
 
 
@@ -292,7 +293,7 @@ def Calories_per_dining(chat_ID,content):
 ##  ##     ##     ####     ##  ##   ##  ##     ##     ######    ####    ##  ##  
                                                                                                                      
 
-def Hydration(chat_ID,content):
+def Hydration(chat_ID,content,post_type):
     """_summary_
 
     Args:
@@ -327,7 +328,7 @@ def Hydration(chat_ID,content):
             }
             ]
         } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)
 #############################################################################################  
     
                                                                                                                      
@@ -339,7 +340,7 @@ def Hydration(chat_ID,content):
 ####     ######   ##  ##            ##  ##   ##  ##   #####    ######     ##    
                                                                                                                      
 
-def Dining_Habit(chat_ID,content):
+def Dining_Habit(chat_ID,content,post_type):
     """_summary_
 
     Args:
@@ -380,7 +381,7 @@ def Dining_Habit(chat_ID,content):
             }
             ]
         } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)    
 #############################################################################################    
 
 
@@ -393,7 +394,7 @@ def Dining_Habit(chat_ID,content):
 ##  ##   ######    ####     ####    ##   ##  ##   ##  ######   ##  ##   ####     ##  ##     ##     ######    ####    ##  ##  
                                                                                                                                                                   
 
-def Recommendation(chat_ID,content):
+def Recommendation(chat_ID,content,post_type):
     """_summary_
 
     Args:
@@ -433,7 +434,7 @@ def Recommendation(chat_ID,content):
         ]
     }
 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)    
 #############################################################################################    
 
 
@@ -446,7 +447,7 @@ def Recommendation(chat_ID,content):
 ## ###   ######    ####     ####    ##   ##           ######   ######   ##  ##   ##  ##  
                                                                                                                               
 
-def Recommendation_Link(chat_ID, content):
+def Recommendation_Link(chat_ID, content,post_type):
     """_summary_
 
     Args:
@@ -480,17 +481,17 @@ def Recommendation_Link(chat_ID, content):
     yun_diet,abc,honest = Functions.Recommendation(carbohydrate,protein)
     
     if '빠른 체중 감량 (3개월 이내)' in user_worries:
-        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=honest)
-        time.sleep(1)         
-        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=yun_diet)       
-        time.sleep(1)
-        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=abc)   
+        response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=honest)
+        # time.sleep(1)         
+        response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=yun_diet)       
+        # time.sleep(1)
+        # response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=abc)   
     elif ('빠른 체중 감량 (3개월 이내)' not in user_worries) and ('적당한 체중 감량 (3개월 이상)' in user_worries):
-        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=yun_diet)
-        time.sleep(1)
-        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=abc)
+        response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=yun_diet)
+        # time.sleep(1)
+        # response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=abc)
     elif ('빠른 체중 감량 (3개월 이내)' and '적당한 체중 감량 (3개월 이상)') not in user_worries:
-        response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=yun_diet) 
+        response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=yun_diet) 
 #############################################################################################        
 
 
@@ -503,7 +504,7 @@ def Recommendation_Link(chat_ID, content):
  ####     ####    ##  ##   ######   ####      ####    ######   ######  
                                                                                                             
 
-def Dining_Schedule(chat_ID,content):
+def Dining_Schedule(chat_ID,content,post_type):
     import requests
     import Functions
     key,pwd = Functions.API_keys()
@@ -532,7 +533,7 @@ def Dining_Schedule(chat_ID,content):
             }
         ]
     }
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)    
 #############################################################################################
 
                                                                                    
@@ -544,7 +545,7 @@ def Dining_Schedule(chat_ID,content):
  ##       ######   ##  ##   ##  ##   ######            ######   ##  ##     ##     ##  ##    ####   
                                                                                                    
 
-def Final_Introduction(chat_ID):
+def Final_Introduction(chat_ID,post_type):
     """_summary_
 
     Args:
@@ -577,4 +578,4 @@ def Final_Introduction(chat_ID):
             }
             ]
         } 
-    response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)    
+    response = requests.post(f'https://api.channel.io/open/v5/{post_type}/{chat_ID}/messages', headers=headers, json=json_data)    

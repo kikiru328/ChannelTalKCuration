@@ -245,19 +245,19 @@ def dining_response(user_dining):
 
 
 def Recommendation(carbohydrate,protein):
-    if (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=23'
-    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_subcription/?idx=30'
-    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=33'
+    if (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_program/?idx=23'
+    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_program/?idx=30'
+    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_program/?idx=33'
         
-    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=38'
-    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(36,40)): url ='https://yundiet.com/curation_subcription/?idx=39'
-    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=40'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_program/?idx=38'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(36,40)): url ='https://yundiet.com/curation_program/?idx=39'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_program/?idx=40'
         
-    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=41'
-    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_subcription/?idx=42'
-    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=45'                
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_program/?idx=41'
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_program/?idx=42'
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_program/?idx=45'                
     
-    else : url = 'https://yundiet.com/curation_subcription/?idx=45' 
+    else : url = 'https://yundiet.com/curation_program/?idx=45' 
     
     yun_diet ={
         'blocks':[
@@ -320,10 +320,11 @@ def Recommendation(carbohydrate,protein):
 
 
 def table(user_goal):
-    if user_goal == '5Kg 이상의 감량을 원하세요?' : return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/more_5_reduce.png'
-    elif user_goal == '5Kg 미만의 감량을 원하세요?' : return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/less_5_reduce.png'
-    elif user_goal == '5kg 이상의 증량을 원하세요?' : return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/gain_5.png'
-    else: return 'https://6433-222-110-195-119.jp.ngrok.io/static/img/maintain.png'
+    url = 'https://ab16-222-110-195-119.jp.ngrok.io'
+    if user_goal == '5Kg 이상의 감량을 원하세요?' : return f'{url}/static/img/more_5_reduce.png'
+    elif user_goal == '5Kg 미만의 감량을 원하세요?' : return f'{url}/static/img/less_5_reduce.png'
+    elif user_goal == '5kg 이상의 증량을 원하세요?' : return f'{url}/static/img/gain_5.png'
+    else: return f'{url}/static/img/maintain.png'
 
 
 
