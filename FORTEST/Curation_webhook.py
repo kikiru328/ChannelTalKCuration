@@ -26,6 +26,92 @@ def webhook():
         import time
         with open('./content_web222.json','w') as file_:
             json.dump(content,file_)
+        chat_ID = content.get('entity').get('chatId')
+        # print(chat_ID)   
+        # print(content.get('entity').get('form'))
+        user_name = content.get('refers').get('user')['profile']['name']
+        # print(content.get('refers').get('user')['profile']['name'])
+        # print(user_name)
+        def Introduction(chat_ID,table):
+            import requests
+            import Functions
+            key,pwd = Functions.API_keys()
+            headers = {
+                'accept': 'application/json',
+                # Already added when you pass json=
+                # 'Content-Type': 'application/json',
+                'x-access-key': f'{key}',
+                'x-access-secret': f'{pwd}',
+            }
+            
+            json_data = {
+                'blocks': [
+                    {
+                        'type': 'text',
+                        'value': f':bulb: {table}'
+                    }
+                    ]
+                } 
+            response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)        
+        def Introduction2(chat_ID,table):
+            import requests
+            import Functions
+            key,pwd = Functions.API_keys()
+            headers = {
+                'accept': 'application/json',
+                # Already added when you pass json=
+                # 'Content-Type': 'application/json',
+                'x-access-key': f'{key}',
+                'x-access-secret': f'{pwd}',
+            }
+            
+            json_data = {
+                'blocks': [
+                    {
+                        'type': 'text',
+                        'value': f':bulb: {table}'
+                    }
+                    ]
+                } 
+            response = requests.post(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', headers=headers, json=json_data)        
+        # print(content.get('refers').get('user')['profile'].get('table'))           
+        if content.get('entity').get('form').get('inputs')[0].get('label') == f'{user_name}의 성공적인 다이어트를 위해 윤식단이 선물을 준비했어요 받으시겠습니까?' :
+            import time
+            time.sleep(5)
+            
+            import requests
+
+            headers = {
+                'accept': 'application/json',
+                'x-access-key': '62ccfab81187f805e611',
+                'x-access-secret': 'f2d2467a158db5b42a2757f79d1477d5',
+            }
+
+            params = {
+                'sortOrder': 'desc',
+                'limit': '1',
+            }
+
+            response = requests.get(f'https://api.channel.io/open/v5/user-chats/{chat_ID}/messages', params=params, headers=headers)
+            
+            # print(type(response.content))
+            contents = response.json()
+            # print(contents.keys())
+            if contents.get('messages')[0].get('form')['inputs'][0]['value'] == True:
+                table = "True"
+                Introduction(chat_ID,table)
+            elif contents.get('messages')[0].get('form')['inputs'][0]['value'] == False:
+                table = 'False'
+                Introduction2(chat_ID,table)
+            else:
+                table = 'None'
+                Introduction2(chat_ID,table)
+            
+                
+
+            # print(e)
+            # print('No form')
+            
         # if content.get('entity').get('tags') != ['식단큐레이션받기']:
         #     pass
         # else:
