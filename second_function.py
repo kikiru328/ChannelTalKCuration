@@ -1,4 +1,5 @@
 
+
                                                                         
    ##     #####    ######            ##  ##   ######   ##  ##    ####   
   ####    ##  ##     ##              ## ##    ##       ##  ##   ##      
@@ -245,19 +246,19 @@ def dining_response(user_dining):
 
 
 def Recommendation(carbohydrate,protein):
-    if (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=23'
-    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_subcription/?idx=30'
-    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=33'
+    if (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_program/?idx=23'
+    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_program/?idx=30'
+    elif (int(carbohydrate/4) in range(0,56)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_program/?idx=33'
         
-    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=38'
-    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(36,40)): url ='https://yundiet.com/curation_subcription/?idx=39'
-    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=40'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_program/?idx=38'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(36,40)): url ='https://yundiet.com/curation_program/?idx=39'
+    elif (int(carbohydrate/4) in range(56,69)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_program/?idx=40'
         
-    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_subcription/?idx=41'
-    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_subcription/?idx=42'
-    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_subcription/?idx=45'                
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(0,36)): url = 'https://yundiet.com/curation_program/?idx=41'
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(36,40)): url = 'https://yundiet.com/curation_program/?idx=42'
+    elif (int(carbohydrate/4) in range(69,81)) and (int(protein/4) in range(40,101)): url = 'https://yundiet.com/curation_program/?idx=45'                
     
-    else : url = 'https://yundiet.com/curation_subcription/?idx=45' 
+    else : url = 'https://yundiet.com/curation_program/?idx=45' 
     
     yun_diet ={
         'blocks':[
@@ -274,39 +275,24 @@ def Recommendation(carbohydrate,protein):
             }
         ]
     }
-    
-    abc = {
-        'blocks':[
-            {
-                'type':'text',
-                'value':':tropical_drink: 공복 섭취시 <b>체지방 감소</b>에\n   도움되는<b>ABC주스</b>를 추천해 드려요!'
-            }
-        ],
-        'buttons':[
-            {
-                'title':'라티브 ABC쥬스 클렌즈 건강 주스',
-                'colorVariant':'green',
-                'url':'https://smartstore.naver.com/latib/products/4661326066?n_media=27758&n_query=%EB%9D%BC%ED%8B%B0%EB%B8%8C&n_rank=1&n_ad_group=grp-a001-02-000000027136859&n_ad=nad-a001-02-000000183759162&n_campaign_type=2&n_mall_id=ncp_1nt80m_01&n_mall_pid=4661326066&n_ad_group_type=2&NaPm=ct%3Dl5dnidx4%7Cci%3D0A80001FeGzw4OvR%5F0ZH%7Ctr%3Dpla%7Chk%3Dd633f149dc91e977e4d06d49e2d3db59c256261c'
-            }
-        ]
-    }
+
     
     honest = {
         'blocks':[
             {
                 'type':'text',
-                'value':':pray: 어니스트 을 추천해 드려요!'
+                'value':':pray: 당신을 위한 \n    정직한 한끼, <b>어니스트</b>를\n   추천해 드려요!'
             }
         ],
         'buttons':[
             {
                 'title':'진정한 윤식단 어니스트',
                 'colorVariant':'green',
-                'url':'https://smartstore.naver.com/yundiet/products/5960404693'
+                'url':'https://yundiet.com/store_all/?idx=47'
             }
         ]
     }
-    return yun_diet, abc, honest
+    return yun_diet, honest
 #############################################################################################
 
                                              
@@ -320,10 +306,12 @@ def Recommendation(carbohydrate,protein):
 
 
 def table(user_goal):
-    if user_goal == '5Kg 이상의 감량을 원하세요?' : return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/more_5_reduce.png'
-    elif user_goal == '5Kg 미만의 감량을 원하세요?' : return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/less_5_reduce.png'
-    elif user_goal == '5kg 이상의 증량을 원하세요?' : return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/gain_5.png'
-    else: return 'https://a985-222-110-195-119.jp.ngrok.io/static/img/maintain.png'
+    url = 'http://3.38.103.219:5000/static/img'
+    print('tabel : ' , user_goal)
+    if  '이상의 감량을' in user_goal : return f'{url}/more_5_reduce.png'
+    elif '5Kg 미만' in user_goal : return f'{url}/less_5_reduce.png'
+    elif '증량' in user_goal : return f'{url}/gain_5.png'
+    else: return f'{url}/maintain.png'
 
 
 

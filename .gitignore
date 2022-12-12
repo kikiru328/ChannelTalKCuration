@@ -4,3 +4,13 @@
 .DS_Store/
 *.ipynb
 flask-container/
+API_key.json
+delivery_date.py
+Functions.py
+holiday_api.json
+nohup.out
+Response.py
+Response2.py
+second_functions.py
+second_response.py
+*.xlsx
