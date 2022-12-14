@@ -21,7 +21,7 @@ def main_curation():
             +) thread : Webhook for flask
             
         """
-        import Response2
+        import main_response
         import time
         if (content['entity']['source']['supportBot']['id']=='51767') and (content['entity']['tags'][0] == '식단큐레이션받기'):
             print('############################        DEFINE_CURATION       ############################')
@@ -33,27 +33,27 @@ def main_curation():
                 pass
             else:
                 time.sleep(2)
-                Response2.Introduction1(chat_ID,content,post_type) 
+                main_response.Introduction1(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Introduction2(chat_ID,content,post_type) 
+                main_response.Introduction2(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Introduction3(chat_ID,content,post_type) 
+                main_response.Introduction3(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Introduction4(chat_ID,content,post_type)
+                main_response.Introduction4(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Introduction5(chat_ID,content,post_type)
+                main_response.Introduction5(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Introduction6(chat_ID,content,post_type)
+                main_response.Introduction6(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Introduction7(chat_ID,content,post_type) 
+                main_response.Introduction7(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Activation_food_amount(chat_ID,content,post_type)
+                main_response.Activation_food_amount(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Calories_per_dining(chat_ID,content,post_type) 
+                main_response.Calories_per_dining(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Before_form(chat_ID,content,post_type)
+                main_response.Before_form(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.RESET(chat_ID,content,post_type)
+                main_response.RESET(chat_ID,content,post_type)
             
         elif (content['entity']['source']['supportBot']['id']=='43684') and (content['entity']['tags'][0] == '식단큐레이션받기'): ## Normal
             chat_ID = content.get('refers').get('message')['chatId'] 
@@ -66,27 +66,27 @@ def main_curation():
                 pass
             else:
                 time.sleep(2)
-                Response2.Introduction1(chat_ID,content,post_type) 
+                main_response.Introduction1(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Introduction2(chat_ID,content,post_type) 
+                main_response.Introduction2(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Introduction3(chat_ID,content,post_type) 
+                main_response.Introduction3(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Introduction4(chat_ID,content,post_type)
+                main_response.Introduction4(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Introduction5(chat_ID,content,post_type)
+                main_response.Introduction5(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Introduction6(chat_ID,content,post_type)
+                main_response.Introduction6(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Introduction7(chat_ID,content,post_type) 
+                main_response.Introduction7(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Activation_food_amount(chat_ID,content,post_type)
+                main_response.Activation_food_amount(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.Calories_per_dining(chat_ID,content,post_type) 
+                main_response.Calories_per_dining(chat_ID,content,post_type) 
                 time.sleep(2)
-                Response2.Before_form(chat_ID,content,post_type)
+                main_response.Before_form(chat_ID,content,post_type)
                 time.sleep(2)
-                Response2.RESET(chat_ID,content,post_type)
+                main_response.RESET(chat_ID,content,post_type)
         else:
             print(f'\n##############################        CANNOT RESPONSE CONTENTS        ##############################\n')
             print(content['entity']['source']['supportBot']['id'])
