@@ -21,13 +21,11 @@ def main_curation():
             +) thread : Webhook for flask
             
         """
-        import Response
         import Response2
         import time
-        if (content['entity']['source']['supportBot']['id']=='51767') and (content['entity']['tags'][0] == '식단큐레이션받기'): ## DEFINE > 현재 반응 없음
+        if (content['entity']['source']['supportBot']['id']=='51767') and (content['entity']['tags'][0] == '식단큐레이션받기'):
             print('############################        DEFINE_CURATION       ############################')
             chat_ID = content.get('refers').get('message')['chatId'] 
-            # chat_ID = '@%ED%81%90%EB%A0%88%EC%9D%B4%EC%85%98%EC%83%81%EB%8B%B4'
             post_type = 'user-chats' 
             thirdparty = content.get('refers')\
                             .get('user')['profile']['thirdPartyAgree']
