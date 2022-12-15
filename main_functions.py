@@ -1,6 +1,16 @@
 """
 Functions for Main curation.
 API header and included calculation functions
+
+<content direction>
+user_name (str): content.get('refers').get('user')['profile']['name'] (이름))
+user_hydrate (str): content.get('refers').get('user')['profile']['hydrate'] (수분섭취량)
+user_weight (str): content.get('refers').get('user')['profile']['weight'] (몸무게)
+user_height (int): content.get('refers').get('user')['profile']['height'] (신장)
+user_age (int): content.get('refers').get('user')['profile']['age'] (나이)
+user_activation (str): content.get('refers').get('user')['profile']['activation'] (활동량)
+user_goal (int): content.get('refers').get('user')['profile']['goal'] (목표량)
+user_dining (str): content.get('refers').get('user')['profile']['number_dining'] (식사횟수)
 """
 
 import json
@@ -33,12 +43,11 @@ def get_bmr(user_weight: int, user_height: int, user_age: int) -> int:
     """BMR : 기초대사량 계산
 
     Args:
-        user_weight (int): content.get('refers').get('user')['profile']['weight'] (몸무게)
-        user_height (int): content.get('refers').get('user')['profile']['height'] (신장)
-        user_age (int): content.get('refers').get('user')['profile']['age'] (나이)
-
+        user_weight : int, 몸무게
+        user_height : int, 신장
+        user_age : int, 나이
     Returns:
-        int: BMR : int > activation_calculation parameter ( trunc )
+        BMR : int , activation_calculation parameter ( trunc )
     """
     return int(66 + (13.7 * user_weight) + (5 * user_height) - (6.8 * user_age))
 
@@ -47,11 +56,11 @@ def activation_calories_calculation(user_activation: str, bmr: int) -> int:
     """_summary_
 
     Args:
-        user_activation (str): content.get('refers').get('user')['profile']['activation'] (활동량)
-    bmr (int): return by `get_bmr`
+        user_activation : str, 활동량
+        bmr : int, return by `get_bmr`
 
     Returns:
-        int: maintenance : int > goal_calculation parameter ( trunc )
+        maintenance : int , goal_calculation parameter ( trunc )
     """
     if user_activation == "거의 없다 (주1회이하)":
         return int(bmr * 1.2)
@@ -62,15 +71,15 @@ def activation_calories_calculation(user_activation: str, bmr: int) -> int:
     return int(bmr * 1.725)
 
 
-def goal_calories_calculation(user_goal: str, maintenance: int):
+def goal_calories_calculation(user_goal: str, maintenance: int) -> int:
     """_summary_
 
     Args:
-        user_goal (int): content.get('refers').get('user')['profile']['goal']
-        maintenance (int): Calculation by return of activation_calculation functions
+        user_goal : str, 목표량
+        maintenance : int, Calculation by return of activation_calculation functions
 
     Returns:
-        int: goal_calories : int > macro_calucation parameter ( trunc )
+        goal_calories : int > macro_calucation parameter ( trunc )
     """
     if user_goal == "5Kg 이상의 감량을 원하세요?":
         return int(maintenance * 0.8)
@@ -81,7 +90,7 @@ def goal_calories_calculation(user_goal: str, maintenance: int):
     return int(maintenance)
 
 
-def macro_calories_calucation(goal_calories):
+def macro_calories_calucation(goal_calories: int) -> list:
     """_summary_
 
     Args:
@@ -90,9 +99,9 @@ def macro_calories_calucation(goal_calories):
     Returns:
         _type_: carbon/protein/fat by gram  int ( trunc )
     """
-    carbohydrate = int(goal_calories * 0.5 / 4)
-    protein = int(goal_calories * 0.3 / 4)
-    fat = int(goal_calories * 0.2 / 9)
+    carbohydrate: int = int(goal_calories * 0.5 / 4)
+    protein: int = int(goal_calories * 0.3 / 4)
+    fat: int = int(goal_calories * 0.2 / 9)
     return carbohydrate, protein, fat
 
 
@@ -100,7 +109,7 @@ def activation_response(user_activation):
     """_summary_
 
     Args:
-        user_activation (str): content.get('refers').get('user')['profile']['activation']
+
 
     Returns:
         str : str > second_block
@@ -118,7 +127,7 @@ def goal_response(user_goal):
     """_summary_
 
     Args:
-        user_goal (str): content.get('refers').get('user')['profile']['goal']
+
 
     Returns:
         str: str > second_block
@@ -136,9 +145,7 @@ def hydrate_response(user_hydrate, user_weight, user_name):
     """_summary_
 
     Args:
-        user_name (str): content.get('refers').get('user')['profile']['name']
-        user_hydrate (str): content.get('refers').get('user')['profile']['hydrate']
-        user_weight (str): content.get('refers').get('user')['profile']['weight']
+
 
     Returns:
         str: response str > third_block
@@ -157,7 +164,7 @@ def dining_response(user_dining):
     """_summary_
 
     Args:
-        user_dining (str): content.get('refers').get('user')['profile']['number_dining']
+
 
     Returns:
         str: response str > fourth_block
