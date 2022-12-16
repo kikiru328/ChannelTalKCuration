@@ -126,7 +126,7 @@ def curation_present():
             
         """
         import time
-        import second_response
+        import present_response
         chat_ID = content['entity']['chatId']
         post_type = 'user-chats'
         try:
@@ -145,9 +145,9 @@ def curation_present():
 
                     post_type = 'user-chats' 
                     
-                    import second_response
+                    import present_response
             
-                    response = second_response.GET_MSG(chat_ID,post_type)    
+                    response = present_response.GET_MSG(chat_ID,post_type)    
                     contents = json.loads(response.content)
                     
                     try:
@@ -156,48 +156,48 @@ def curation_present():
                             print('TRUE')
                             import time
                             time.sleep(2)
-                            second_response.present(chat_ID,content,post_type)
+                            present_response.present(chat_ID,content,post_type)
                             print('present')
                             time.sleep(2)
-                            second_response.knowhow(chat_ID,content,post_type)
+                            present_response.knowhow(chat_ID,content,post_type)
                             print('knowhow')
                             time.sleep(2)
-                            second_response.Dining_Schedule(chat_ID,content,post_type)
+                            present_response.Dining_Schedule(chat_ID,content,post_type)
                             print('ds')
                             time.sleep(2)
-                            second_response.goal_success(chat_ID,content,post_type)
+                            present_response.goal_success(chat_ID,content,post_type)
                             print('suc')
                             time.sleep(2)
-                            second_response.yun_cheer(chat_ID,content,post_type)
+                            present_response.yun_cheer(chat_ID,content,post_type)
                             print('ch')
                             time.sleep(2)
-                            second_response.marketing(chat_ID,content,post_type)
+                            present_response.marketing(chat_ID,content,post_type)
                             print('ma')
                             time.sleep(2)
-                            second_response.last_quote(chat_ID,content,post_type)
+                            present_response.last_quote(chat_ID,content,post_type)
                             print('lq')
                             time.sleep(2)
-                            second_response.event_salad(chat_ID,content,post_type)
+                            present_response.event_salad(chat_ID,content,post_type)
                             print('ev')
                             time.sleep(2)
-                            second_response.Final_Introduction(chat_ID,post_type)
+                            present_response.Final_Introduction(chat_ID,post_type)
                             
                         elif contents['messages'][0]['form']['inputs'][0]['value'] \
                                                     == False:
                             print('False')
                             time.sleep(2)
-                            second_response.Final_Introduction(chat_ID,post_type)
+                            present_response.Final_Introduction(chat_ID,post_type)
                             print('fi')
                             time.sleep(1)
-                            second_response.normal_salad(chat_ID,content,post_type)
+                            present_response.normal_salad(chat_ID,content,post_type)
                             print('False')
                     except Exception as e:
                         print(e)
                         time.sleep(2)
-                        second_response.Final_Introduction(chat_ID,post_type)
+                        present_response.Final_Introduction(chat_ID,post_type)
                         print('fi')
                         time.sleep(1)
-                        second_response.normal_salad(chat_ID,content,post_type)
+                        present_response.normal_salad(chat_ID,content,post_type)
                                             
             elif content['refers']['userChat']['source']['supportBot']['id'] == '43684':
                 if content['entity']['form']['inputs'][0]['label'] == "받으시겠어요?" : 
@@ -208,9 +208,9 @@ def curation_present():
 
                     post_type = 'user-chats' 
                     
-                    import second_response
+                    import present_response
             
-                    response = second_response.GET_MSG(chat_ID,post_type)    
+                    response = present_response.GET_MSG(chat_ID,post_type)    
                     contents = json.loads(response.content)
                     
                     try:
@@ -219,48 +219,48 @@ def curation_present():
                             print('TRUE')
                             import time
                             time.sleep(2)
-                            second_response.present(chat_ID,content,post_type)
+                            present_response.present(chat_ID,content,post_type)
                             print('present')
                             time.sleep(2)
-                            second_response.knowhow(chat_ID,content,post_type)
+                            present_response.knowhow(chat_ID,content,post_type)
                             print('knowhow')
                             time.sleep(2)
-                            second_response.Dining_Schedule(chat_ID,content,post_type)
+                            present_response.Dining_Schedule(chat_ID,content,post_type)
                             print('ds')
                             time.sleep(2)
-                            second_response.goal_success(chat_ID,content,post_type)
+                            present_response.goal_success(chat_ID,content,post_type)
                             print('suc')
                             time.sleep(2)
-                            second_response.yun_cheer(chat_ID,content,post_type)
+                            present_response.yun_cheer(chat_ID,content,post_type)
                             print('ch')
                             time.sleep(2)
-                            second_response.marketing(chat_ID,content,post_type)
+                            present_response.marketing(chat_ID,content,post_type)
                             print('ma')
                             time.sleep(2)
-                            second_response.last_quote(chat_ID,content,post_type)
+                            present_response.last_quote(chat_ID,content,post_type)
                             print('lq')
                             time.sleep(2)
-                            second_response.event_salad(chat_ID,content,post_type)
+                            present_response.event_salad(chat_ID,content,post_type)
                             print('ev')
                             time.sleep(2)
-                            second_response.Final_Introduction(chat_ID,post_type)
+                            present_response.Final_Introduction(chat_ID,post_type)
                             
                         elif contents['messages'][0]['form']['inputs'][0]['value'] \
                                                     == False:
                             print('False')
                             time.sleep(2)
-                            second_response.Final_Introduction(chat_ID,post_type)
+                            present_response.Final_Introduction(chat_ID,post_type)
                             print('fi')
                             time.sleep(1)
-                            second_response.normal_salad(chat_ID,content,post_type)
+                            present_response.normal_salad(chat_ID,content,post_type)
                             print('False')
                     except Exception as e:
                         print(e)
                         time.sleep(2)
-                        second_response.Final_Introduction(chat_ID,post_type)
+                        present_response.Final_Introduction(chat_ID,post_type)
                         print('fi')
                         time.sleep(1)
-                        second_response.normal_salad(chat_ID,content,post_type)
+                        present_response.normal_salad(chat_ID,content,post_type)
 
             else:
                 print(content['entity']['form']['inputs'][0]['label'])
@@ -300,7 +300,7 @@ def delivery_():
             
         """
         import time
-        import second_response
+        import present_response
         chat_ID = content['entity']['chatId']
         post_type = 'user-chats'
         import delivery_date
