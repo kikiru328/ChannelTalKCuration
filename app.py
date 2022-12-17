@@ -1,27 +1,40 @@
-from flask import Flask, request, render_template, jsonify
+"""
+Flask for curation application
+"""
+from flask import Flask, request, render_template
+import main_response
+import present_response
 import threading
 import json
 
 app = Flask(__name__)
 @app.route('/')
 def home():
+    """
+    Flask homepage for testing
+
+    Returns:
+        rendering template 
+    """
     return render_template("index.html")
 
 @app.route('/main_curation', methods=['GET', 'POST'])
-
 def main_curation():
     
-    '''자동화 작업 함수'''
+    '''
+    Main curation 
+    Operation after survey.
+    '''
     def auto(content):
-        """_summary_
+        """
+        auto functinos for main curation 
 
         Args:
             content (str): chat_ID : UserChat ID
             +) Tags : Only for curation
             +) thread : Webhook for flask
-            
         """
-        import main_response
+
         import time
         if (content['entity']['source']['supportBot']['id']=='51767') and (content['entity']['tags'][0] == '식단큐레이션받기'):
             print('############################        DEFINE_CURATION       ############################')
