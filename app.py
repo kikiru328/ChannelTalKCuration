@@ -37,7 +37,7 @@ def home():
 
     Args:
         None
-        
+
     Returns:
         rendering template
     """
@@ -50,12 +50,12 @@ def main_curation():
     """
     Main curation
     Operation after survey.
-    
+
     Args:
         None
     """
 
-    def auto(content:dict) -> str:
+    def auto(content: dict) -> str:
         """
         auto functinos for main curation
 
@@ -63,41 +63,49 @@ def main_curation():
             content (str): chat_ID : UserChat ID
             +) Tags : Only for curation
             +) thread : Webhook for flask
-        
+
         Returns:
             check this main_curation is operated on url
         """
         try:
-            if (content['entity']['source']['supportBot']['id']=='51767' or '43684' or '47423'):
-                if (content['entity']['tags'][0] == '식단큐레이션받기'):
-                    chat_ID:str= content.get('refers').get('message')['chatId']
-                    post_type:str = 'user-chats'
-                    thirdparty:str = content.get('refers').get('user')['profile']['thirdPartyAgree']
+            if (
+                content["entity"]["source"]["supportBot"]["id"] == "51767"
+                or "43684"
+                or "47423"
+            ):
+                if content["entity"]["tags"][0] == "식단큐레이션받기":
+                    chat_ID: str = content.get("refers").get("message")["chatId"]
+                    post_type: str = "user-chats"
+                    thirdparty: str = content.get("refers").get("user")["profile"][
+                        "thirdPartyAgree"
+                    ]
                     if thirdparty != True:
                         pass
                     else:
                         time.sleep(2)
-                        main_response.Introduction1(chat_ID,content,post_type)
+                        main_response.Introduction1(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction2(chat_ID,content,post_type)
+                        main_response.Introduction2(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction3(chat_ID,content,post_type)
+                        main_response.Introduction3(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction4(chat_ID,content,post_type)
+                        main_response.Introduction4(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction5(chat_ID,content,post_type)
+                        main_response.Introduction5(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction6(chat_ID,content,post_type)
+                        main_response.Introduction6(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction7(chat_ID,content,post_type)
+                        main_response.Introduction7(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Activation_food_amount(chat_ID,content,post_type)
+                        main_response.Activation_food_amount(
+                            chat_ID, content, post_type
+                        )
                         time.sleep(2)
-                        main_response.Calories_per_dining(chat_ID,content,post_type)
+                        main_response.Calories_per_dining(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.Before_form(chat_ID,content,post_type)
+                        main_response.Before_form(chat_ID, content, post_type)
                         time.sleep(2)
-                        main_response.RESET(chat_ID,content,post_type)
+                        main_response.RESET(chat_ID, content, post_type)
                 else:
                     pass
         except Exception as e:
@@ -127,17 +135,15 @@ def curation_present():
     """자동화 작업 함수"""
 
     def auto(content):
-        # print('<<<<<<<<<<', content)
         """_summary_
 
         Args:
             content (str): chat_ID : UserChat ID
             +) Tags : Only for curation
             +) thread : Webhook for flask
-
         """
         import time
-        import present_response
+        import second_response
 
         chat_ID = content["entity"]["chatId"]
         post_type = "user-chats"
@@ -145,160 +151,57 @@ def curation_present():
             user_name = content["refers"]["user"]["profile"]["name"]
         except:
             pass
-
+        print("PRESENT")
+        print(content)
         try:
-            if content["refers"]["userChat"]["source"]["supportBot"]["id"] == "51767":
-                print(
-                    "############################        DEFINE_CURATION_ PRESENT       ############################"
-                )
-                if content["entity"]["form"]["inputs"][0]["label"] == "받으시겠어요?":
-                    print("YES")
+            if (
+                content["refers"]["userChat"]["source"]["supportBot"]["id"] == "51767"
+                or "43684"
+                or "47423"
+            ):
+                if content["entity"]["plainText"] == "선물":
                     import time
 
-                    time.sleep(5)
                     chat_ID = content["entity"]["chatId"]
-
                     post_type = "user-chats"
+                    import second_response
 
-                    import present_response
-
-                    response = present_response.GET_MSG(chat_ID, post_type)
+                    response = second_response.GET_MSG(chat_ID, post_type)
                     contents = json.loads(response.content)
-
                     try:
-                        if (
-                            contents["messages"][0]["form"]["inputs"][0]["value"]
-                            == True
-                        ):
-                            print("TRUE")
-                            import time
+                        import time
 
-                            time.sleep(2)
-                            present_response.present(chat_ID, content, post_type)
-                            print("present")
-                            time.sleep(2)
-                            present_response.knowhow(chat_ID, content, post_type)
-                            print("knowhow")
-                            time.sleep(2)
-                            present_response.Dining_Schedule(
-                                chat_ID, content, post_type
-                            )
-                            print("ds")
-                            time.sleep(2)
-                            present_response.goal_success(chat_ID, content, post_type)
-                            print("suc")
-                            time.sleep(2)
-                            present_response.yun_cheer(chat_ID, content, post_type)
-                            print("ch")
-                            time.sleep(2)
-                            present_response.marketing(chat_ID, content, post_type)
-                            print("ma")
-                            time.sleep(2)
-                            present_response.last_quote(chat_ID, content, post_type)
-                            print("lq")
-                            time.sleep(2)
-                            present_response.event_salad(chat_ID, content, post_type)
-                            print("ev")
-                            time.sleep(2)
-                            present_response.Final_Introduction(chat_ID, post_type)
-
-                        elif (
-                            contents["messages"][0]["form"]["inputs"][0]["value"]
-                            == False
-                        ):
-                            print("False")
-                            time.sleep(2)
-                            present_response.Final_Introduction(chat_ID, post_type)
-                            print("fi")
-                            time.sleep(1)
-                            present_response.normal_salad(chat_ID, content, post_type)
-                            print("False")
-                    except Exception as e:
-                        print(e)
                         time.sleep(2)
-                        present_response.Final_Introduction(chat_ID, post_type)
-                        print("fi")
-                        time.sleep(1)
-                        present_response.normal_salad(chat_ID, content, post_type)
-
-            elif content["refers"]["userChat"]["source"]["supportBot"]["id"] == "43684":
-                if content["entity"]["form"]["inputs"][0]["label"] == "받으시겠어요?":
-                    print("YES")
-                    import time
-
-                    time.sleep(5)
-                    chat_ID = content["entity"]["chatId"]
-
-                    post_type = "user-chats"
-
-                    import present_response
-
-                    response = present_response.GET_MSG(chat_ID, post_type)
-                    contents = json.loads(response.content)
-
-                    try:
-                        if (
-                            contents["messages"][0]["form"]["inputs"][0]["value"]
-                            == True
-                        ):
-                            print("TRUE")
-                            import time
-
-                            time.sleep(2)
-                            present_response.present(chat_ID, content, post_type)
-                            print("present")
-                            time.sleep(2)
-                            present_response.knowhow(chat_ID, content, post_type)
-                            print("knowhow")
-                            time.sleep(2)
-                            present_response.Dining_Schedule(
-                                chat_ID, content, post_type
-                            )
-                            print("ds")
-                            time.sleep(2)
-                            present_response.goal_success(chat_ID, content, post_type)
-                            print("suc")
-                            time.sleep(2)
-                            present_response.yun_cheer(chat_ID, content, post_type)
-                            print("ch")
-                            time.sleep(2)
-                            present_response.marketing(chat_ID, content, post_type)
-                            print("ma")
-                            time.sleep(2)
-                            present_response.last_quote(chat_ID, content, post_type)
-                            print("lq")
-                            time.sleep(2)
-                            present_response.event_salad(chat_ID, content, post_type)
-                            print("ev")
-                            time.sleep(2)
-                            present_response.Final_Introduction(chat_ID, post_type)
-
-                        elif (
-                            contents["messages"][0]["form"]["inputs"][0]["value"]
-                            == False
-                        ):
-                            print("False")
-                            time.sleep(2)
-                            present_response.Final_Introduction(chat_ID, post_type)
-                            print("fi")
-                            time.sleep(1)
-                            present_response.normal_salad(chat_ID, content, post_type)
-                            print("False")
-                    except Exception as e:
-                        print(e)
+                        second_response.present(chat_ID, content, post_type)
                         time.sleep(2)
-                        present_response.Final_Introduction(chat_ID, post_type)
-                        print("fi")
+                        second_response.knowhow(chat_ID, content, post_type)
+                        time.sleep(2)
+                        second_response.Dining_Schedule(chat_ID, content, post_type)
+                        time.sleep(2)
+                        second_response.goal_success(chat_ID, content, post_type)
+                        time.sleep(2)
+                        second_response.yun_cheer(chat_ID, content, post_type)
+                        time.sleep(2)
+                        second_response.marketing(chat_ID, content, post_type)
+                        time.sleep(2)
+                        second_response.last_quote(chat_ID, content, post_type)
+                        time.sleep(2)
+                        second_response.event_salad(chat_ID, content, post_type)
+                        time.sleep(2)
+                        second_response.Final_Introduction(chat_ID, post_type)
+                    except Exception as e:
+                        time.sleep(2)
+                        second_response.Final_Introduction(chat_ID, post_type)
                         time.sleep(1)
-                        present_response.normal_salad(chat_ID, content, post_type)
-
-            else:
-                print(content["entity"]["form"]["inputs"][0]["label"])
-
+                        second_response.normal_salad(chat_ID, content, post_type)
+                else:
+                    time.sleep(2)
+                    second_response.wrong_answer(chat_ID, post_type)
         except Exception as e:
-            pass
-            # print(e)
-            # print('PASS')
+            print("PRESENT ERROR OCCURED")
+            print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            print(e)
+            print()
 
     if request.method == "GET":
         content = request.args.to_dict()
