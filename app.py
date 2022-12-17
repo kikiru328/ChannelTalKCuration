@@ -108,6 +108,8 @@ def main_curation():
                         main_response.RESET(chat_ID, content, post_type)
                 else:
                     pass
+        except ValueError as ve:
+            print(ve)
         except Exception as e:
             print("RESPONSE MAIN ERROR OCCURED")
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -228,7 +230,6 @@ def delivery_():
             content (str): chat_ID : UserChat ID
             +) Tags : Only for curation
             +) thread : Webhook for flask
-            
         """
         import time
         import present_response
