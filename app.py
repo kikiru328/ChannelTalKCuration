@@ -26,6 +26,7 @@ import present_response
 import threading
 import json
 import time
+import datetime
 
 app = Flask(__name__)
 
@@ -60,7 +61,7 @@ def main_curation():
         auto functinos for main curation
 
         Args:
-            content (str): chat_ID : UserChat ID
+            content (str): chat_id : UserChat ID
             +) Tags : Only for curation
             +) thread : Webhook for flask
 
@@ -68,13 +69,13 @@ def main_curation():
             check this main_curation is operated on url
         """
         try:
-            if (
-                content["entity"]["source"]["supportBot"]["id"] == "51767"
-                or "43684"
-                or "47423"
-            ):
+            if content["entity"]["source"]["supportBot"]["id"] in [
+                "51767",
+                "43684",
+                "47423",
+            ]:
                 if content["entity"]["tags"][0] == "식단큐레이션받기":
-                    chat_ID: str = content.get("refers").get("message")["chatId"]
+                    chat_id: str = content.get("refers").get("message")["chatId"]
                     post_type: str = "user-chats"
                     thirdparty: str = content.get("refers").get("user")["profile"][
                         "thirdPartyAgree"
@@ -83,33 +84,33 @@ def main_curation():
                         pass
                     else:
                         time.sleep(2)
-                        main_response.Introduction1(chat_ID, content, post_type)
+                        main_response.Introduction1(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction2(chat_ID, content, post_type)
+                        main_response.Introduction2(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction3(chat_ID, content, post_type)
+                        main_response.Introduction3(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction4(chat_ID, content, post_type)
+                        main_response.Introduction4(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction5(chat_ID, content, post_type)
+                        main_response.Introduction5(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction6(chat_ID, content, post_type)
+                        main_response.Introduction6(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Introduction7(chat_ID, content, post_type)
+                        main_response.Introduction7(chat_id, content, post_type)
                         time.sleep(2)
                         main_response.Activation_food_amount(
-                            chat_ID, content, post_type
+                            chat_id, content, post_type
                         )
                         time.sleep(2)
-                        main_response.Calories_per_dining(chat_ID, content, post_type)
+                        main_response.Calories_per_dining(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Before_form(chat_ID, content, post_type)
+                        main_response.Before_form(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.RESET(chat_ID, content, post_type)
+                        main_response.RESET(chat_id, content, post_type)
                 else:
                     pass
-        except ValueError as ve:
-            print(ve)
+        except ValueError:
+            raise
         except Exception as e:
             print("RESPONSE MAIN ERROR OCCURED")
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -140,14 +141,14 @@ def curation_present():
         """_summary_
 
         Args:
-            content (str): chat_ID : UserChat ID
+            content (str): chat_id : UserChat ID
             +) Tags : Only for curation
             +) thread : Webhook for flask
         """
         import time
         import second_response
 
-        chat_ID = content["entity"]["chatId"]
+        chat_id = content["entity"]["chatId"]
         post_type = "user-chats"
         try:
             user_name = content["refers"]["user"]["profile"]["name"]
@@ -164,41 +165,41 @@ def curation_present():
                 if content["entity"]["plainText"] == "선물":
                     import time
 
-                    chat_ID = content["entity"]["chatId"]
+                    chat_id = content["entity"]["chatId"]
                     post_type = "user-chats"
                     import second_response
 
-                    response = second_response.GET_MSG(chat_ID, post_type)
+                    response = second_response.GET_MSG(chat_id, post_type)
                     contents = json.loads(response.content)
                     try:
                         import time
 
                         time.sleep(2)
-                        second_response.present(chat_ID, content, post_type)
+                        second_response.present(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.knowhow(chat_ID, content, post_type)
+                        second_response.knowhow(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.Dining_Schedule(chat_ID, content, post_type)
+                        second_response.Dining_Schedule(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.goal_success(chat_ID, content, post_type)
+                        second_response.goal_success(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.yun_cheer(chat_ID, content, post_type)
+                        second_response.yun_cheer(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.marketing(chat_ID, content, post_type)
+                        second_response.marketing(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.last_quote(chat_ID, content, post_type)
+                        second_response.last_quote(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.event_salad(chat_ID, content, post_type)
+                        second_response.event_salad(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.Final_Introduction(chat_ID, post_type)
+                        second_response.Final_Introduction(chat_id, post_type)
                     except Exception as e:
                         time.sleep(2)
-                        second_response.Final_Introduction(chat_ID, post_type)
+                        second_response.Final_Introduction(chat_id, post_type)
                         time.sleep(1)
-                        second_response.normal_salad(chat_ID, content, post_type)
+                        second_response.normal_salad(chat_id, content, post_type)
                 else:
                     time.sleep(2)
-                    second_response.wrong_answer(chat_ID, post_type)
+                    second_response.wrong_answer(chat_id, post_type)
         except Exception as e:
             print("PRESENT ERROR OCCURED")
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -227,14 +228,14 @@ def delivery_():
         """_summary_
 
         Args:
-            content (str): chat_ID : UserChat ID
+            content (str): chat_id : UserChat ID
             +) Tags : Only for curation
             +) thread : Webhook for flask
         """
         import time
         import present_response
 
-        chat_ID = content["entity"]["chatId"]
+        chat_id = content["entity"]["chatId"]
         post_type = "user-chats"
         import delivery_date
         import datetime
@@ -247,15 +248,15 @@ def delivery_():
             if content["refers"]["userChat"]["source"]["supportBot"]["id"] == "52853":
                 if content["entity"]["plainText"] == "새벽배송":
                     delivery_date.get_delivery_start_date_each.get_deliv_start_date(
-                        chat_ID, post_type, now, holiday_dataframe, "새벽배송"
+                        chat_id, post_type, now, holiday_dataframe, "새벽배송"
                     )
                 elif content["entity"]["plainText"] == "일반배송":
                     delivery_date.get_delivery_start_date_each.get_deliv_start_date(
-                        chat_ID, post_type, now, holiday_dataframe, "일반배송"
+                        chat_id, post_type, now, holiday_dataframe, "일반배송"
                     )
                 elif content["entity"]["plainText"] == "직접배송":
                     delivery_date.get_delivery_start_date_each.get_deliv_start_date(
-                        chat_ID, post_type, now, holiday_dataframe, "직접배송"
+                        chat_id, post_type, now, holiday_dataframe, "직접배송"
                     )
         except:
             pass
