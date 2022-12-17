@@ -4,8 +4,8 @@ present curation Responses
 chat_id (str): content.get('refers').get('message')['chatId']
 post_type (str) : groups : post message to groups
 """
-import present_function
 import requests
+import present_function
 
 headers = present_function.api_header()
 
@@ -154,7 +154,7 @@ def quote_goal_success(chat_id, content, post_type):
         "blocks": [
             {
                 "type": "text",
-                "value": f":trophy: <b>식단표</b>를 잘 활용한다면 "
+                "value": ":trophy: <b>식단표</b>를 잘 활용한다면 "
                 + f"<b>3개월 이내</b>\n    {add_response} 달성할 수 있어요!",
             }
         ]
@@ -192,7 +192,7 @@ def cheering_quote(chat_id, content, post_type):
         "blocks": [
             {
                 "type": "text",
-                "value": f":crossed_fingers: <b>윤식단이 "
+                "value": ":crossed_fingers: <b>윤식단이 "
                 + f"[{user_name}]님의\n    {add_response2} 성공을 응원해요!",
             }
         ]
@@ -205,7 +205,7 @@ def cheering_quote(chat_id, content, post_type):
     )
 
 
-def marketing_quote(chat_id, content, post_type):
+def marketing_quote(chat_id, post_type):
     """
     Selling a marketing message
 
@@ -230,7 +230,7 @@ def marketing_quote(chat_id, content, post_type):
     )
 
 
-def last_quote(chat_id, content, post_type):
+def last_quote(chat_id, post_type):
     """
     Message to start yun now
 
@@ -256,7 +256,7 @@ def last_quote(chat_id, content, post_type):
     )
 
 
-def give_link_event_salad(chat_id, content, post_type):
+def give_link_event_salad(chat_id, post_type):
     """
     link to purchase
 
@@ -284,7 +284,7 @@ def give_link_event_salad(chat_id, content, post_type):
     )
 
 
-def give_link_normal_salad(chat_id, content, post_type):
+def give_link_normal_salad(chat_id, post_type):
     """
     link to purchase
 
