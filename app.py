@@ -20,14 +20,14 @@ if stop this app or change code, you should stop this app and restart
 `kill -9 pid_number`
 """
 
-from flask import Flask, request, render_template
-import main_response
-import present_response
 import threading
 import json
 import time
 import datetime
 import logging
+from flask import Flask, request, render_template
+import main_response
+import present_response
 
 app = Flask(__name__)
 
@@ -122,11 +122,14 @@ def main_curation():
 
 @app.route("/curation_presents", methods=["GET", "POST"])
 def curation_present():
-
-    """자동화 작업 함수"""
+    """
+    Present curation
+    Operation after say 'complete'
+    """
 
     def auto(content):
-        """_summary_
+        """
+        auto functinos for present curation
 
         Args:
             content (str): chat_id : UserChat ID
@@ -134,10 +137,6 @@ def curation_present():
 
         chat_id = content["entity"]["chatId"]
         post_type = "user-chats"
-        try:
-            user_name = content["refers"]["user"]["profile"]["name"]
-        except BaseException as bae:
-            pass
         try:
             if content["refers"]["userChat"]["source"]["supportBot"]["id"] in [
                 "51767",
@@ -147,16 +146,17 @@ def curation_present():
                 if content["entity"]["plainText"] == "선물":
                     chat_id = content["entity"]["chatId"]
                     post_type = "user-chats"
-
                     response = present_response.get_message(chat_id, post_type)
-                    contents = json.loads(response.content)
+                    content = json.loads(response.content)
                     try:
                         time.sleep(2)
                         present_response.quote_present(chat_id, content, post_type)
                         time.sleep(2)
                         present_response.quote_knowhow(chat_id, post_type)
                         time.sleep(2)
-                        present_response.give_dining_schedule(chat_id, content, post_type)
+                        present_response.give_dining_schedule(
+                            chat_id, content, post_type
+                        )
                         time.sleep(2)
                         present_response.quote_goal_success(chat_id, content, post_type)
                         time.sleep(2)
@@ -169,21 +169,16 @@ def curation_present():
                         present_response.give_link_event_salad(chat_id, post_type)
                         time.sleep(2)
                         present_response.final_quote(chat_id, post_type)
-                    except Exception as e:
-                        time.sleep(2)
-                        present_response.give_link_normal_salad(chat_id, post_type)
-                        time.sleep(1)
-                        present_response.final_quote(chat_id, post_type)
+                    except TypeError as type_mid_error:
+                        logging.warning(
+                            "Exception Name: %s", type(type_mid_error).__name__
+                        )
+                        logging.warning("Exception Desc: %s", {type_mid_error})
 
         except TypeError as type_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
             logging.warning("Exception Name: %s", type(type_error).__name__)
             logging.warning("Exception Desc: %s", {type_error})
-
-        except ValueError as value_error:
-            print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-            logging.warning("Exception Name: %s", type(value_error).__name__)
-            logging.warning("Exception Desc: %s", {value_error})
 
         except KeyError as key_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -202,58 +197,6 @@ def curation_present():
     thread.start()
 
     return "curation_presents successfully operated!"
-
-
-@app.route("/delivery_curation", methods=["GET", "POST"])
-def delivery_():
-    def auto(content):
-        print("####DELIVERY####", content)
-        """_summary_
-
-        Args:
-            content (str): chat_id : UserChat ID
-            +) Tags : Only for curation
-            +) thread : Webhook for flask
-        """
-
-        chat_id = content["entity"]["chatId"]
-        post_type = "user-chats"
-        import delivery_date
-        import datetime
-
-        now = datetime.datetime.now()
-        holiday_dataframe = delivery_date.holiday_dataframe
-        print("######### NOW ##########", now)
-        time.sleep(0.68)
-        try:
-            if content["refers"]["userChat"]["source"]["supportBot"]["id"] == "52853":
-                if content["entity"]["plainText"] == "새벽배송":
-                    delivery_date.get_delivery_start_date_each.get_deliv_start_date(
-                        chat_id, post_type, now, holiday_dataframe, "새벽배송"
-                    )
-                elif content["entity"]["plainText"] == "일반배송":
-                    delivery_date.get_delivery_start_date_each.get_deliv_start_date(
-                        chat_id, post_type, now, holiday_dataframe, "일반배송"
-                    )
-                elif content["entity"]["plainText"] == "직접배송":
-                    delivery_date.get_delivery_start_date_each.get_deliv_start_date(
-                        chat_id, post_type, now, holiday_dataframe, "직접배송"
-                    )
-        except:
-            pass
-
-    if request.method == "GET":
-        content = request.args.to_dict()
-    elif request.method == "POST":
-        if request.is_json is True:
-            content = request.get_json()
-        else:
-            content = request.form.to_dict()
-
-    thread = threading.Thread(target=auto, kwargs={"content": content})
-    thread.start()
-
-    return "delivery_curation successfully operated!"
 
 
 if __name__ == "__main__":
