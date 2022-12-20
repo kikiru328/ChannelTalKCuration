@@ -27,6 +27,7 @@ import threading
 import json
 import time
 import datetime
+import logging
 
 app = Flask(__name__)
 
@@ -51,9 +52,6 @@ def main_curation():
     """
     Main curation
     Operation after survey.
-
-    Args:
-        None
     """
 
     def auto(content: dict) -> str:
@@ -62,9 +60,6 @@ def main_curation():
 
         Args:
             content (str): chat_id : UserChat ID
-            +) Tags : Only for curation
-            +) thread : Webhook for flask
-
         Returns:
             check this main_curation is operated on url
         """
@@ -80,42 +75,36 @@ def main_curation():
                     thirdparty: str = content.get("refers").get("user")["profile"][
                         "thirdPartyAgree"
                     ]
-                    if thirdparty != True:
-                        pass
-                    else:
+                    if thirdparty is True:
                         time.sleep(2)
-                        main_response.introduction1(chat_id, content, post_type)
+                        main_response.introduction1(chat_id, post_type)
                         time.sleep(2)
                         main_response.introduction2(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.introduction3(chat_id, content, post_type)
+                        main_response.introduction3(chat_id, post_type)
                         time.sleep(2)
                         main_response.introduction4(chat_id, content, post_type)
                         time.sleep(2)
                         main_response.introduction5(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.introduction6(chat_id, content, post_type)
+                        main_response.introduction6(chat_id, post_type)
                         time.sleep(2)
                         main_response.introduction7(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Activation_food_amount(
-                            chat_id, content, post_type
-                        )
+                        main_response.get_food_amount(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Calories_per_dining(chat_id, content, post_type)
+                        main_response.cal_per_dining(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.Before_form(chat_id, content, post_type)
+                        main_response.before_form(chat_id, content, post_type)
                         time.sleep(2)
-                        main_response.RESET(chat_id, content, post_type)
+                        main_response.question_present(chat_id, content, post_type)
                 else:
                     pass
-        except ValueError:
-            raise
-        except Exception as e:
-            print("RESPONSE MAIN ERROR OCCURED")
+
+        except ValueError as value_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-            print(e)
-            print()
+            logging.warning("Exception Name: %s", type(value_error).__name__)
+            logging.warning("Exception Desc: %s", {value_error})
 
     if request.method == "GET":
         content = request.args.to_dict()
@@ -125,7 +114,6 @@ def main_curation():
         else:
             content = request.form.to_dict()
 
-    """스레드 실행"""
     thread = threading.Thread(target=auto, kwargs={"content": content})
     thread.start()
 
@@ -142,69 +130,68 @@ def curation_present():
 
         Args:
             content (str): chat_id : UserChat ID
-            +) Tags : Only for curation
-            +) thread : Webhook for flask
         """
-        import time
-        import second_response
 
         chat_id = content["entity"]["chatId"]
         post_type = "user-chats"
         try:
             user_name = content["refers"]["user"]["profile"]["name"]
-        except:
+        except BaseException as bae:
             pass
-        print("PRESENT")
-        print(content)
         try:
-            if (
-                content["refers"]["userChat"]["source"]["supportBot"]["id"] == "51767"
-                or "43684"
-                or "47423"
-            ):
+            if content["refers"]["userChat"]["source"]["supportBot"]["id"] in [
+                "51767",
+                "43684",
+                "47423",
+            ]:
                 if content["entity"]["plainText"] == "선물":
-                    import time
-
                     chat_id = content["entity"]["chatId"]
                     post_type = "user-chats"
-                    import second_response
 
-                    response = second_response.GET_MSG(chat_id, post_type)
+                    response = present_response.GET_MSG(chat_id, post_type)
                     contents = json.loads(response.content)
                     try:
-                        import time
-
                         time.sleep(2)
-                        second_response.present(chat_id, content, post_type)
+                        present_response.present(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.knowhow(chat_id, content, post_type)
+                        present_response.knowhow(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.Dining_Schedule(chat_id, content, post_type)
+                        present_response.Dining_Schedule(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.goal_success(chat_id, content, post_type)
+                        present_response.goal_success(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.yun_cheer(chat_id, content, post_type)
+                        present_response.yun_cheer(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.marketing(chat_id, content, post_type)
+                        present_response.marketing(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.last_quote(chat_id, content, post_type)
+                        present_response.last_quote(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.event_salad(chat_id, content, post_type)
+                        present_response.event_salad(chat_id, content, post_type)
                         time.sleep(2)
-                        second_response.Final_Introduction(chat_id, post_type)
+                        present_response.Final_Introduction(chat_id, post_type)
                     except Exception as e:
                         time.sleep(2)
-                        second_response.Final_Introduction(chat_id, post_type)
+                        present_response.Final_Introduction(chat_id, post_type)
                         time.sleep(1)
-                        second_response.normal_salad(chat_id, content, post_type)
+                        present_response.normal_salad(chat_id, content, post_type)
                 else:
                     time.sleep(2)
-                    second_response.wrong_answer(chat_id, post_type)
-        except Exception as e:
-            print("PRESENT ERROR OCCURED")
+                    present_response.wrong_answer(chat_id, post_type)
+
+        except TypeError as type_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-            print(e)
-            print()
+            logging.warning("Exception Name: %s", type(type_error).__name__)
+            logging.warning("Exception Desc: %s", {type_error})
+
+        except ValueError as value_error:
+            print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            logging.warning("Exception Name: %s", type(value_error).__name__)
+            logging.warning("Exception Desc: %s", {value_error})
+
+        except KeyError as key_error:
+            print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            logging.warning("Exception Name: %s", type(key_error).__name__)
+            logging.warning("Exception Desc: %s", {key_error})
 
     if request.method == "GET":
         content = request.args.to_dict()
@@ -214,7 +201,6 @@ def curation_present():
         else:
             content = request.form.to_dict()
 
-    """스레드 실행"""
     thread = threading.Thread(target=auto, kwargs={"content": content})
     thread.start()
 
@@ -232,8 +218,6 @@ def delivery_():
             +) Tags : Only for curation
             +) thread : Webhook for flask
         """
-        import time
-        import present_response
 
         chat_id = content["entity"]["chatId"]
         post_type = "user-chats"
@@ -269,7 +253,6 @@ def delivery_():
         else:
             content = request.form.to_dict()
 
-    """스레드 실행"""
     thread = threading.Thread(target=auto, kwargs={"content": content})
     thread.start()
 

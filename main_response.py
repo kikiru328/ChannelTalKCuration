@@ -392,7 +392,7 @@ def before_form(chat_id: str, content: dict, post_type: str) -> requests:
     )
 
 
-def reset(chat_id: str, content: dict, post_type: str) -> requests:
+def question_present(chat_id: str, content: dict, post_type: str) -> requests:
     """_summary_
 
     Args:

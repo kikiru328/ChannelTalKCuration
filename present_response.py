@@ -100,7 +100,7 @@ def quote_knowhow(chat_id: str, post_type: str) -> requests:
     )
 
 
-def give_dining_schedule(chat_id, content, post_type):
+def give_dining_schedule(chat_id: str, content: dict, post_type: str) -> requests:
     """
     give dining_schedule table
     """
