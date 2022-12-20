@@ -100,7 +100,7 @@ def main_curation():
                         time.sleep(2)
                         main_response.Activation_food_amount(
                             chat_id, content, post_type
-                        ) 
+                        )
                         time.sleep(2)
                         main_response.Calories_per_dining(chat_id, content, post_type)
                         time.sleep(2)
