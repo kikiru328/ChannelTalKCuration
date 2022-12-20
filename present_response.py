@@ -130,7 +130,7 @@ def give_dining_schedule(chat_id: str, content: dict, post_type: str) -> request
     )
 
 
-def quote_goal_success(chat_id, content, post_type):
+def quote_goal_success(chat_id: str, content: dict, post_type: str) -> requests:
     """
     Remind goal and table
 
@@ -167,7 +167,7 @@ def quote_goal_success(chat_id, content, post_type):
     )
 
 
-def cheering_quote(chat_id, content, post_type):
+def cheering_quote(chat_id: str, content: dict, post_type: str) -> requests:
     """
     Cheer message
 
@@ -205,7 +205,7 @@ def cheering_quote(chat_id, content, post_type):
     )
 
 
-def marketing_quote(chat_id, post_type):
+def marketing_quote(chat_id: str, post_type: str) -> requests:
     """
     Selling a marketing message
 
@@ -230,7 +230,7 @@ def marketing_quote(chat_id, post_type):
     )
 
 
-def last_quote(chat_id, post_type):
+def last_quote(chat_id: str, post_type: str) -> requests:
     """
     Message to start yun now
 
@@ -256,7 +256,7 @@ def last_quote(chat_id, post_type):
     )
 
 
-def give_link_event_salad(chat_id, post_type):
+def give_link_event_salad(chat_id: str, post_type: str) -> requests:
     """
     link to purchase
 
@@ -284,7 +284,7 @@ def give_link_event_salad(chat_id, post_type):
     )
 
 
-def give_link_normal_salad(chat_id, post_type):
+def give_link_normal_salad(chat_id: str, post_type: str) -> requests:
     """
     link to purchase
 
@@ -312,7 +312,7 @@ def give_link_normal_salad(chat_id, post_type):
     )
 
 
-def final_quote(chat_id, post_type):
+def final_quote(chat_id: str, post_type: str) -> requests:
     """
     The Final Introduction
 

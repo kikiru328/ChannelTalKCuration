@@ -148,35 +148,32 @@ def curation_present():
                     chat_id = content["entity"]["chatId"]
                     post_type = "user-chats"
 
-                    response = present_response.GET_MSG(chat_id, post_type)
+                    response = present_response.get_message(chat_id, post_type)
                     contents = json.loads(response.content)
                     try:
                         time.sleep(2)
-                        present_response.present(chat_id, content, post_type)
+                        present_response.quote_present(chat_id, content, post_type)
                         time.sleep(2)
-                        present_response.knowhow(chat_id, content, post_type)
+                        present_response.quote_knowhow(chat_id, post_type)
                         time.sleep(2)
-                        present_response.Dining_Schedule(chat_id, content, post_type)
+                        present_response.give_dining_schedule(chat_id, content, post_type)
                         time.sleep(2)
-                        present_response.goal_success(chat_id, content, post_type)
+                        present_response.quote_goal_success(chat_id, content, post_type)
                         time.sleep(2)
-                        present_response.yun_cheer(chat_id, content, post_type)
+                        present_response.cheering_quote(chat_id, content, post_type)
                         time.sleep(2)
-                        present_response.marketing(chat_id, content, post_type)
+                        present_response.marketing_quote(chat_id, post_type)
                         time.sleep(2)
-                        present_response.last_quote(chat_id, content, post_type)
+                        present_response.last_quote(chat_id, post_type)
                         time.sleep(2)
-                        present_response.event_salad(chat_id, content, post_type)
+                        present_response.give_link_event_salad(chat_id, post_type)
                         time.sleep(2)
-                        present_response.Final_Introduction(chat_id, post_type)
+                        present_response.final_quote(chat_id, post_type)
                     except Exception as e:
                         time.sleep(2)
-                        present_response.Final_Introduction(chat_id, post_type)
+                        present_response.give_link_normal_salad(chat_id, post_type)
                         time.sleep(1)
-                        present_response.normal_salad(chat_id, content, post_type)
-                else:
-                    time.sleep(2)
-                    present_response.wrong_answer(chat_id, post_type)
+                        present_response.final_quote(chat_id, post_type)
 
         except TypeError as type_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
