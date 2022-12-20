@@ -154,11 +154,9 @@ def curation_present():
                         time.sleep(2)
                         present_response.quote_knowhow(chat_id, post_type)
                         time.sleep(2)
-                        present_response.give_dining_schedule(
-                            chat_id, content, post_type
-                        )
+                        present_response.give_dining_table(chat_id, content, post_type)
                         time.sleep(2)
-                        present_response.quote_goal_success(chat_id, content, post_type)
+                        present_response.quote_goal(chat_id, content, post_type)
                         time.sleep(2)
                         present_response.cheering_quote(chat_id, content, post_type)
                         time.sleep(2)
