@@ -5,9 +5,9 @@ chat_id (str): content.get('refers').get('message')['chatId']
 post_type (str) : groups : post message to groups
 """
 import requests
-import main_functions
+import main_function
 
-headers = main_functions.api_header()
+headers = main_function.api_header()
 
 
 def get_variables(content: dict) -> tuple:
@@ -26,10 +26,10 @@ def get_variables(content: dict) -> tuple:
     user_age = content.get("refers").get("user")["profile"]["age"]
     user_activation = content.get("refers")["user"]["profile"]["activation"]
     user_goal = content.get("refers").get("user")["profile"]["goal"]
-    bmr = main_functions.get_bmr(user_weight, user_height, user_age)
-    maintenance = main_functions.get_cal_by_activation(user_activation, bmr)
-    goal_calories = main_functions.get_cal_for_goal(user_goal, maintenance)
-    carbohydrate, protein, fat = main_functions.get_macro_cal(goal_calories)
+    bmr = main_function.get_bmr(user_weight, user_height, user_age)
+    maintenance = main_function.get_cal_by_activation(user_activation, bmr)
+    goal_calories = main_function.get_cal_for_goal(user_goal, maintenance)
+    carbohydrate, protein, fat = main_function.get_macro_cal(goal_calories)
     return (
         user_name,
         user_weight,
