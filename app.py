@@ -26,7 +26,7 @@ import logging
 from flask import Flask, request, render_template
 from MainCuration import main_curation
 from PresentCuration import present_curation
-
+from RefundCalculator import refund_calculator
 app = Flask(__name__)
 
 
@@ -52,7 +52,7 @@ def open_userchat():
     Operation after survey.
     """
 
-    def main_curation_operater(content: dict) -> str:
+    def main_curation_operator(content: dict) -> str:
         """
         operation main_curation
         """
@@ -65,6 +65,26 @@ def open_userchat():
         else:
             logging.warning("MAIN_EXCEPTION")
 
+    def refund_calculator_operator(content:dict) -> str:
+        """
+        operation refund calculator
+        """
+        try:
+            refund_calculator.refund_calculator(content)
+            
+        except TypeError as type_error:
+            print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            logging.warning("Exception Name: %s", type(type_error).__name__)
+            logging.warning("Exception Desc: %s", {type_error})            
+        except NameError as name_error:
+            logging.warning("Exception Name: %s", type(name_error).__name__)
+            logging.warning("Exception Desc: %s", {name_error})
+        except ValueError as value_error:
+            logging.warning("Exception Name: %s", type(value_error).__name__)
+            logging.warning("Exception Desc: %s", {value_error})
+        else:
+            logging.warning("MAIN_EXCEPTION")    
+            
     if request.method == "GET":
         content = request.args.to_dict()
     elif request.method == "POST":
@@ -74,11 +94,16 @@ def open_userchat():
             content = request.form.to_dict()
 
     main_curation_thread = threading.Thread(
-        target=main_curation_operater, kwargs={"content": content}
+        target=main_curation_operator, kwargs={"content": content}
     )
     main_curation_thread.start()
+    
+    refund_calculator_thread = threading.Thread(
+        target=refund_calculator_operator, kwargs={"content": content}
+    )
+    refund_calculator_thread.start()
 
-    return "main_curation successfully operated"
+    return 'open_userchat successfully operated'
 
 
 @app.route("/in_userchat", methods=["GET", "POST"])
@@ -88,7 +113,7 @@ def in_userchat():
     Operation after say 'complete'
     """
 
-    def present_curation_operater(content):
+    def present_curation_operator(content):
         """
         operation present_curation
         """
@@ -117,11 +142,11 @@ def in_userchat():
             content = request.form.to_dict()
 
     present_curation_thread = threading.Thread(
-        target=present_curation_operater, kwargs={"content": content}
+        target=present_curation_operator, kwargs={"content": content}
     )
     present_curation_thread.start()
 
-    return "curation_presents successfully operated!"
+    return 'in_userchat successfully operated!'
 
 
 if __name__ == "__main__":
