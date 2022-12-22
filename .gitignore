@@ -6,8 +6,10 @@ API_key.json
 holiday_api.json
 nohup.out
 delivery_date.py
+main_curation.py
 main_function.py
 main_response.py
+present_curation.py
 present_function.py
 present_response.py
 img/
