@@ -21,13 +21,11 @@ if stop this app or change code, you should stop this app and restart
 """
 
 import threading
-import json
-import time
 import datetime
 import logging
 from flask import Flask, request, render_template
-import main_curation
-import present_response
+from MainCuration import main_curation
+from PresentCuration import present_curation
 
 app = Flask(__name__)
 
@@ -56,12 +54,7 @@ def open_userchat():
 
     def main_curation_operater(content: dict) -> str:
         """
-        auto functinos for main curation
-
-        Args:
-            content (str): chat_id : UserChat ID
-        Returns:
-            check this main_curation is operated on url
+        operation main_curation
         """
         try:
             main_curation.main_curation(content)
@@ -69,6 +62,8 @@ def open_userchat():
         except ValueError as value_error:
             logging.warning("Exception Name: %s", type(value_error).__name__)
             logging.warning("Exception Desc: %s", {value_error})
+        else:
+            logging.warning("MAIN_EXCEPTION")
 
     if request.method == "GET":
         content = request.args.to_dict()
@@ -78,66 +73,27 @@ def open_userchat():
         else:
             content = request.form.to_dict()
 
-    thread = threading.Thread(
+    main_curation_thread = threading.Thread(
         target=main_curation_operater, kwargs={"content": content}
     )
-    thread.start()
+    main_curation_thread.start()
 
     return "main_curation successfully operated"
 
 
-@app.route("/curation_presents", methods=["GET", "POST"])
-def curation_present():
+@app.route("/in_userchat", methods=["GET", "POST"])
+def in_userchat():
     """
     Present curation
     Operation after say 'complete'
     """
 
-    def auto(content):
+    def present_curation_operater(content):
         """
-        auto functinos for present curation
-
-        Args:
-            content (str): chat_id : UserChat ID
+        operation present_curation
         """
-
-        chat_id = content["entity"]["chatId"]
-        post_type = "user-chats"
         try:
-            if content["refers"]["userChat"]["source"]["supportBot"]["id"] in [
-                "51767",
-                "43684",
-                "47423",
-            ]:
-                if content["entity"]["plainText"] == "선물":
-                    chat_id = content["entity"]["chatId"]
-                    post_type = "user-chats"
-                    response = present_response.get_message(chat_id, post_type)
-                    content = json.loads(response.content)
-                    try:
-                        time.sleep(2)
-                        present_response.quote_present(chat_id, content, post_type)
-                        time.sleep(2)
-                        present_response.quote_knowhow(chat_id, post_type)
-                        time.sleep(2)
-                        present_response.give_dining_table(chat_id, content, post_type)
-                        time.sleep(2)
-                        present_response.quote_goal(chat_id, content, post_type)
-                        time.sleep(2)
-                        present_response.cheering_quote(chat_id, content, post_type)
-                        time.sleep(2)
-                        present_response.marketing_quote(chat_id, post_type)
-                        time.sleep(2)
-                        present_response.last_quote(chat_id, post_type)
-                        time.sleep(2)
-                        present_response.give_link_event_salad(chat_id, post_type)
-                        time.sleep(2)
-                        present_response.final_quote(chat_id, post_type)
-                    except TypeError as type_mid_error:
-                        logging.warning(
-                            "Exception Name: %s", type(type_mid_error).__name__
-                        )
-                        logging.warning("Exception Desc: %s", {type_mid_error})
+            present_curation.present_curation(content)
 
         except TypeError as type_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -149,6 +105,9 @@ def curation_present():
             logging.warning("Exception Name: %s", type(key_error).__name__)
             logging.warning("Exception Desc: %s", {key_error})
 
+        else:
+            logging.warning("MAIN_EXCEPTION")
+
     if request.method == "GET":
         content = request.args.to_dict()
     elif request.method == "POST":
@@ -157,8 +116,10 @@ def curation_present():
         else:
             content = request.form.to_dict()
 
-    thread = threading.Thread(target=auto, kwargs={"content": content})
-    thread.start()
+    present_curation_thread = threading.Thread(
+        target=present_curation_operater, kwargs={"content": content}
+    )
+    present_curation_thread.start()
 
     return "curation_presents successfully operated!"
 

@@ -7,8 +7,8 @@
 #    #  #      #      #      #    # #    # #      
 #     # ###### ###### ###### #    #  ####  ###### 
                                                   
-global main_function
-import main_function
+global main_curation.main_function
+import main_curation.main_function as main_function
 
 
  ######  #######    ####    #####   ##  ###  #####    
@@ -27,7 +27,7 @@ def SECOND(chat_ID,post_type):
         post_type (str) : groups : post message to groups
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -69,7 +69,7 @@ def Introduction(chat_ID,post_type):
         post_type (str) : groups : post message to groups
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -109,7 +109,7 @@ def Personal_Information_BMR(chat_ID,content,post_type):
         content (_type_): content by webhook
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -153,7 +153,7 @@ def Activation_food_amount(chat_ID,content,post_type):
         content (_type_): content by webhook
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -229,7 +229,7 @@ def Calories_per_dining(chat_ID,content,post_type):
         content (_type_): content by webhook
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -355,7 +355,7 @@ def Hydration(chat_ID,content,post_type):
         content (_type_): content by webhook
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -402,7 +402,7 @@ def Dining_Habit(chat_ID,content,post_type):
         content (_type_): content by webhook
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -456,7 +456,7 @@ def Recommendation(chat_ID,content,post_type):
         content (_type_): content by webhook
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -509,7 +509,7 @@ def Recommendation_Link(chat_ID, content,post_type):
         content (_type_): content by webhook
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     import time
     key,pwd = main_function.API_keys()
     headers = {
@@ -560,7 +560,7 @@ def Recommendation_Link(chat_ID, content,post_type):
 
 def Dining_Schedule(chat_ID,content,post_type):
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -606,7 +606,7 @@ def Final_Introduction(chat_ID,post_type):
         chat_ID (str): content.get('refers').get('message')['chatId'] 
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',
@@ -644,7 +644,7 @@ def RESET(chat_ID,content,post_type):
         chat_ID (str): content.get('refers').get('message')['chatId'] 
     """
     import requests
-    import main_function
+    import main_curation.main_function as main_function
     key,pwd = main_function.API_keys()
     headers = {
         'accept': 'application/json',

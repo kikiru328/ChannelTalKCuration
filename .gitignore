@@ -12,6 +12,8 @@ main_response.py
 present_curation.py
 present_function.py
 present_response.py
+MainCuration/
+PresentCuration/
 img/
 m1_ngrok/
 static/
