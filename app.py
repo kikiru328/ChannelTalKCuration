@@ -18,6 +18,8 @@ check app if is running on background,
 
 if stop this app or change code, you should stop this app and restart
 `kill -9 pid_number`
+
+response > change response
 """
 
 import threading
@@ -26,7 +28,7 @@ import logging
 from flask import Flask, request, render_template
 from MainCuration import main_curation
 from PresentCuration import present_curation
-from RefundCalculator import refund_calculator
+from RefundCuration import refund_curation
 app = Flask(__name__)
 
 
@@ -70,7 +72,7 @@ def open_userchat():
         operation refund calculator
         """
         try:
-            refund_calculator.refund_calculator(content)
+            refund_curation.refund_curation(content)
             
         except TypeError as type_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -112,7 +114,6 @@ def in_userchat():
     Present curation
     Operation after say 'complete'
     """
-
     def present_curation_operator(content):
         """
         operation present_curation
