@@ -1,25 +1,24 @@
 """
-Flask for curation application
+Flask for curation application.
+This is process modularization
 
-main_response - main functions
-present_response - present functions
+start by
 
-All functions are defined in the *_functions.py
+    nohup.out is showed about log
 
-nohup.out is showed about log
+    app can start with code below to
+    `nohup flask run --host=0.0.0.0 &`
 
-app can start with code below to
-`nohup flask run --host=0.0.0.0 &`
+    nohup can run this app on background
 
-nohup can run this app on background
+    check app if is running on background,
+    `lsof -i :5000`
 
-check app if is running on background,
-`lsof -i :5000`
+    if stop this app or change code, you should stop this app and restart
+    `kill -9 pid_number`
 
-if stop this app or change code, you should stop this app and restart
-`kill -9 pid_number`
-
-response > change response
+    response > change response
+    
 """
 
 import threading
@@ -27,8 +26,7 @@ import datetime
 import logging
 from flask import Flask, request, render_template
 from MainCuration import main_curation
-from PresentCuration import present_curation
-from RefundCuration import refund_curation
+from InteractionCuration import interaction_curation
 app = Flask(__name__)
 
 
@@ -47,7 +45,7 @@ def home():
 
 
 @app.route("/open_userchat", methods=["GET", "POST"])
-def open_userchat():
+def open_userchat(): # when user-chat is available (open)
 
     """
     Main curation
@@ -67,26 +65,7 @@ def open_userchat():
         else:
             logging.warning("MAIN_EXCEPTION")
 
-    def refund_calculator_operator(content:dict) -> str:
-        """
-        operation refund calculator
-        """
-        try:
-            refund_curation.refund_curation(content)
-            
-        except TypeError as type_error:
-            print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-            logging.warning("Exception Name: %s", type(type_error).__name__)
-            logging.warning("Exception Desc: %s", {type_error})            
-        except NameError as name_error:
-            logging.warning("Exception Name: %s", type(name_error).__name__)
-            logging.warning("Exception Desc: %s", {name_error})
-        except ValueError as value_error:
-            logging.warning("Exception Name: %s", type(value_error).__name__)
-            logging.warning("Exception Desc: %s", {value_error})
-        else:
-            logging.warning("MAIN_EXCEPTION")    
-            
+
     if request.method == "GET":
         content = request.args.to_dict()
     elif request.method == "POST":
@@ -100,26 +79,21 @@ def open_userchat():
     )
     main_curation_thread.start()
     
-    refund_calculator_thread = threading.Thread(
-        target=refund_calculator_operator, kwargs={"content": content}
-    )
-    refund_calculator_thread.start()
-
     return 'open_userchat successfully operated'
 
 
 @app.route("/in_userchat", methods=["GET", "POST"])
-def in_userchat():
+def in_userchat(): # when user sends a message and chat in progress
     """
     Present curation
     Operation after say 'complete'
     """
-    def present_curation_operator(content):
+    def Interaction_curation_operater(content):
         """
-        operation present_curation
+        operation Interaction_curation
         """
         try:
-            present_curation.present_curation(content)
+            interaction_curation.interaction_curation(content)
 
         except TypeError as type_error:
             print(f"DATETIME : {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -142,10 +116,10 @@ def in_userchat():
         else:
             content = request.form.to_dict()
 
-    present_curation_thread = threading.Thread(
-        target=present_curation_operator, kwargs={"content": content}
+    interaction_curation_thred = threading.Thread(
+        target=Interaction_curation_operater, kwargs={"content": content}
     )
-    present_curation_thread.start()
+    interaction_curation_thred.start()
 
     return 'in_userchat successfully operated!'
 
