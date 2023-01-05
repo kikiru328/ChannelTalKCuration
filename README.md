@@ -23,6 +23,18 @@ In preparation for any possible error or problem, logging was output to nohup to
 
 </br>
 
+<details>
+<summary>프로젝트 도식화 : Project schematic</summary>
+<div markdown=''>
+
+![](https://user-images.githubusercontent.com/60537388/210837865-92f7fdeb-8318-4e71-bffc-a91ae15a93a4.png)
+
+</div>
+</details>
+
+<br/>
+<br/>
+
 ### Modularization
 
 해당 git 내용은 Curation 서비스를 `모듈화`하였다.  
