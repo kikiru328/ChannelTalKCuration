@@ -5,7 +5,7 @@
 
 모든 답변의 내용은 채널톡 내 고객 설문조사를 기반으로 계산되어 제공된다.  
 즉, 설문조사가 선행되어야 하며, channeltalk 내 database에서 어느 분야로 저장할지 지정할 수 있다.
-
+ 
 저장된 database를 근거로 Flask를 활용하여 답변을 주는 서비스를 구현하였고  
 24시간 작동을 위하여 AWS LIGHTSAIL background에 실행하였다.  
 혹시 모를 에러나 문제에 대비하여 nohup에 logging을 출력하여 해결하였다.
