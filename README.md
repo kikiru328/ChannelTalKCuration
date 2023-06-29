@@ -22,7 +22,7 @@ It was executed in AWS LIGHTSAIL background for 24-hour operation.
 In preparation for any possible error or problem, logging was output to nohup to solve it.
 
 </br>
-
+ 
 <details>
 <summary>프로젝트 도식화 : Project schematic</summary>
 <div markdown=''>
