@@ -12,7 +12,7 @@
 
 <br/>
 Channel Talk's support bot sends designated answers, so it is difficult to answer them individually.
-Therefore, a 1:1 automatic response service was developed using ChannelTalk's Webhook and API.
+Therefore, a 1:1 automatic response service was developed using ChannelTalk's Webhook and API. 
 
 The contents of all answers are calculated and provided based on customer surveys in Channel Talk.
 In other words, a survey must be preceded, and it is possible to specify which field to store in the database in channeltalk.
