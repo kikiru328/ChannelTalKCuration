@@ -1,4 +1,4 @@
-# ChannelTalk 1:1 Curation Service
+  # ChannelTalk 1:1 Curation Service
 
 채널톡의 서포트봇은 지정해둔 답변이 발송되기 때문에 개인에 맞는 답변이 어렵다.  
 따라서 ChannelTalk(이하 채널톡)의 Webhook과 API를 사용하여 1:1 자동 응답 서비스를 개발하였다.
