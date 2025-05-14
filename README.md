@@ -1,132 +1,76 @@
-  # ChannelTalk 1:1 Curation Service
+# 24시간 큐레이션 자동화 서비스
 
-채널톡의 서포트봇은 지정해둔 답변이 발송되기 때문에 개인에 맞는 답변이 어렵다.  
-따라서 ChannelTalk(이하 채널톡)의 Webhook과 API를 사용하여 1:1 자동 응답 서비스를 개발하였다.
+**ChannelTalk API와 Webhook을 활용한 실시간 개인화 큐레이션 자동 응답 시스템**입니다.  
+Flask 기반의 백엔드 서버를 AWS Lightsail에 배포하여 24시간 상담 전환과 자동화를 구현하였습니다.  
+기존 수동 응답 시스템 대비 개인 상담 전환율이 **2% → 19%**, 약 **850% 향상**되었습니다.
 
-모든 답변의 내용은 채널톡 내 고객 설문조사를 기반으로 계산되어 제공된다.  
-즉, 설문조사가 선행되어야 하며, channeltalk 내 database에서 어느 분야로 저장할지 지정할 수 있다.
- 
-저장된 database를 근거로 Flask를 활용하여 답변을 주는 서비스를 구현하였고  
-24시간 작동을 위하여 AWS LIGHTSAIL background에 실행하였다.  
-혹시 모를 에러나 문제에 대비하여 nohup에 logging을 출력하여 해결하였다.
+## 개요
 
-<br/>
-Channel Talk's support bot sends designated answers, so it is difficult to answer them individually.
-Therefore, a 1:1 automatic response service was developed using ChannelTalk's Webhook and API. 
+- 기간: 2022.07 ~ 2022.10
+- 역할: 기획 / API 서버 개발 / 자동화 설계 / 배포 운영
+- 기술 스택: Python, Flask, AWS Lightsail, ChannelTalk API, Webhook
 
-The contents of all answers are calculated and provided based on customer surveys in Channel Talk.
-In other words, a survey must be preceded, and it is possible to specify which field to store in the database in channeltalk.
 
-Based on the stored database, we implemented a service that provides answers using Flask.
-It was executed in AWS LIGHTSAIL background for 24-hour operation.
-In preparation for any possible error or problem, logging was output to nohup to solve it.
+## 프로젝트 배경
 
-</br>
- 
-<details>
-<summary>프로젝트 도식화 : Project schematic</summary>
-<div markdown=''>
+- 기존 ChannelTalk 서포트봇은 단순 고정형 답변만 제공 → 실시간 맞춤형 큐레이션 제공 불가
+- 고객 응답 결과를 매번 사람이 분석하고 응답 → 운영 부담과 응답 지연 발생
+- 상담 연결까지의 **전환율이 낮고 실시간성 부족**
 
-![](https://user-images.githubusercontent.com/60537388/210837865-92f7fdeb-8318-4e71-bffc-a91ae15a93a4.png)
+## 문제 정의
 
-</div>
-</details>
+| 문제 상황 | 설명 |
+|-----------|------|
+| 개인화 응답 부족 | 설문 결과에 따른 자동 추천 불가능 |
+| 운영 부담 증가 | 매 상담마다 수작업으로 큐레이션 제공 |
+| 24시간 응답 불가 | 근무 외 시간에는 상담이 끊김 |
 
-<br/>
-<br/>
+## 해결 방안
 
-### Modularization
+- Flask 백엔드 서버 구축 → ChannelTalk Webhook 실시간 수신
+- 고객 설문 데이터 기반 응답 자동 생성
+- REST API로 ChannelTalk에 응답 전송 → 실시간 큐레이션 제공
+- AWS Lightsail에 서버 배포 → 24시간 무중단 운영
 
-해당 git 내용은 Curation 서비스를 `모듈화`하였다.  
-따라서 git clone 이후 사용이 가능하다.
-<br/>
+## 시스템 구조
 
-This git content 'modularized' the Curation service.
-Therefore, it can be used after git clone.
+![image](https://github.com/user-attachments/assets/96ffcaa1-f842-438d-ada1-ff63dda1c44a)
 
-# Prepare
+- **ChannelTalk Webhook**: 고객 입력 수신
+- **Flask 서버**: 설문 응답 기반 큐레이션 자동 생성
+- **ChannelTalk API**: 응답 전송
+- **AWS Lightsail**: 서버 배포 및 운영
 
-필요한 것은 두가지다.  
-There are two things that are needed.
 
-1. ChannelTalk API Key
-2. ChannelTalk Webhook address
-<details>
-<summary><font size='2'>Webhook address</font></summary>
-<div markdown='1'>
-webhook 주소는 서버 URL + app.py 내 route 주소.
-webhook 주소를 channeltalk webhook 주소에 입력한다.
+## 성과 및 지표
 
-```python
-# server address = https://0.00.00.00
+| 항목 | 개선 전 | 개선 후 |
+|------|---------|----------|
+| 개인 상담 전환율 | 2% | **19%** |
+| 상담 연결까지 평균 시간 | 수분 소요 | **즉시 응답** |
+| 운영 필요 인력 | 실시간 대응 필요 | **자동화 운영** |
 
-@app.route("/in_userchat", methods=["GET", "POST"])
-# route address = "/in_userchat"
+![image](https://github.com/user-attachments/assets/7240181f-dccb-44a4-8f1e-e4352f57f5e9)
 
-# webhook address = https://0.00.00.00/in_userchat
-```
+## 구현 상세
 
-![webhook address](https://user-images.githubusercontent.com/60537388/210834393-0f9957e2-8bcd-402d-be0d-0dd28e79719d.png)
+### 사용방법
+1. ChannelTalk에서 Webhook 등록
+2. .env 또는 API_key.json 설정
+3. app.py 실행 후 Webhook 경로 /in_userchat에 연결
+4. 설문 응답이 오면 자동 응답 전송됨
 
-<details>
-<summary><font size='2'>open_userchat_option</font></summary>
-<div markdown='1'>
+### Webhook 흐름
 
-![image](https://user-images.githubusercontent.com/60537388/210835098-5f0ab058-db0e-4fd7-bfe9-31aa1351c165.png)
+- `POST /in_userchat` 엔드포인트에서 Webhook 요청 수신
+- 설문 응답값 파싱 → 응답 유형 분류 → 템플릿 응답 생성
+- ChannelTalk API를 통해 자동 응답 전송
 
-</div>
-</details>
+### 운영 환경
+- AWS Lightsail에서 Flask 앱 실행
+- nohup 로그 기록 및 에러 대응
+- RESTful 구조로 유지보수 및 기능 추가 용이
+- 하루 24시간 운영 가능하도록 설정
 
-<details>
-<summary><font size='2'>in_userchat_option</font></summary>
-<div markdown='1'>
-
-![image](https://user-images.githubusercontent.com/60537388/210834944-fa040cb8-3a90-4af8-a3b1-95e1cdee3bef.png)
-
-</div>
-</details>
-
-</div>
-</details>
-
-<details>
-<summary><font size='2'>Webhook?</font></summary>
-<div markdown='1'>
-
-![](https://user-images.githubusercontent.com/60537388/210836216-788a45c7-3105-47de-abdb-2c20b6c3f478.png)
-
-</div>
-</details>
-<br/>
-
-# Use
-
-Flask operator > `app.py`  
-MainCuration.main_curation.main_curation > operator main_curation  
-same as InteractionCuration
-
-<br/>
-
-# Set Message
-
-set message in #\_response.py
-
-<br/>
-
-```
-📦distribution_git
- ┣ 📂InteractionCuration
- ┃ ┣ 📜interaction_curation.py
- ┃ ┣ 📜interaction_functions.py
- ┃ ┗ 📜interaction_response.py
- ┣ 📂MainCuration
- ┃ ┣ 📜main_curation.py
- ┃ ┣ 📜main_function.py
- ┃ ┗ 📜main_response.py
- ┣ 📂templates
- ┃ ┗ 📜index.html
- ┣ 📜API_key.json
- ┣ 📜app.py
- ┣ 📜nohup.out
- ┗ 📜requirements.txt
-```
+# 참고 자료
+- [Channel Talk API Docs](https://developers.channel.io/)
